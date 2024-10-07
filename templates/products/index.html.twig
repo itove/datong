@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/products.css') }}">
+{% endblock %}
+
+{% block main %}
+<div class="hero" style="background-image: url({{ asset('images/products_hero.jpg') }})">
+  <div class="container">
+    <div class="text">
+      <div class="title2lines">
+        <div class="title">PRODUCT CENTER</div>
+        <div>产品中心</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main container py-5">
+  <div class="btn-wrapper">
+    <div class="btns btns1">
+      <button class="btn btn-dark">产品类型:</button>
+      {% for i in cates %}
+      {% set btn_css = cate == i.id ? 'btn-danger' : 'btn-outline-danger' %}
+      <a href="{{ path('app_products', {'c': i.id, 'd': drive_type, 't': ton}) }}">
+        <button class="btn {{btn_css}}">{{ i.name }}</button>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="btns btns2">
+      <button class="btn btn-dark">驱动形式:</button>
+      {% for i in drive_types %}
+      {% set btn_css = drive_type == loop.index0 ? 'btn-danger' : 'btn-outline-danger' %}
+      <a href="{{ path('app_products', {'c': cate, 'd': loop.index0, 't': ton}) }}">
+        <button class="btn {{btn_css}}">{{ i }}</button>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="btns btns3">
+      <button class="btn btn-dark">吨位:</button>
+      {% for i in tons %}
+      {% set btn_css = ton == loop.index0 ? 'btn-danger' : 'btn-outline-danger' %}
+      <a href="{{ path('app_products', {'c': cate, 'd': drive_type, 't': loop.index0}) }}">
+        <button class="btn {{btn_css}}">{{ i }}吨</button>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="products-wrapper row mt-5">
+    {% for i in nodes %}
+    <div class="col-12 col-md-4 px-md-5">
+      <a href="{{path('app_product_show', {nid: 1})}}">
+      <div class="img">
+        <img src="{{ asset("images/#{i.image}")}}">
+      </div>
+      <div class="title text-center">{{ i.title }}</div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% if page_count > 0 %}
+  <div class="d-flex justify-content-center mb-5">
+    <ul class="pagination">
+      <li class="page-item {{ page == 1 ? 'disabled'}}">
+        <a class="page-link" href="{{ path('app_products', {'c': cate, 'd': drive_type, 't': ton, 'p': page - 1}) }}"><span>&laquo;</span></a>
+      </li> 
+      {% for i in 1..page_count %}
+      <li class="page-item {{ loop.index == page ? 'active'}}">
+        <a class="page-link" href="{{ path('app_products', {'c': cate, 'd': drive_type, 't': ton, 'p': loop.index }) }}"><span>{{ loop.index }}</span></a>
+      </li>
+      {% endfor %}
+      <li class="page-item {{ page == page_count ? 'disabled'}}">
+        <a class="page-link" href="{{ path('app_products', {'c': cate, 'd': drive_type, 't': ton, 'p': page + 1}) }}">&raquo;</a>
+      </li>
+    </ul>
+  </div>
+{% endif %}
+
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

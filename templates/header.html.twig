@@ -1,0 +1,46 @@
+{% set route = app.request.get('_route') %}
+{#
+{% set route = app.request.attributes.get('_route') %}
+#}
+
+<header class="header">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+    <div class="container">
+      <a href="/"><img class="logo" src="/images/{{ conf.logo }}"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-3">
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_index' ? 'active' }}" aria-current="page" href="/">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_about' ? 'active' }}" href="{{ path('app_about') }}">关于我们</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_topic' ? 'active' }}" href="{{ path('app_topic') }}">产品专题</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_products' ? 'active' }}" href="{{ path('app_products') }}">产品中心</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_news_list' ? 'active' }}" href="{{ path('app_news_list') }}">新闻资讯</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_services' ? 'active' }}" href="{{ path('app_services') }}">售后服务</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ route == 'app_contact' ? 'active' }}" href="{{ path('app_contact') }}">联系我们</a>
+          </li>
+        </ul>
+        <form role="search" class="form-search">
+          <input class="form-control search" type="search" placeholder="" aria-label="Search">
+            <img class="img" src="{{ asset('images/search.png') }}">
+            <button class="text">搜索</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

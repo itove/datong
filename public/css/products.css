@@ -1,0 +1,105 @@
+.btns{
+  margin-bottom: 1rem;
+  .btn{
+    margin-top: .6rem;
+    margin-right: .6rem;
+  }
+  &.btns1{
+    .btn{
+      width: 145px;
+    }
+  }
+  .btn-dark{
+    width: 120px !important;
+    margin-right: .5rem;
+  }
+  .btn-outline-danger{
+    border-color: #d2d2d2;
+    color: #646464;
+  }
+}
+.products-wrapper{
+  .img{
+    width: 380px;
+    height: 240px;
+    background: linear-gradient(90deg, #e6e6e6 0 90%, transparent 50% 100%);
+    img{
+      width: 90%;
+      transform: translate(2rem, .8rem);
+    }
+  }
+  .title{
+    margin: 3rem 0;
+  }
+  >div:nth-child(3n+3){
+    padding-right: 12px !important;
+  }
+  >div:nth-child(3n+1){
+    padding-left: 12px !important;
+  }
+}
+
+.product{
+  .images-1{
+    img{
+      height: 400px;
+    };
+  }
+  .images-2{
+    img{
+      height: 268px;
+    };
+  }
+  .images{
+    >div{
+    }
+    .title{
+      padding: .6rem 1rem;
+      border: #aaaaaa 1px solid;
+      border-top: none;
+      margin-bottom: 1.6rem;
+    }
+    img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .summary{
+    padding: 2rem 0;
+  }
+  th, .more{
+    color: #737373;
+    font-weight: initial;
+  }
+  .body{
+    figure{
+      text-align: center;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+form{
+  .input-group{
+    margin: .6rem 0;
+  }
+  .input-group-text{
+    background-color: #fff;
+    color: #4b4b4b;
+    border-radius: 0;;
+  }
+  .form-control{
+    border-left: none;
+    border-radius: 0;;
+  }
+}
+.reserve{
+  .text{
+    .desc{
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
+}

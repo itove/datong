@@ -1,0 +1,146 @@
+:root{
+  --red: #c8000a;
+  --grey: #626262;
+  --grey-light: #cdcdcd;
+  --dark: #1e1e1e;
+  --grey-bg: #eaeaea;
+}
+body{
+  background-color: #fff !important;
+}
+.header{
+  .logo{
+    width: 16rem;
+  }
+}
+.footer{
+  background: url("/images/footer_bg.jpg");
+  background-size: cover;
+  color: #fff;
+  .nav-link{
+    color: #fff !important;
+  }
+  .part-3{
+    padding-top: 2rem;
+    border-color: #626262 !important;
+    .qr{
+      text-align: right;
+      font-size: 1.65rem;
+      font-weight: bold;
+      img{
+        width: 5rem;
+      }
+    }
+  }
+  .part-2{
+    border-bottom: #c8000a .3rem solid;
+    width: 5.5rem;
+  }
+  .part-1{
+    padding-bottom: 2.3rem;
+    font-weight: 900;
+    font-size: 1.3rem;
+    .title{
+      color: #c8000a;
+    }
+    img{
+      width: 64px;
+      margin-left: .6rem;
+    }
+  }
+  .copyright{
+    color: #8f8f8f;
+    font-size: .9rem;
+  }
+}
+.navbar{
+  background-color: #1e1e1e !important;
+  padding: 2.5rem 0 1.5rem;
+  .nav-link{
+    color: #fff;
+  }
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+  color: #c8000b;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.form-search{
+  position: relative;
+  top: -1.2rem;
+  width: 180px;
+  .search{
+    border-radius: 2rem;
+    font-size: .5rem;
+    position: absolute;
+    top: .4rem;
+    padding-left: 2rem;
+  }
+  .img{
+    position: absolute;
+    width: 1rem;
+    top: .5rem;
+    left: .3rem;
+  }
+  .text{
+    background-color: #c8000a;
+    color: #fff;
+    display: inline-block;
+    border-radius: 1rem;
+    padding: .1rem .5rem;
+    font-size: .8rem;
+    position: absolute;
+    z-index: 999;
+    top: .5rem;
+    right: .2rem;
+    border: none;
+  }
+}
+.title2lines{
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fff;
+  .title{
+    color: #c8000a;
+  }
+}
+.btn{
+  border-radius: 0;
+}
+.btn-danger{
+  background-color: #c8000a !important;
+}
+.hero{
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .text{
+    position: absolute;
+    bottom: 3rem;
+  }
+}
+.pagination{
+  .page-item:first-child .page-link,
+  .page-item:last-child .page-link {
+    border-radius: 0;
+  }
+  .page-link{
+    background-color: var(--dark);
+    color: #fff;
+  }
+  .active>.page-link, .page-link.active{
+    background-color: var(--red);
+    border-color: var(--red);
+  }
+}
+a{
+  color: unset;
+  text-decoration: unset;
+}
+.bg-cover{
+  background-position: center;
+  background-size: cover
+}

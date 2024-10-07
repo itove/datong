@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/about.css') }}">
+{% endblock %}
+
+{% block main %}
+<div class="hero" style="background-image: url({{ asset('images/about_hero.jpg') }})">
+  <div class="container">
+    <div class="text">
+      <div class="title2lines">
+        <div class="title"></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-1 container">
+    <div class="head d-flex justify-content-between">
+      <div class="text">
+        <div class="title2lines">
+          <div class="title">COMPANY INTRODUCTION</div>
+          <div>公司介绍</div>
+        </div>
+      </div>
+      <div class="big d-none d-md-block">INTRODUCTION </div>
+    </div>
+    <div class="row">
+      <img class="col-12 col-md-7 object-fit-cover" src="{{ asset("images/#{intro[0].image}") }}">
+      <div class="col-12 col-md-5 content">{{ intro[0].body|raw}}</div>
+    </div>
+  </div>
+
+  <div class="section-2">
+    <div class="container">
+      <div class="head d-flex justify-content-between">
+        <div class="big d-none d-md-block">HONOR</div>
+        <div class="text">
+          <div class="title2lines text-start text-md-end">
+            <div class="title">CORPORATE HONOR</DIV>
+            <div>公司荣誉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row list">
+        {% for i in honor %}
+        <div class="col-12 col-md-6">
+          <img class="" src="{{ asset("images/#{i.image}") }}">
+          <div class="title"><span class="dot">●</span>{{i.title}}</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="text">{{ honor_title[0].body|raw}}</div>
+    </div>
+  </div>
+
+  <div class="section-3">
+    <div class="container">
+      <div class="head d-flex justify-content-between">
+        <div class="text">
+          <div class="title2lines">
+            <div class="title">EMPLOYEE DEMEANOR</DIV>
+            <div>员工风采</div>
+          </div>
+        </div>
+        <div class="big d-none d-md-block">DEMEANOR</div>
+      </div>
+
+      <div class="row list">
+        {% for i in staff %}
+        <div class="col-12 col-md-4">
+          <img class="" src="{{ asset("images/#{i.image}") }}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="section-4">
+    <div class="container">
+      <div class="head d-flex justify-content-between">
+        <div class="big d-none d-md-block">CONCERN</div>
+        <div class="text">
+          <div class="title2lines text-start text-md-end">
+            <div class="title">LEADERSHIP CONCERN</DIV>
+            <div>领导关怀</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row list">
+        <div class="col-12 col-md-8">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- slides -->
+              {% for i in concern_slide %}
+              <div class="swiper-slide" style="background-image: url({{asset("images/#{i.image}")}})">
+                <div class="img"></div>
+                <div class="title">{{i.title}}</div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        {% for i in concern %}
+        <div class="col-12 col-md-4">
+          <img class="img" src="{{ asset("images/#{i.image}") }}">
+          <div class="title">{{i.title}}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('js/about.js') }}"></script>
+{% endblock %}
