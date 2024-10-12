@@ -30,16 +30,18 @@ class RegionCrudController extends AbstractCrudController
     {
         $disabled = false;
         if ($pageName == 'edit') {
-            $disabled = true;
+            if ($_ENV['APP_ENV'] === 'prod') {
+                $disabled = true;
+            }
         }
 
         yield IdField::new('id')->onlyOnIndex();
         yield AssociationField::new('page')
-            // ->setDisabled($disabled)
+            ->setDisabled($disabled)
         ;
         yield TextField::new('name');
         yield TextField::new('label')
-            // ->setDisabled($disabled)
+            ->setDisabled($disabled)
         ;
         yield TextField::new('icon');
         yield TextField::new('description');
@@ -49,8 +51,10 @@ class RegionCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        return $actions
-            ->disable('delete')
-        ;
+        if ($_ENV['APP_ENV'] === 'prod') {
+            $actions->disable('delete');
+        }
+
+        return $actions;
     }
 }
