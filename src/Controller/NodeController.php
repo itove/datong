@@ -240,6 +240,7 @@ class NodeController extends AbstractController
     public function hire(Request $request): Response
     {
         $data = $this->data->getPageContent('hire', $request->getLocale());
+        $data['page']['label'] = 'Join Us';
         $data['page']['intro'] = '大同经纪对行业风险管理服务体系建设有着自己独特的推广方式和管理经验，并集合了一大批有经验的保险经纪和风险管理专业人员。';
 
         return $this->render('hire.html.twig', $data);
