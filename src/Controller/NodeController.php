@@ -237,7 +237,7 @@ class NodeController extends AbstractController
     {
         $data = $this->data->getMisc($request->getLocale());
 
-        return $this->render('contact.html.twig', $data);
+        return $this->render('hire.html.twig', $data);
     }
 
     #[Route('/info', name: 'app_info')]
@@ -245,6 +245,6 @@ class NodeController extends AbstractController
     {
         $data = $this->data->getMisc($request->getLocale());
 
-        return $this->render('contact.html.twig', $data);
+        return $this->render('info.html.twig', $data);
     }
 }

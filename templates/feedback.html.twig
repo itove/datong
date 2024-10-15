@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block main %}
+<main class="main">
+    {{ include('block/hero.html.twig') }}
+
+    {{ include('block/about.html.twig') }}
+
+    {{ include('block/stats.html.twig') }}
+
+    {{ include('block/team.html.twig') }}
+
+    {{ include('block/testimonials.html.twig') }}
+
+    {{ include('block/faq.html.twig') }}
+
+  </main>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}
