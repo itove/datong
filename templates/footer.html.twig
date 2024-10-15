@@ -1,56 +1,63 @@
-<footer class="py-5 footer">
-  <div class="container">
-      <div class="row part-1 d-none d-sm-flex">
-          <div class="col-12 col-md-4 mb-3 title2lines">
-            <div class="title">COOPERATIVE PARTNER</div>
-            <div>合作伙伴</div>
-          </div>
-          <div class="col"></div>
-          <div class="col-auto mb-3 d-flex justify-content-between d-flex justify-content-between">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-            <img src="{{ asset('images/square.png') }}">
-          </div>
-      </div>
-      <div class="part-2"></div>
+<footer id="footer" class="footer dark-background">
 
-      <div class="row border-top part-3 justify-content-between">
-        <div class="row col-12 col-md-9 justify-content-between">
-          {% for i in range(0, 4) %}
-          <div class="col-6 col-md-2 mb-3">
-            <h5>智能选车</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">牵引车</li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">载货车</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">自卸车</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">专用车</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">自动挡产品</a></li>
-            </ul>
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Logis</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
           </div>
-          {% endfor %}
-        </div>
-        <div class="col-12 col-md-3 mb-3 qr text-center text-md-end">
-          <div>
-            <img src="{{ asset('images/qr.png') }}">
-            <img src="{{ asset('images/qr.png') }}">
-          </div>
-          <div><i style="font-size: 2rem" class="bi bi-telephone-fill"></i> 400-888-8888</div>
         </div>
 
-      </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
 
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 copyright">
-        <p>法律声明 丨 人杰特汽 版权所有 <a href="https://beian.miit.gov.cn/">鄂ICP备2022014866号-1</a></p>
-        <ul class="list-unstyled d-flex m-auto m-md-0">
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><i style="font-size: 1.5rem; color: #c8000a;" class="bi bi-tencent-qq"></i></a></li>
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><i style="font-size: 1.5rem; color: #c8000a;" class="bi bi-wechat"></i></a></li>
-          <li class="ms-3"><a class="link-body-emphasis" href="#"><i style="font-size: 1.5rem; color: #c8000a;" class="bi bi-sina-weibo"></i></a></li>
-        </ul>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
       </div>
-  </div>
-</footer>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Logis</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>

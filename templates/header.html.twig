@@ -3,44 +3,48 @@
 {% set route = app.request.attributes.get('_route') %}
 #}
 
-<header class="header">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
-    <div class="container">
-      <a href="/"><img class="logo" src="/images/{{ conf.logo }}"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-3">
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_index' ? 'active' }}" aria-current="page" href="/">首页</a>
+      <a href="/" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">湖北大同保险经纪有限公司</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">首页<br></a></li>
+          <li><a href="about.html">关于我们</a></li>
+          <li class="dropdown"><a href="#"><span>产品服务</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">产品服务</a></li>
+              <li><a href="#">业务中心</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_about' ? 'active' }}" href="{{ path('app_about') }}">关于我们</a>
+          <li><a href="services.html">消保专栏</a></li>
+          <li><a href="services.html">信息披露</a></li>
+          <li class="dropdown"><a href="#"><span>新闻公告</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">公司新闻</a></li>
+              <li class="dropdown"><a href="#"><span>公告通知</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">会议纪要</a></li>
+                  <li><a href="#">项目公告</a></li>
+                  <li><a href="#">下载中心</a></li>
+                </ul>
+              </li>
+              <li><a href="#">集团新闻</a></li>
+              <li><a href="#">行业新闻</a></li>
+              <li><a href="services.html">党建之窗</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_topic' ? 'active' }}" href="{{ path('app_topic') }}">产品专题</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_products' ? 'active' }}" href="{{ path('app_products') }}">产品中心</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_news_list' ? 'active' }}" href="{{ path('app_news_list') }}">新闻资讯</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_services' ? 'active' }}" href="{{ path('app_services') }}">售后服务</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ route == 'app_contact' ? 'active' }}" href="{{ path('app_contact') }}">联系我们</a>
-          </li>
+          <li><a href="services.html">加入我们</a></li>
         </ul>
-        <form role="search" class="form-search">
-          <input class="form-control search" type="search" placeholder="" aria-label="Search">
-            <img class="img" src="{{ asset('images/search.png') }}">
-            <button class="text">搜索</button>
-        </form>
-      </div>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="get-a-quote.html">联系我们</a>
+
     </div>
-  </nav>
-</header>
+  </header>

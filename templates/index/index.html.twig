@@ -1,245 +1,543 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<link href="assets/css/index.css" rel="stylesheet">
 {% endblock %}
 {% block breadcrumbs %}{% endblock %}
 
 {% block main %}
-<div class="main">
-  <div class="swiper swiper-1 section-1">
-    <!-- additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- slides -->
-      {% for i in slide_1 %}
-      <div class="swiper-slide" style="background-image: url({{asset("images/#{i.image}")}})"></div>
-      {% endfor %}
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
+<main class="main">
 
-  <div class="section-2" style="background-image: url({{asset('images/bg-1.jpg')}})">
-    <div class="container position-relative">
-      <div class="text d-flex justify-content-between">
-        <div class="title2lines">
-          <div class="title">PRODUCT DISPLAY</div>
-          <div>产品展示</div>
-        </div>
-        <div class="d-flex align-items-center"><a href="{{ path('app_products') }}">更多车型 &raquo;</a></div>
-      </div>
-      <div class="switch text-center my-4">
-        <button data-id="1" class="btn btn-danger">随车起重运输车</button>
-        <button data-id="2" class="btn btn-light">汽车起重机</button>
-      </div>
-      <div class="swiper swiper-2 swiper-2-1" data-id="1">
-        <!-- additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- slides -->
-          {% for i in slide_2_1 %}
-          <div class="swiper-slide" style="background-image: url({{asset("images/#{i.image}")}})"></div>
-          {% endfor %}
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-      <div class="swiper swiper-2 swiper-2-2 d-none" data-id="2">
-        <!-- additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- slides -->
-          {% for i in slide_2_2 %}
-          <div class="swiper-slide" style="background-image: url({{asset("images/#{i.image}")}})"></div>
-          {% endfor %}
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
+      <img src="assets/img/world-dotted-map.png" alt="" class="hero-bg" data-aos="fade-in">
 
-      {#
-      <div class="swiper swiper-2 swiper-2-3 d-none" data-id="3">
-        <!-- additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- slides -->
-          <div class="swiper-slide" style="background-image: url({{asset('images/slider-2.jpg')}})"></div>
-          <div class="swiper-slide" style="background-image: url({{asset('images/slider-2.jpg')}})"></div>
-          <div class="swiper-slide" style="background-image: url({{asset('images/slider-2.jpg')}})"></div>
-          <div class="swiper-slide" style="background-image: url({{asset('images/slider-2.jpg')}})"></div>
-          <div class="swiper-slide" style="background-image: url({{asset('images/slider-2.jpg')}})"></div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-      #}
+      <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2 data-aos="fade-up">经世济民，天下大同</h2>
+            <p data-aos="fade-up" data-aos-delay="100">历经楚风汉雨的滋润和洗礼，大同经纪凤凰涅槃，在精彩的绽放中实现了华丽转身，在林林总总的保险中介机构中，独树一帜，引领风潮。大同经纪已经形成了风险管理、风险转移、损失善后等诸多保险经纪服务的成熟经营模式。</p>
 
-    </div>
-  </div>
+            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="text" class="form-control" placeholder="您的城市，搜索网点">
+              <button type="submit" class="btn btn-primary">搜索</button>
+            </form>
 
-  <div class="section-3 py-5" id="feedback">
-    <div class="container">
-      {% for message in app.flashes('notice') %}
-      <div class="flash-notice text-center text-success">
-          {{ message }}
-      </div>
-      {% endfor %}
-      <div class="title mb-3">预约看车</div>
-      <form class="text-center text-md-end" action="{{ path('app_feedback_new')}}" method="post">
-        <div class="row justify-content-between">
-          <div class="input-group col-12 col-md-4">
-            <span class="input-group-text">姓名:</span>
-            <input type="text" name="name" class="form-control" required placeholder="" aria-label="name">
-          </div>
-          <div class="input-group col-12 col-md-4">
-            <span class="input-group-text">性别:</span>
-            <select name="sex" required class="form-select" aria-label="">
-              <option selected></option>
-              <option value="0">女</option>
-              <option value="1">男</option>
-            </select>
-          </div>
-          <div class="input-group col-12 col-md-4">
-            <span class="input-group-text">电话:</span>
-            <input type="text" name="phone" class="form-control" required placeholder="" aria-label="phone">
-          </div>
-          <div class="input-group col-12 col-md-4 input-group-2">
-            <span class="input-group-text">省份:</span>
-            <select name="province" id="provinces" required class="form-select" aria-label="">
-              <option selected></option>
-            </select>
-            <div class="mx-2"></div>
-            <span class="input-group-text">城市:</span>
-            <select name="city" id="cities" required class="form-select" aria-label="">
-              <option selected></option>
-            </select>
-          </div>
-          <div class="input-group col-12 col-md-4">
-            <span class="input-group-text">选择吨位:</span>
-            <input type="text" name="body" class="form-control" required placeholder="" aria-label="body">
-          </div>
-          <div class="input-group col-12 col-md-4">
-            <span class="input-group-text">预算:</span>
-            <input type="text" name="note" class="form-control" required placeholder="" aria-label="note">
-          </div>
-        </div>
-            <input type="text" name="type" class="d-none" value="1">
-        <button class="btn btn-danger mt-3 mb-2">立即预约</button>
-      </form>
-    </div>
-  </div>
+            <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
 
-  <div class="section-4">
-    <div class="container position-relative">
-      <div class="text text-right text-md-end">
-        <div class="title2lines">
-          <div class="title">NEWS AND INFORMATION</div>
-          <div>新闻资讯</div>
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="0" class="purecounter">232</span>
+                  <p>客户</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="0" class="purecounter">521</span>
+                  <p>服务</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="0" class="purecounter">1453</span>
+                  <p>员工</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-3 col-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="0" class="purecounter">32</span>
+                  <p>网点</p>
+                </div>
+              </div><!-- End Stats Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="">
+          </div>
+
         </div>
       </div>
-      <div class="mt-4 text-center text-md-start">
-        <button class="btn btn-danger"><a href="{{ path('app_news_list')}}">新闻</a></button>
-        <button class="btn btn-danger"><a href="{{ path('app_news_list')}}">视频</a></button>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
+            <div>
+              <h4 class="title">解决方案</h4>
+              <p class="description">为政府、企业、个人客户提供全方位、全体系、全流程的风险解决方案。</p>
+              <a href="#" class="readmore stretched-link"><span>了解详情</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div>
+            <div>
+              <h4 class="title">产品优选</h4>
+              <p class="description">要用系统化、网络化和交互影响视角来观察和分析经济社会发展中可能面临的重大风险。</p>
+              <a href="#" class="readmore stretched-link"><span>了解详情</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div>
+              <h4 class="title">私人定制</h4>
+              <p class="description">我们重视您的需求，更深谙您对生活的憧憬。我们将从多个维度提供友善建议，助您规划生涯、赢得人生。</p>
+              <a href="#" class="readmore stretched-link"><span>了解详情</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
       </div>
-      <div class="row justify-content-between">
-        <div class="col-12 col-md-4 pe-md-5">
-          <div class="swiper swiper-3-1">
-            <!-- additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- slides -->
-              {% for i in news %}
-              <div class="swiper-slide">
-                <div class="title">{{ i.title }}</div>
-                <div class="line"></div>
-                <div class="summary">{{ i.summary }}</div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="img-wrapper col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content order-last  order-lg-first" data-aos="fade-up" data-aos-delay="100">
+            <h3>关于我们</h3>
+            <p>
+作为湖北地区注册的保险经纪一级法人机构，经过十九年的探索、传承和丰富发展，大同经纪已经形成了风险管理、风险转移、损失善后等诸多保险经纪服务的成熟经营模式。相比于同业，大同经纪至少具有显著优势：
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-diagram-3"></i>
+                <div>
+                  <h5>资本实力优势</h5>
+                  <p>大同经纪注册资本金5000万元。控股股东联想控股集团创办于1984年，2012年综合营业额2266亿元，总资产1872亿元，是世界500强企业。联保投资集团是全产业链的大型金融保险服务集团，注册资本金1.2亿元，是国家保监会第一批批准筹建的五家保险中介集团之一。</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-fullscreen-exit"></i>
+                <div>
+                  <h5>理论技术优势</h5>
+                  <p>雄厚的经济实力支撑和推动了深入的理论研究。在教育、医疗卫生、环境保护等领域的风险管理研究方面纂写了13个行业的风险管理报告，拥有同业公司无法企及的理论水平和技术实力。</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-broadcast"></i>
+                <div>
+                  <h5>项目经验优势</h5>
+                  <p>大同经纪积极参与湖北省教育、医疗、环保等行业风险管理服务方面的研究与实践，在诸多行业建立并完善了“政府推动、政策引导、多方参与、市场运作”的行业风险管理服务体系，迄今已与湖北省内17个县市行业行政主管部门，以及67家企业或行业协会、163个居民社区签订风险管理服务协议。</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Our Services<br></span>
+        <h2>我们的服务</h2>
+        <p>为政府、企业、个人客户提供全方位、全体系、全流程的风险解决方案。</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-1.jpg" alt="" class="img-fluid">
               </div>
-              {% endfor %}
+              <h3>政府（社会）风险解决方案</h3>
+              <p>依托常年服务政府、企事业单位丰富经验，积极协助有关部门，通过加强风险管理能力建设，建立健全现代风险管理体系，推动社会治理领域保险产品和风险管理服务创新，不断完善多层次社会保障体系。</p>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-        <div class="col-12 col-md-8">
-          <div class="swiper swiper-3-2">
-            <!-- additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- slides -->
-              {% for i in news %}
-              <div class="swiper-slide" style="background-image: url({{asset("images/#{i.image}")}})"></div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          </div><!-- End Card Item -->
 
-  <div class="section-5">
-    <div class="container">
-      <div class="text mt-5">
-        <div class="title2lines">
-          <div class="title">PRODUCT DISPLAY</div>
-          <div class="text-dark">经销商查询</div>
-        </div>
-      </div>
-      <div id="map-wrapper">
-        <div id="amap-container">
-        </div>
-        <div id="amap-container-form" class="listCon">
-          <div class="listBox">
-            <div class="searchBox cf">
-              <form class="d-flex justify-content-between" action="" method="post" name="distributor_form" id="distributor_form">
-                <div class="gSelect fl">
-                  <i></i>
-                  <select class="mhxl" id="province" name="province">
-                    <!--
-                    <option></option>
-                    -->
-                  </select>
-                </div>
-                <div class="gSelect noMarR fl">
-                  <i></i>
-                  <select class="mhxl" id="city" name="city">
-                    <!--
-                    <option></option>
-                    -->
-                  </select>
-                </div>
-              </form>
-            </div>
-            <div class="table_b">
-              <div class="">
-                <div class="vscroller vscroller0">
-                  <div class="vscroller-content" style="top: 0px;">
-                    <ul class="distributor_list" id="distributor_list">
-                      <li data-lat="" data-lng="" data-title="" data-address="" data-tel="">
-                        <h4 class=""></h4>
-                        <div class="">
-                          <p>地址： </p>
-                          <p>电话： </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-2.jpg" alt="" class="img-fluid">
               </div>
+              <h3><a href="#" class="stretched-link">企业风险解决方案</a></h3>
+              <p>深度参与采矿业、制造业、建筑业、电力热力、交通运输、金属冶炼、水利、商贸等多个行业的企业风险管理项目，利用风险识别分析，细分风险类型，为相关行业提供专业化、定制型的风险管理服务。</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-3.jpg" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">个人风险解决方案</a></h3>
+              <p>我们重视您的需求，更深谙您对生活的憧憬。安诺将从健康管理、疾病康复、出行保障、财富传承等多个维度提供友善建议，助您规划生涯、赢得人生。</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-4.jpg" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">农业保险</a></h3>
+              <p>我们拥有丰富的农业保险项目经验，可向政府及有关单位提供：农业保险政府采购代理服务；农业保险绩效评价服务；农业保险技术咨询服务……</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-5.jpg" alt="" class="img-fluid">
+              </div>
+              <h3>责任保险</h3>
+              <p>我们已为多个省级、市级责任保险统保项目提供经纪服务，可协助政府及有关单位开展：承运人责任险；安全生产责任保险；环境污染责任保险...</p>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/service-6.jpg" alt="" class="img-fluid">
+              </div>
+              <h3><a href="#" class="stretched-link">健康保险</a></h3>
+              <p>针对个人客户的全方位医疗保障产品。通过对住院医疗、指定门诊医疗、住院前后各30天门（急）诊医疗等多项保障内容的覆盖，为投保客户个人和家庭提供全覆盖，高保障的医疗保险服务。</p>
+            </div>
+          </div><!-- End Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="assets/img/cta-bg.jpg" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>业务资讯</h3>
+              <p>我公司的业务范围是为投保人拟定投保方案、选择保险人、办理投保手续；协助被保险人进行索赔；为委托人提供防灾、防损或风险评估、风险管理咨询服务等。</p>
+              <a class="cta-btn" href="#">联系我们</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-</div>
+    </section><!-- /Call To Action Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Features</span>
+        <h2>我们的优势</h2>
+        <p>大同经纪已经形成了风险管理、风险转移、损失善后等诸多保险经纪服务的成熟经营模式。相比于同业，大同经纪至少具有显著优势：</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/features-1.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+            <h3>资本实力优势</h3>
+            <p class="fst-italic">
+控股股东联想控股集团创办于1984年，2012年综合营业额2266亿元，总资产1872亿元，是世界500强企业。联保投资集团是全产业链的大型金融保险服务集团，注册资本金1.2亿元，是国家保监会第一批批准筹建的五家保险中介集团之一。
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i><span>大同经纪注册资本金5000万元，是世界500强企业</span></li>
+              <li><i class="bi bi-check"></i> <span>2012年综合营业额2266亿元，总资产1872亿元</span></li>
+              <li><i class="bi bi-check"></i> <span>联保投资集团是全产业链的大型金融保险服务集团，注册资本金1.2亿元，是国家保监会第一批批准筹建的五家保险中介集团之一</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/features-2.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>理论技术优势</h3>
+            <p class="fst-italic">
+雄厚的经济实力支撑和推动了深入的理论研究。
+            </p>
+            <p>
+在教育、医疗卫生、环境保护等领域的风险管理研究方面纂写了13个行业的风险管理报告，拥有同业公司无法企及的理论水平和技术实力。
+            </p>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/features-3.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>项目经验优势</h3>
+            <p>大同经纪积极参与湖北省教育、医疗、环保等行业风险管理服务方面的研究与实践，在诸多行业建立并完善了“政府推动、政策引导、多方参与、市场运作”的行业风险管理服务体系</p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>服务湖北省内17个县市行业行政主管部门</span></li>
+              <li><i class="bi bi-check"></i><span>以及67家企业或行业协会</span></li>
+              <li><i class="bi bi-check"></i> <span>163个居民社区</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/features-4.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+            <h3>总部区位优势</h3>
+            <p class="fst-italic">
+大同经纪成立于2004年5月，是湖北地区第一家获批的全国性保险经纪公司。
+            </p>
+            <p>
+湖北省人民政府金融办为公司的设立专门发文督办支持并寄予厚望，武汉市政府及省保监局对公司的设立也给予了大力支持和高度关注。湖北大同总部位于武汉，相对于同业，其决策程序高效，服务速度快捷，资源倾斜力度有保证，本地公共关系紧密，突发事件应对能力强的优势非常明显。
+            </p>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section map">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Locations</span>
+        <h2>网点分布</h2>
+        <p>2014年，大同经纪资产重组后，在省政府及各职能部门的全力支持下，高点起步，快速布局，在全省各市州设立了分支机构，形成了在全省范围内通行达业、通城达镇、通乡达村、通街达巷的城乡经纪服务网络。我们已根植湖北并走向全国：下辖28家机构，其中湖北省内分公司18家，省外分公司6家，省内营业部 4 家。 </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+      <img src="assets/img/map.jpg">
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Frequently Asked Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                <div class="faq-content">
+                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                <div class="faq-content">
+                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                <div class="faq-content">
+                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                <div class="faq-content">
+                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                <div class="faq-content">
+                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+  </main>
 {% endblock %}
 
 {% block javascript %}
-<script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
-<script src="{{ asset('js/home.js') }}"></script>
-<script src="https://webapi.amap.com/maps?v=2.0&key=3713e08bba2f85ad35c1ad69943d725f"></script>
-<script src="{{ asset('js/z_map.js')}}"></script>
-<script src="{{ asset('js/z_setMapCenterByCity.js')}}"></script>
-<script src="{{ asset('js/pca.js')}}"></script>
 {% endblock %}
