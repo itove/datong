@@ -6,7 +6,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="/" class="logo d-flex align-items-center me-auto">
+      <a href="{{ path('app_index') }}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">湖北大同保险经纪有限公司</h1>
@@ -14,37 +14,37 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/" class="active">首页<br></a></li>
-          <li><a href="about.html">关于我们</a></li>
-          <li class="dropdown"><a href="#"><span>产品服务</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{{ path('app_index') }}" class="{{ route == 'app_index' ? 'active' }}">首页<br></a></li>
+          <li><a href="{{ path('app_about') }}" class="{{ route == 'app_about' ? 'active' }}">关于我们</a></li>
+          <li class="dropdown"><a href="#" class="{{ route == 'app_services' ? 'active' }}"><span>产品服务</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">产品服务</a></li>
-              <li><a href="#">业务中心</a></li>
+              <li><a href="{{ path('app_services') }}">产品服务</a></li>
+              <li><a href="{{ path('app_services') }}">业务中心</a></li>
             </ul>
           </li>
-          <li><a href="services.html">消保专栏</a></li>
-          <li><a href="services.html">信息披露</a></li>
-          <li class="dropdown"><a href="#"><span>新闻公告</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{{ path('app_topic') }}" class="{{ route == 'app_topic' ? 'active' }}">消保专栏</a></li>
+          <li><a href="{{ path('app_info') }}" class="{{ route == 'app_info' ? 'active' }}">信息披露</a></li>
+          <li class="dropdown"><a href="#" class="{{ route == 'app_news_index' ? 'active' }}"><span>新闻公告</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">公司新闻</a></li>
+              <li><a href="{{ path('app_news_index') }}">公司新闻</a></li>
               <li class="dropdown"><a href="#"><span>公告通知</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">会议纪要</a></li>
-                  <li><a href="#">项目公告</a></li>
-                  <li><a href="#">下载中心</a></li>
+                  <li><a href="{{ path('app_news_index') }}">会议纪要</a></li>
+                  <li><a href="{{ path('app_news_index') }}">项目公告</a></li>
+                  <li><a href="{{ path('app_news_index') }}">下载中心</a></li>
                 </ul>
               </li>
-              <li><a href="#">集团新闻</a></li>
-              <li><a href="#">行业新闻</a></li>
-              <li><a href="services.html">党建之窗</a></li>
+              <li><a href="{{ path('app_news_index') }}">集团新闻</a></li>
+              <li><a href="{{ path('app_news_index') }}">行业新闻</a></li>
+              <li><a href="{{ path('app_news_index') }}">党建之窗</a></li>
             </ul>
           </li>
-          <li><a href="services.html">加入我们</a></li>
+          <li><a href="{{ path('app_hire') }}" class="{{ route == 'app_hire' ? 'active' }}">加入我们</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="get-a-quote.html">联系我们</a>
+      <a class="btn-getstarted" href="{{ path('app_contact') }}">联系我们</a>
 
     </div>
   </header>

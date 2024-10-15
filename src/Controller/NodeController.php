@@ -44,7 +44,7 @@ class NodeController extends AbstractController
         return $this->render('node/show.html.twig', array_merge($data, $data1));
     }
 
-    #[Route('/news', name: 'app_news_list')]
+    #[Route('/news', name: 'app_news_index')]
     public function listNodes(Request $request): Response
     {
         $regionLabel = 'news';
@@ -86,7 +86,7 @@ class NodeController extends AbstractController
         return $this->render('node/show.html.twig', $data);
     }
     
-    #[Route('/news/{regionLabel?}', name: 'app_news_region_label')]
+    #[Route('/news/{regionLabel?}', name: 'app_news_region')]
     public function listRegionNodes(string $regionLabel, Request $request): Response
     {
         $locale = $request->getLocale();
@@ -226,6 +226,22 @@ class NodeController extends AbstractController
 
     #[Route('/contact', name: 'app_contact')]
     public function contact(Request $request): Response
+    {
+        $data = $this->data->getMisc($request->getLocale());
+
+        return $this->render('contact.html.twig', $data);
+    }
+
+    #[Route('/hire', name: 'app_hire')]
+    public function hire(Request $request): Response
+    {
+        $data = $this->data->getMisc($request->getLocale());
+
+        return $this->render('contact.html.twig', $data);
+    }
+
+    #[Route('/info', name: 'app_info')]
+    public function info(Request $request): Response
     {
         $data = $this->data->getMisc($request->getLocale());
 
