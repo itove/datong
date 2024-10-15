@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Feedback;
 use App\Entity\Node;
+use App\Service\Data;
 use Doctrine\Persistence\ManagerRegistry;
 
 #[Route('/feedback')]
@@ -16,15 +17,16 @@ class FeedbackController extends AbstractController
 {
     private $doctrine;
 
-    public function __construct(ManagerRegistry $doctrine)
+    public function __construct(ManagerRegistry $doctrine, Data $data)
     {
         $this->doctrine = $doctrine;
+        $this->data = $data;
     }
 
     #[Route('/', methods: ['get'], name: 'app_feedback')]
     public function index(Request $request): Response
     {
-        $data = [];
+        $data = $this->data->getMisc($request->getLocale());
 
         return $this->render('feedback.html.twig', $data);
     }
