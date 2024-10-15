@@ -70,13 +70,13 @@ class FeedbackController extends AbstractController
         $em->persist($f);
         $em->flush();
 
-        $this->addFlash(
-            'notice',
-            '您的表单已成功提交！'
-        );
+        // $this->addFlash(
+        //     'notice',
+        //     '您的表单已成功提交！'
+        // );
         
-        // return $this->json('OK');
+        return $this->json(["code" => 0, 'msg' => 'OK']);
         // return new RedirectResponse($this->generateUrl('app_contact'));
-        return new RedirectResponse($request->headers->get('referer') . '#feedback');
+        // return new RedirectResponse($request->headers->get('referer') . '#feedback');
     }
 }
