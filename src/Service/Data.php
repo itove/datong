@@ -167,16 +167,30 @@ class Data
     {
         $page = $this->doctrine->getRepository(Page::class)->findOneBy(['label' => $label]);
         $regions = $page->getRegions();
+
         $data = [];
         foreach ($regions as $r) {
             $dataOfRegion = self::findNodesByRegion($r, $locale, $r->getCount());
-            $data[$r->getLabel()] = $dataOfRegion;
+            // $data[$r->getLabel()] = $dataOfRegion;
+            $data['nodes'] = $dataOfRegion;
         }
         
-        $data['path'] = $page->getName();
-        
+        $data['page'] = self::getPageInfo($label);
+
         return array_merge($data, self::getMisc($locale));
-        
+    }
+    
+    public function getPageInfo(string $label)
+    {
+        $page = $this->doctrine->getRepository(Page::class)->findOneBy(['label' => $label]);
+
+        $data = [
+          'name' => $page->getName(),
+          'label' => $label,
+          'intro' => '',
+        ];
+
+        return $data;
     }
     
     public function getMisc(string $locale)

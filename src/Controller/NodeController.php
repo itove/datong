@@ -47,14 +47,15 @@ class NodeController extends AbstractController
     #[Route('/news', name: 'app_news_index')]
     public function listNodes(Request $request): Response
     {
-        $regionLabel = 'news';
+        $regionLabel = 'meeting';
+        $pageLabel = 'news';
         $locale = $request->getLocale();
-        $page = $request->query->get('p');
-        $limit = 5;
-        if (is_null($page) || empty($page)) {
-          $page = 1;
+        $p = $request->query->get('p');
+        $limit = 15;
+        if (is_null($p) || empty($p)) {
+          $p = 1;
         }
-        $offset = $limit * ($page - 1);
+        $offset = $limit * ($p - 1);
 
         $region = $this->data->getRegionByLabel($regionLabel);
         if ($region == null) {
@@ -63,18 +64,16 @@ class NodeController extends AbstractController
 
         $nodes = $this->data->findNodesByRegion($region, $locale, $limit, $offset);
         $nodes_all = $this->data->findNodesByRegion($region, $locale);
+        dump($nodes);
 
-        $data = $this->data->getMisc($request->getLocale());
-        $data1 = [
-          'nodes' => $nodes,
-          'path' => $region->getName(),
-          'page_title' => $this->translator->trans('News'),
-          'page' => $page,
-          'page_count' => ceil(count($nodes_all) / $limit),
-          'regionLabel' => $regionLabel,
-        ];
+        $data = $this->data->getMisc($pageLabel);
+        $data['page'] = $this->data->getPageInfo($pageLabel);
+        $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
+        $data['nodes'] = $nodes;
+        $data['p'] = $p;
+        $data['page_count'] = ceil(count($nodes_all) / $limit);
 
-        return $this->render('news/index.html.twig', array_merge($data, $data1));
+        return $this->render('news/index.html.twig', array_merge($data));
     }
 
     #[Route('news/{nid}', requirements: ['nid' => '\d+'], name: 'app_node_show')]
@@ -131,6 +130,7 @@ class NodeController extends AbstractController
     public function aboutUs(Request $request): Response
     {
         $data = $this->data->getPageContent('about', $request->getLocale());
+        $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
 
         return $this->render('about.html.twig', $data);
     }
@@ -219,7 +219,8 @@ class NodeController extends AbstractController
     #[Route('/services', name: 'app_services')]
     public function services(Request $request): Response
     {
-        $data = $this->data->getMisc($request->getLocale());
+        $data = $this->data->getPageContent('services', $request->getLocale());
+        $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
 
         return $this->render('services.html.twig', $data);
     }
@@ -227,7 +228,9 @@ class NodeController extends AbstractController
     #[Route('/contact', name: 'app_contact')]
     public function contact(Request $request): Response
     {
-        $data = $this->data->getMisc($request->getLocale());
+        $data = $this->data->getPageContent('contact', $request->getLocale());
+        $data['page']['label'] = 'Contact Us';
+        $data['page']['intro'] = '大厅已根植湖并走向全国：下辖28家机构，其中湖北省内分公司18家，省外分公司6家，省内营业部 4 家。';
 
         return $this->render('contact.html.twig', $data);
     }
@@ -235,7 +238,8 @@ class NodeController extends AbstractController
     #[Route('/hire', name: 'app_hire')]
     public function hire(Request $request): Response
     {
-        $data = $this->data->getMisc($request->getLocale());
+        $data = $this->data->getPageContent('hire', $request->getLocale());
+        $data['page']['intro'] = '大同经纪对行业风险管理服务体系建设有着自己独特的推广方式和管理经验，并集合了一大批有经验的保险经纪和风险管理专业人员。';
 
         return $this->render('hire.html.twig', $data);
     }
@@ -243,7 +247,8 @@ class NodeController extends AbstractController
     #[Route('/info', name: 'app_info')]
     public function info(Request $request): Response
     {
-        $data = $this->data->getMisc($request->getLocale());
+        $data = $this->data->getPageContent('information', $request->getLocale());
+        $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
 
         return $this->render('info.html.twig', $data);
     }

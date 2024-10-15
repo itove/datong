@@ -27,6 +27,7 @@ class FeedbackController extends AbstractController
     public function index(Request $request): Response
     {
         $data = $this->data->getMisc($request->getLocale());
+        $data['page'] = $this->data->getPageInfo('feedback');
 
         return $this->render('feedback.html.twig', $data);
     }

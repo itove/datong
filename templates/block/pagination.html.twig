@@ -1,15 +1,15 @@
   <div class="d-flex justify-content-center my-4">
     <ul class="pagination">
-      <li class="page-item {{ page == 1 ? 'disabled'}}">
-        <a class="page-link" href="?p={{ page - 1 }}"><span>&laquo;</span></a>
+      <li class="page-item {{ p == 1 ? 'disabled'}}">
+        <a class="page-link" href="?p={{ p - 1 }}"><span>&laquo;</span></a>
       </li> 
       {% for i in 1..page_count %}
-      <li class="page-item {{ loop.index == page ? 'active'}}">
+      <li class="page-item {{ loop.index == p ? 'active'}}">
         <a class="page-link" href="?p={{ loop.index }}"><span>{{ loop.index }}</span></a>
       </li>
       {% endfor %}
-      <li class="page-item {{ page == page_count ? 'disabled'}}">
-        <a class="page-link" href="?p={{ page + 1}}">&raquo;</a>
+      <li class="page-item {{ p == page_count ? 'disabled'}}">
+        <a class="page-link" href="?p={{ p + 1}}">&raquo;</a>
       </li>
     </ul>
   </div>
