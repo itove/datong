@@ -116,9 +116,9 @@ class DashboardController extends AbstractDashboardController
                 array_push($items, $item);
 
                 // yield MenuItem::section($p->getName());
-                // yield $item;
+                yield $item;
             }
-            yield MenuItem::subMenu($p->getName(), 'fa fa-file-image-o')->setSubItems($items);
+            // yield MenuItem::subMenu($p->getName(), 'fa fa-file-image-o')->setSubItems($items);
         }
         
         yield MenuItem::section('');
