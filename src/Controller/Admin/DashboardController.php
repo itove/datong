@@ -112,22 +112,30 @@ class DashboardController extends AbstractDashboardController
         ;
         
         foreach ($pages as $p) {
-            if (count($p->getRegions()) > 0) {
-                yield MenuItem::section($p->getName());
+            if ($_ENV['USE_SUBMENU']) {
+                $items = [];
+            } else {
+                if (count($p->getRegions()) > 0) {
+                    yield MenuItem::section($p->getName());
+                }
             }
 
-            // $items = [];
             foreach ($p->getRegions() as $region) {
                 $item = MenuItem::linkToCrud($region->getName(), "fas fa-{$region->getIcon()}", Node::class)
                     ->setQueryParameter('region', $region->getId())
-                    // ->setController(NodeCrudController::class)
-                    // ->setLinkRel('next')
+                    ->setController(_N::class . $region->getId())
                 ;
-                // array_push($items, $item);
+                if ($_ENV['USE_SUBMENU']) {
+                    array_push($items, $item);
+                } else {
+                    yield $item;
+                }
 
-                yield $item;
             }
-            // yield MenuItem::subMenu($p->getName(), 'fa fa-file-image-o')->setSubItems($items);
+
+            if ($_ENV['USE_SUBMENU']) {
+                yield MenuItem::subMenu($p->getName(), 'fa fa-file-image-o')->setSubItems($items);
+            }
         }
 
         yield MenuItem::section('Feedback');

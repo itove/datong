@@ -27,3 +27,4 @@
 /node_modules/
 
 /**/*.swp
+/src/Controller/Admin/_N*.php
