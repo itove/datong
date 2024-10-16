@@ -11,6 +11,15 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+
+// use EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto;
+// use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
+// use EasyCorp\Bundle\EasyAdminBundle\Orm\EntityRepository;
+// use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
+// use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
+// use Doctrine\ORM\QueryBuilder;
+
 class PageCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -28,6 +37,7 @@ class PageCrudController extends AbstractCrudController
             }
         }
 
+        yield IdField::new('id')->onlyOnIndex();
         if ($this->isGranted('ROLE_SUPER_ADMIN')) {
             yield IntegerField::new('weight');
         }
@@ -48,4 +58,23 @@ class PageCrudController extends AbstractCrudController
 
         return $actions;
     }
+    
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['weight' => 'ASC', 'id' => 'DESC'])
+        ;
+    }
+    
+    // public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
+    // {
+    //     $qb = $this->container->get(EntityRepository::class)->createQueryBuilder($searchDto, $entityDto, $fields, $filters);
+    //     
+    //     $qb
+    //         ->orderBy('entity.weight', 'ASC')
+    //         ->addOrderBy('entity.id', 'DESC')
+    //     ;
+
+    //     return $qb;
+    // }
 }

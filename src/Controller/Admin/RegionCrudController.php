@@ -19,6 +19,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use App\Service\Data;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+
 class RegionCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -62,5 +64,12 @@ class RegionCrudController extends AbstractCrudController
         }
 
         return $actions;
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['page' => 'ASC', 'weight' => 'ASC', 'id' => 'DESC'])
+        ;
     }
 }
