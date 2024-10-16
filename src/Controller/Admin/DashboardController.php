@@ -105,7 +105,11 @@ class DashboardController extends AbstractDashboardController
         //     ->setQueryParameter('region', 'news')
         // ;
         
-        yield MenuItem::section('Content Management');
+        yield MenuItem::section('Content Management')
+            ->setCssClass('');
+            // ->setBadge('test')
+            // ->setPermission('ROLE_SUPER_ADMIN')
+        ;
         
         foreach ($pages as $p) {
             if (count($p->getRegions()) > 0) {
@@ -132,7 +136,7 @@ class DashboardController extends AbstractDashboardController
             ->setQueryParameter('type', 1)
         ;
         
-        yield MenuItem::section('');
+        yield MenuItem::section('Taxon Management');
         if ($_ENV['HAVE_ORDERS']) {
             yield MenuItem::linkToCrud('Order Management', 'fas fa-book-open', Order::class);
             yield MenuItem::linkToCrud('Refund Records', 'fas fa-book-open', Refund::class);
