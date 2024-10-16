@@ -34,7 +34,7 @@ class Region
     private ?string $icon = null;
 
     #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
-    private ?array $fields = null;
+    private ?array $fields = ['image', 'summary', 'body'];
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
