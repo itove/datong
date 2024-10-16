@@ -27,7 +27,10 @@ class PageCrudController extends AbstractCrudController
         }
 
         yield TextField::new('name');
-        yield TextField::new('label')->setDisabled($disabled);
+        yield TextField::new('label')
+            ->setDisabled($disabled)
+            ->setRequired(false)
+        ;
         yield AssociationField::new('regions')->setDisabled($disabled);
     }
 
