@@ -31,7 +31,7 @@ class Region
     private ?int $count = 5;
 
     #[ORM\Column(length: 20, nullable: true)]
-    private ?string $icon = null;
+    private ?string $icon = 'list';
 
     #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
     private ?array $fields = ['image', 'summary', 'body'];
