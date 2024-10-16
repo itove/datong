@@ -35,6 +35,9 @@ class TagCrudController extends AbstractCrudController
         }
 
         yield TextField::new('name');
-        yield TextField::new('label')->setDisabled($disabled);
+        yield TextField::new('label')
+            ->setDisabled($disabled)
+            ->setRequired(false)
+        ;
     }
 }
