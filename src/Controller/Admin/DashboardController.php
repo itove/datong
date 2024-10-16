@@ -106,7 +106,7 @@ class DashboardController extends AbstractDashboardController
         // ;
         
         yield MenuItem::section('Content Management')
-            ->setCssClass('');
+            // ->setCssClass('test');
             // ->setBadge('test')
             // ->setPermission('ROLE_SUPER_ADMIN')
         ;
