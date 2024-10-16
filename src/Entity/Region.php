@@ -43,7 +43,7 @@ class Region
     private ?Page $page = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $weight = null;
+    private ?int $weight = 0;
 
     public function __toString(): string
     {

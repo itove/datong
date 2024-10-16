@@ -30,7 +30,7 @@ class Page
     private ?string $label = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $weight = null;
+    private ?int $weight = 0;
 
     public function __construct()
     {
