@@ -108,6 +108,10 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Content Management');
         
         foreach ($pages as $p) {
+            if (count($p->getRegions()) > 0) {
+                yield MenuItem::section($p->getName());
+            }
+
             $items = [];
             foreach ($p->getRegions() as $region) {
                 $item = MenuItem::linkToCrud($region->getName(), "fas fa-{$region->getIcon()}", Node::class)
@@ -115,7 +119,6 @@ class DashboardController extends AbstractDashboardController
                 ;
                 array_push($items, $item);
 
-                // yield MenuItem::section($p->getName());
                 yield $item;
             }
             // yield MenuItem::subMenu($p->getName(), 'fa fa-file-image-o')->setSubItems($items);
