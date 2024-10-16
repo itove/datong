@@ -123,6 +123,14 @@ class DashboardController extends AbstractDashboardController
             }
             // yield MenuItem::subMenu($p->getName(), 'fa fa-file-image-o')->setSubItems($items);
         }
+
+        yield MenuItem::section('Feedback');
+        yield MenuItem::linkToCrud('Feedback', 'fas fa-message', Feedback::class)
+            ->setQueryParameter('type', 0)
+        ;
+        yield MenuItem::linkToCrud('Consultation', 'fas fa-message', Feedback::class)
+            ->setQueryParameter('type', 1)
+        ;
         
         yield MenuItem::section('');
         if ($_ENV['HAVE_ORDERS']) {
@@ -132,12 +140,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Menu Management', 'fas fa-link', Menu::class);
         yield MenuItem::linkToCrud('Tag Management', 'fas fa-tags', Tag::class);
         yield MenuItem::linkToCrud('Category Management', 'fas fa-table-cells-large', Category::class);
-        yield MenuItem::linkToCrud('Feedback', 'fas fa-message', Feedback::class)
-            ->setQueryParameter('type', 0)
-        ;
-        yield MenuItem::linkToCrud('Appointment', 'fas fa-message', Feedback::class)
-            ->setQueryParameter('type', 1)
-        ;
         
         // admin menu of regions
         // foreach ($this->regions as $region) {
