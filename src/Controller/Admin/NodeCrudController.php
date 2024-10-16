@@ -226,6 +226,7 @@ class NodeCrudController extends AbstractCrudController
         $parentField = AssociationField::new('parent')->onlyOnForms()->setDisabled();
         $childrenField = AssociationField::new('children')->setDisabled();
         $summaryField = TextareaField::new('summary')
+            ->setNumOfRows(2)
             // ->setMaxLength(15)
             ;
         $bodyField = TextareaField::new('body')->setNumOfRows(10)->onlyOnForms();
