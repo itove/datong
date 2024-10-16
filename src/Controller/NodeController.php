@@ -231,7 +231,7 @@ class NodeController extends AbstractController
     {
         $data = $this->data->getPageContent('contact', $request->getLocale());
         $data['page']['label'] = 'Contact Us';
-        $data['page']['intro'] = '大厅已根植湖并走向全国：下辖28家机构，其中湖北省内分公司18家，省外分公司6家，省内营业部 4 家。';
+        $data['page']['intro'] = '大同已根植湖并走向全国：下辖28家机构，其中湖北省内分公司18家，省外分公司6家，省内营业部 4 家。';
 
         return $this->render('contact.html.twig', $data);
     }
