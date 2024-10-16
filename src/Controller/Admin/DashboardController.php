@@ -116,12 +116,14 @@ class DashboardController extends AbstractDashboardController
                 yield MenuItem::section($p->getName());
             }
 
-            $items = [];
+            // $items = [];
             foreach ($p->getRegions() as $region) {
                 $item = MenuItem::linkToCrud($region->getName(), "fas fa-{$region->getIcon()}", Node::class)
                     ->setQueryParameter('region', $region->getId())
+                    // ->setController(NodeCrudController::class)
+                    // ->setLinkRel('next')
                 ;
-                array_push($items, $item);
+                // array_push($items, $item);
 
                 yield $item;
             }
