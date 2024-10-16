@@ -31,7 +31,7 @@ class RegionListener extends AbstractController
     public function preUpdate(Region $region, PreUpdateEventArgs $event): void
     {
 
-        if ($event->hasChangedField('name') || is_null($region->getLabel())) {
+        if (is_null($region->getLabel())) {
             $label = Pinyin::permalink($region->getName(), '');
             $region->setLabel($label);
         }

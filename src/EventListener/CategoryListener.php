@@ -31,7 +31,7 @@ class CategoryListener extends AbstractController
     public function preUpdate(Category $category, PreUpdateEventArgs $event): void
     {
 
-        if ($event->hasChangedField('name') || is_null($category->getLabel())) {
+        if (is_null($category->getLabel())) {
             $label = Pinyin::permalink($category->getName(), '');
             $category->setLabel($label);
         }
