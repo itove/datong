@@ -31,7 +31,10 @@ class TagCrudController extends AbstractCrudController
     {
         $disabled = false;
         if ($pageName == 'edit') {
-            $disabled = true;
+            // if ($_ENV['APP_ENV'] === 'prod') {
+            if (!$this->isGranted('ROLE_SUPER_ADMIN')) {
+                $disabled = true;
+            }
         }
 
         yield TextField::new('name');
