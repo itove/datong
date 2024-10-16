@@ -16,13 +16,13 @@
         <ul>
           <li><a href="{{ path('app_index') }}" class="{{ route == 'app_index' ? 'active' }}">首页<br></a></li>
           <li><a href="{{ path('app_about') }}" class="{{ route == 'app_about' ? 'active' }}">关于我们</a></li>
-          <li class="dropdown"><a href="#" class="{{ route == 'app_services' ? 'active' }}"><span>产品服务</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="{{ route == 'app_services' ? 'active' }}"><span>产品中心</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ path('app_services') }}">产品服务</a></li>
               <li><a href="{{ path('app_services') }}">业务中心</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#" class="{{ route == 'app_news_index' ? 'active' }}"><span>新闻公告</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="{{ route == 'app_news_index' ? 'active' }}"><span>资讯中心</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ path('app_news_index') }}">公司新闻</a></li>
               <li class="dropdown"><a href="#"><span>公告通知</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -38,9 +38,10 @@
               <li><a href="{{ path('app_news_index') }}">党建之窗</a></li>
             </ul>
           </li>
-          <li><a href="{{ path('app_info') }}" class="{{ route == 'app_info' ? 'active' }}">信息披露</a></li>
-          <li><a href="{{ path('app_hire') }}" class="{{ route == 'app_hire' ? 'active' }}">加入我们</a></li>
+          <li><a href="{{ path('app_news_index') }}" class="{{ route == 'app_news_index' ? 'active' }}">消保专栏</a></li>
+          <li><a href="{{ path('app_hire') }}" class="{{ route == 'app_hire' ? 'active' }}">客户服务</a></li>
           <li><a href="{{ path('app_contact') }}" class="{{ route == 'app_contact' ? 'active' }}">联系我们</a></li>
+          <li><a href="{{ path('app_info') }}" class="{{ route == 'app_info' ? 'active' }}">信息披露</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
