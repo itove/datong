@@ -42,6 +42,9 @@ class Region
     #[ORM\ManyToOne(inversedBy: 'regions')]
     private ?Page $page = null;
 
+    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
+    private ?int $weight = null;
+
     public function __toString(): string
     {
         $page = $this->page;
@@ -173,6 +176,18 @@ class Region
     public function setPage(?Page $page): static
     {
         $this->page = $page;
+
+        return $this;
+    }
+
+    public function getWeight(): ?int
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(?int $weight): static
+    {
+        $this->weight = $weight;
 
         return $this;
     }

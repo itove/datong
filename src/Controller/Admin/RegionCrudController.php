@@ -41,6 +41,9 @@ class RegionCrudController extends AbstractCrudController
         yield AssociationField::new('page')
             ->setDisabled($disabled)
         ;
+        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
+            yield IntegerField::new('weight');
+        }
         yield TextField::new('name');
         yield TextField::new('label')
             ->setDisabled($disabled)
