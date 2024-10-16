@@ -29,6 +29,7 @@ class RegionCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         $disabled = false;
+
         if ($pageName == 'edit') {
             if ($_ENV['APP_ENV'] === 'prod') {
                 $disabled = true;
@@ -42,6 +43,7 @@ class RegionCrudController extends AbstractCrudController
         yield TextField::new('name');
         yield TextField::new('label')
             ->setDisabled($disabled)
+            ->setRequired(false)
         ;
         yield TextField::new('icon');
         yield TextField::new('description');
