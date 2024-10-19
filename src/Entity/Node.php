@@ -110,11 +110,11 @@ class Node
     #[ORM\OneToMany(mappedBy: 'node', targetEntity: Comment::class)]
     private Collection $comments;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $up = null;
+    #[ORM\Column(nullable: true, options: ["unsigned" => true, "default" => 0])]
+    private ?int $up = 0;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $down = null;
+    #[ORM\Column(nullable: true, options: ["unsigned" => true, "default" => 0])]
+    private ?int $down = 0;
 
     #[ORM\ManyToOne(inversedBy: 'nodes')]
     private ?User $author = null;
