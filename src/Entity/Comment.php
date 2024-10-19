@@ -27,14 +27,14 @@ class Comment
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
-    private ?int $up = null;
+    #[ORM\Column(options: ["unsigned" => true, "default" => 0])]
+    private ?int $up = 0;
 
-    #[ORM\Column]
-    private ?int $down = null;
+    #[ORM\Column(options: ["unsigned" => true, "default" => 0])]
+    private ?int $down = 0;
 
-    #[ORM\Column]
-    private ?bool $deleted = null;
+    #[ORM\Column(options: ["default" => false])]
+    private ?bool $deleted = false;
 
     public function getId(): ?int
     {

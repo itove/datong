@@ -110,6 +110,15 @@ class Node
     #[ORM\OneToMany(mappedBy: 'node', targetEntity: Comment::class)]
     private Collection $comments;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $up = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $down = null;
+
+    #[ORM\ManyToOne(inversedBy: 'nodes')]
+    private ?User $author = null;
+
     public function __construct()
     {
         $this->regions = new ArrayCollection();
@@ -564,6 +573,42 @@ class Node
                 $comment->setNode(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUp(): ?int
+    {
+        return $this->up;
+    }
+
+    public function setUp(?int $up): static
+    {
+        $this->up = $up;
+
+        return $this;
+    }
+
+    public function getDown(): ?int
+    {
+        return $this->down;
+    }
+
+    public function setDown(?int $down): static
+    {
+        $this->down = $down;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): static
+    {
+        $this->author = $author;
 
         return $this;
     }
