@@ -16,6 +16,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\HiddenField;
 use App\Admin\Field\VichImageField;
 use App\Admin\Field\VichFileField;
 use EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto;
@@ -238,6 +241,11 @@ class NodeCrudController extends AbstractCrudController
         $imagesField = CollectionField::new('images')->useEntryCrudForm()->hideOnIndex();
         $latitudeField = NumberField::new('latitude')->setNumDecimals(12)->hideOnIndex();
         $longitudeField = NumberField::new('longitude')->setNumDecimals(12)->hideOnIndex();
+        $coordField = ArrayField::new('coord')->hideOnIndex()->hideOnForm();
+        $authorField = AssociationField::new('author')->setDisabled();
+        $deletedField = BooleanField::new('deleted')->setDisabled();
+        $upField = IntegerField::new('up')->setDisabled();
+        $downField = IntegerField::new('down')->setDisabled();
         
         $fields = [];
         if (!is_null($this->region)) {
@@ -249,10 +257,17 @@ class NodeCrudController extends AbstractCrudController
         }
         
         yield $titleField;
+
         foreach ($fields as $f) {
             $ff = $f . "Field";
             yield $$ff;
         }
+
+        if (in_array('coord', $fields)) {
+            yield $latitudeField;
+            yield $longitudeField;
+        }
+
         // yield ArrayField::new('regions')->onlyOnIndex();
 
         // if (in_array('image', $fields)) {
