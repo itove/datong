@@ -37,7 +37,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: category; Type: TABLE; Schema: public; Owner: datongdev
+-- Name: category; Type: TABLE; Schema: public; Owner: datong
 --
 
 CREATE TABLE public.category (
@@ -47,7 +47,7 @@ CREATE TABLE public.category (
 );
 
 
-ALTER TABLE public.category OWNER TO datongdev;
+ALTER TABLE public.category OWNER TO datong;
 
 --
 -- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
@@ -500,7 +500,7 @@ CREATE SEQUENCE public.order_id_seq
 ALTER SEQUENCE public.order_id_seq OWNER TO datong;
 
 --
--- Name: page; Type: TABLE; Schema: public; Owner: datongdev
+-- Name: page; Type: TABLE; Schema: public; Owner: datong
 --
 
 CREATE TABLE public.page (
@@ -511,7 +511,7 @@ CREATE TABLE public.page (
 );
 
 
-ALTER TABLE public.page OWNER TO datongdev;
+ALTER TABLE public.page OWNER TO datong;
 
 --
 -- Name: page_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
@@ -566,7 +566,7 @@ CREATE SEQUENCE public.refund_id_seq
 ALTER SEQUENCE public.refund_id_seq OWNER TO datong;
 
 --
--- Name: region; Type: TABLE; Schema: public; Owner: datongdev
+-- Name: region; Type: TABLE; Schema: public; Owner: datong
 --
 
 CREATE TABLE public.region (
@@ -582,10 +582,10 @@ CREATE TABLE public.region (
 );
 
 
-ALTER TABLE public.region OWNER TO datongdev;
+ALTER TABLE public.region OWNER TO datong;
 
 --
--- Name: COLUMN region.fields; Type: COMMENT; Schema: public; Owner: datongdev
+-- Name: COLUMN region.fields; Type: COMMENT; Schema: public; Owner: datong
 --
 
 COMMENT ON COLUMN public.region.fields IS '(DC2Type:simple_array)';
@@ -713,7 +713,7 @@ ALTER TABLE ONLY public.messenger_messages ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
--- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: datongdev
+-- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: datong
 --
 
 COPY public.category (id, name, label) FROM stdin;
@@ -883,7 +883,7 @@ COPY public."order" (id, node_id, consumer_id, quantity, amount, created_at, pai
 
 
 --
--- Data for Name: page; Type: TABLE DATA; Schema: public; Owner: datongdev
+-- Data for Name: page; Type: TABLE DATA; Schema: public; Owner: datong
 --
 
 COPY public.page (id, name, label, weight) FROM stdin;
@@ -913,7 +913,7 @@ COPY public.refund (id, ord_id, created_at, reason, note, sn, wx_refund_id) FROM
 
 
 --
--- Data for Name: region; Type: TABLE DATA; Schema: public; Owner: datongdev
+-- Data for Name: region; Type: TABLE DATA; Schema: public; Owner: datong
 --
 
 COPY public.region (id, page_id, name, label, count, icon, fields, description, weight) FROM stdin;
@@ -1089,7 +1089,7 @@ SELECT pg_catalog.setval('public.user_id_seq', 2, true);
 
 
 --
--- Name: category category_pkey; Type: CONSTRAINT; Schema: public; Owner: datongdev
+-- Name: category category_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
 --
 
 ALTER TABLE ONLY public.category
@@ -1193,7 +1193,7 @@ ALTER TABLE ONLY public."order"
 
 
 --
--- Name: page page_pkey; Type: CONSTRAINT; Schema: public; Owner: datongdev
+-- Name: page page_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
 --
 
 ALTER TABLE ONLY public.page
@@ -1209,7 +1209,7 @@ ALTER TABLE ONLY public.refund
 
 
 --
--- Name: region region_pkey; Type: CONSTRAINT; Schema: public; Owner: datongdev
+-- Name: region region_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
 --
 
 ALTER TABLE ONLY public.region
@@ -1368,7 +1368,7 @@ CREATE INDEX idx_f5299398460d9fd7 ON public."order" USING btree (node_id);
 
 
 --
--- Name: idx_f62f176c4663e4; Type: INDEX; Schema: public; Owner: datongdev
+-- Name: idx_f62f176c4663e4; Type: INDEX; Schema: public; Owner: datong
 --
 
 CREATE INDEX idx_f62f176c4663e4 ON public.region USING btree (page_id);
@@ -1530,7 +1530,7 @@ ALTER TABLE ONLY public."order"
 
 
 --
--- Name: region fk_f62f176c4663e4; Type: FK CONSTRAINT; Schema: public; Owner: datongdev
+-- Name: region fk_f62f176c4663e4; Type: FK CONSTRAINT; Schema: public; Owner: datong
 --
 
 ALTER TABLE ONLY public.region
@@ -1557,231 +1557,231 @@ ALTER TABLE ONLY public.user_node
 -- Name: SEQUENCE category_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.category_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.category_id_seq TO datong;
 
 
 --
 -- Name: TABLE conf; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.conf TO datongdev;
+GRANT ALL ON TABLE public.conf TO datong;
 
 
 --
 -- Name: SEQUENCE conf_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.conf_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.conf_id_seq TO datong;
 
 
 --
 -- Name: TABLE doctrine_migration_versions; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.doctrine_migration_versions TO datongdev;
+GRANT ALL ON TABLE public.doctrine_migration_versions TO datong;
 
 
 --
 -- Name: TABLE feedback; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.feedback TO datongdev;
+GRANT ALL ON TABLE public.feedback TO datong;
 
 
 --
 -- Name: SEQUENCE feedback_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.feedback_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.feedback_id_seq TO datong;
 
 
 --
 -- Name: TABLE image; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.image TO datongdev;
+GRANT ALL ON TABLE public.image TO datong;
 
 
 --
 -- Name: SEQUENCE image_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.image_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.image_id_seq TO datong;
 
 
 --
 -- Name: TABLE language; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.language TO datongdev;
+GRANT ALL ON TABLE public.language TO datong;
 
 
 --
 -- Name: SEQUENCE language_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.language_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.language_id_seq TO datong;
 
 
 --
 -- Name: TABLE link; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.link TO datongdev;
+GRANT ALL ON TABLE public.link TO datong;
 
 
 --
 -- Name: SEQUENCE link_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.link_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.link_id_seq TO datong;
 
 
 --
 -- Name: TABLE menu; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.menu TO datongdev;
+GRANT ALL ON TABLE public.menu TO datong;
 
 
 --
 -- Name: SEQUENCE menu_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.menu_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.menu_id_seq TO datong;
 
 
 --
 -- Name: TABLE messenger_messages; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.messenger_messages TO datongdev;
+GRANT ALL ON TABLE public.messenger_messages TO datong;
 
 
 --
 -- Name: SEQUENCE messenger_messages_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.messenger_messages_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.messenger_messages_id_seq TO datong;
 
 
 --
 -- Name: TABLE node; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.node TO datongdev;
+GRANT ALL ON TABLE public.node TO datong;
 
 
 --
 -- Name: SEQUENCE node_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.node_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.node_id_seq TO datong;
 
 
 --
 -- Name: TABLE node_region; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.node_region TO datongdev;
+GRANT ALL ON TABLE public.node_region TO datong;
 
 
 --
 -- Name: TABLE node_tag; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.node_tag TO datongdev;
+GRANT ALL ON TABLE public.node_tag TO datong;
 
 
 --
 -- Name: TABLE "order"; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public."order" TO datongdev;
+GRANT ALL ON TABLE public."order" TO datong;
 
 
 --
 -- Name: SEQUENCE order_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.order_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.order_id_seq TO datong;
 
 
 --
 -- Name: SEQUENCE page_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.page_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.page_id_seq TO datong;
 
 
 --
 -- Name: TABLE refund; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.refund TO datongdev;
+GRANT ALL ON TABLE public.refund TO datong;
 
 
 --
 -- Name: SEQUENCE refund_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.refund_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.refund_id_seq TO datong;
 
 
 --
 -- Name: SEQUENCE region_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.region_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.region_id_seq TO datong;
 
 
 --
 -- Name: TABLE spec; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.spec TO datongdev;
+GRANT ALL ON TABLE public.spec TO datong;
 
 
 --
 -- Name: SEQUENCE spec_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.spec_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.spec_id_seq TO datong;
 
 
 --
 -- Name: TABLE tag; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.tag TO datongdev;
+GRANT ALL ON TABLE public.tag TO datong;
 
 
 --
 -- Name: SEQUENCE tag_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.tag_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.tag_id_seq TO datong;
 
 
 --
 -- Name: TABLE "user"; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public."user" TO datongdev;
+GRANT ALL ON TABLE public."user" TO datong;
 
 
 --
 -- Name: SEQUENCE user_id_seq; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON SEQUENCE public.user_id_seq TO datongdev;
+GRANT ALL ON SEQUENCE public.user_id_seq TO datong;
 
 
 --
 -- Name: TABLE user_node; Type: ACL; Schema: public; Owner: datong
 --
 
-GRANT ALL ON TABLE public.user_node TO datongdev;
+GRANT ALL ON TABLE public.user_node TO datong;
 
 
 --
