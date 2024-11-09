@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 15.4
--- Dumped by pg_dump version 15.4
+-- Dumped from database version 16.4 (Debian 16.4-3+b1)
+-- Dumped by pg_dump version 16.4 (Debian 16.4-3+b1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,7 +17,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: notify_messenger_messages(); Type: FUNCTION; Schema: public; Owner: datong
+-- Name: notify_messenger_messages(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
 CREATE FUNCTION public.notify_messenger_messages() RETURNS trigger
@@ -30,14 +30,14 @@ CREATE FUNCTION public.notify_messenger_messages() RETURNS trigger
         $$;
 
 
-ALTER FUNCTION public.notify_messenger_messages() OWNER TO datong;
+ALTER FUNCTION public.notify_messenger_messages() OWNER TO postgres;
 
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- Name: category; Type: TABLE; Schema: public; Owner: datong
+-- Name: category; Type: TABLE; Schema: public; Owner: datongdev
 --
 
 CREATE TABLE public.category (
@@ -47,10 +47,10 @@ CREATE TABLE public.category (
 );
 
 
-ALTER TABLE public.category OWNER TO datong;
+ALTER TABLE public.category OWNER TO datongdev;
 
 --
--- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.category_id_seq
@@ -61,10 +61,10 @@ CREATE SEQUENCE public.category_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.category_id_seq OWNER TO datong;
+ALTER SEQUENCE public.category_id_seq OWNER TO postgres;
 
 --
--- Name: conf; Type: TABLE; Schema: public; Owner: datong
+-- Name: conf; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.conf (
@@ -82,24 +82,24 @@ CREATE TABLE public.conf (
 );
 
 
-ALTER TABLE public.conf OWNER TO datong;
+ALTER TABLE public.conf OWNER TO postgres;
 
 --
--- Name: COLUMN conf.keywords; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN conf.keywords; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.conf.keywords IS '(DC2Type:simple_array)';
 
 
 --
--- Name: COLUMN conf.updated_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN conf.updated_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.conf.updated_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: conf_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: conf_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.conf_id_seq
@@ -110,10 +110,10 @@ CREATE SEQUENCE public.conf_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.conf_id_seq OWNER TO datong;
+ALTER SEQUENCE public.conf_id_seq OWNER TO postgres;
 
 --
--- Name: doctrine_migration_versions; Type: TABLE; Schema: public; Owner: datong
+-- Name: doctrine_migration_versions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.doctrine_migration_versions (
@@ -123,10 +123,10 @@ CREATE TABLE public.doctrine_migration_versions (
 );
 
 
-ALTER TABLE public.doctrine_migration_versions OWNER TO datong;
+ALTER TABLE public.doctrine_migration_versions OWNER TO postgres;
 
 --
--- Name: feedback; Type: TABLE; Schema: public; Owner: datong
+-- Name: feedback; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.feedback (
@@ -148,10 +148,10 @@ CREATE TABLE public.feedback (
 );
 
 
-ALTER TABLE public.feedback OWNER TO datong;
+ALTER TABLE public.feedback OWNER TO postgres;
 
 --
--- Name: feedback_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: feedback_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.feedback_id_seq
@@ -162,10 +162,10 @@ CREATE SEQUENCE public.feedback_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.feedback_id_seq OWNER TO datong;
+ALTER SEQUENCE public.feedback_id_seq OWNER TO postgres;
 
 --
--- Name: image; Type: TABLE; Schema: public; Owner: datong
+-- Name: image; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.image (
@@ -176,10 +176,10 @@ CREATE TABLE public.image (
 );
 
 
-ALTER TABLE public.image OWNER TO datong;
+ALTER TABLE public.image OWNER TO postgres;
 
 --
--- Name: image_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: image_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.image_id_seq
@@ -190,10 +190,10 @@ CREATE SEQUENCE public.image_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.image_id_seq OWNER TO datong;
+ALTER SEQUENCE public.image_id_seq OWNER TO postgres;
 
 --
--- Name: language; Type: TABLE; Schema: public; Owner: datong
+-- Name: language; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.language (
@@ -204,10 +204,10 @@ CREATE TABLE public.language (
 );
 
 
-ALTER TABLE public.language OWNER TO datong;
+ALTER TABLE public.language OWNER TO postgres;
 
 --
--- Name: language_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: language_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.language_id_seq
@@ -218,10 +218,10 @@ CREATE SEQUENCE public.language_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.language_id_seq OWNER TO datong;
+ALTER SEQUENCE public.language_id_seq OWNER TO postgres;
 
 --
--- Name: link; Type: TABLE; Schema: public; Owner: datong
+-- Name: link; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.link (
@@ -233,10 +233,10 @@ CREATE TABLE public.link (
 );
 
 
-ALTER TABLE public.link OWNER TO datong;
+ALTER TABLE public.link OWNER TO postgres;
 
 --
--- Name: link_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: link_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.link_id_seq
@@ -247,10 +247,10 @@ CREATE SEQUENCE public.link_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.link_id_seq OWNER TO datong;
+ALTER SEQUENCE public.link_id_seq OWNER TO postgres;
 
 --
--- Name: menu; Type: TABLE; Schema: public; Owner: datong
+-- Name: menu; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.menu (
@@ -260,10 +260,10 @@ CREATE TABLE public.menu (
 );
 
 
-ALTER TABLE public.menu OWNER TO datong;
+ALTER TABLE public.menu OWNER TO postgres;
 
 --
--- Name: menu_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: menu_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.menu_id_seq
@@ -274,10 +274,10 @@ CREATE SEQUENCE public.menu_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.menu_id_seq OWNER TO datong;
+ALTER SEQUENCE public.menu_id_seq OWNER TO postgres;
 
 --
--- Name: messenger_messages; Type: TABLE; Schema: public; Owner: datong
+-- Name: messenger_messages; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.messenger_messages (
@@ -291,31 +291,31 @@ CREATE TABLE public.messenger_messages (
 );
 
 
-ALTER TABLE public.messenger_messages OWNER TO datong;
+ALTER TABLE public.messenger_messages OWNER TO postgres;
 
 --
--- Name: COLUMN messenger_messages.created_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN messenger_messages.created_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.messenger_messages.created_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN messenger_messages.available_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN messenger_messages.available_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.messenger_messages.available_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN messenger_messages.delivered_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN messenger_messages.delivered_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.messenger_messages.delivered_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: messenger_messages_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: messenger_messages_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.messenger_messages_id_seq
@@ -326,17 +326,17 @@ CREATE SEQUENCE public.messenger_messages_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.messenger_messages_id_seq OWNER TO datong;
+ALTER SEQUENCE public.messenger_messages_id_seq OWNER TO postgres;
 
 --
--- Name: messenger_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: datong
+-- Name: messenger_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.messenger_messages_id_seq OWNED BY public.messenger_messages.id;
 
 
 --
--- Name: node; Type: TABLE; Schema: public; Owner: datong
+-- Name: node; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.node (
@@ -361,24 +361,24 @@ CREATE TABLE public.node (
 );
 
 
-ALTER TABLE public.node OWNER TO datong;
+ALTER TABLE public.node OWNER TO postgres;
 
 --
--- Name: COLUMN node.created_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN node.created_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.node.created_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN node.updated_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN node.updated_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.node.updated_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: node_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: node_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.node_id_seq
@@ -389,10 +389,10 @@ CREATE SEQUENCE public.node_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.node_id_seq OWNER TO datong;
+ALTER SEQUENCE public.node_id_seq OWNER TO postgres;
 
 --
--- Name: node_region; Type: TABLE; Schema: public; Owner: datong
+-- Name: node_region; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.node_region (
@@ -401,10 +401,10 @@ CREATE TABLE public.node_region (
 );
 
 
-ALTER TABLE public.node_region OWNER TO datong;
+ALTER TABLE public.node_region OWNER TO postgres;
 
 --
--- Name: node_tag; Type: TABLE; Schema: public; Owner: datong
+-- Name: node_tag; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.node_tag (
@@ -413,10 +413,10 @@ CREATE TABLE public.node_tag (
 );
 
 
-ALTER TABLE public.node_tag OWNER TO datong;
+ALTER TABLE public.node_tag OWNER TO postgres;
 
 --
--- Name: order; Type: TABLE; Schema: public; Owner: datong
+-- Name: order; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."order" (
@@ -441,52 +441,52 @@ CREATE TABLE public."order" (
 );
 
 
-ALTER TABLE public."order" OWNER TO datong;
+ALTER TABLE public."order" OWNER TO postgres;
 
 --
--- Name: COLUMN "order".created_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN "order".created_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public."order".created_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN "order".paid_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN "order".paid_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public."order".paid_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN "order".used_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN "order".used_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public."order".used_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN "order".cancelled_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN "order".cancelled_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public."order".cancelled_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN "order".refunded_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN "order".refunded_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public."order".refunded_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: COLUMN "order".deleted_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN "order".deleted_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public."order".deleted_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: order_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: order_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.order_id_seq
@@ -497,23 +497,24 @@ CREATE SEQUENCE public.order_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.order_id_seq OWNER TO datong;
+ALTER SEQUENCE public.order_id_seq OWNER TO postgres;
 
 --
--- Name: page; Type: TABLE; Schema: public; Owner: datong
+-- Name: page; Type: TABLE; Schema: public; Owner: datongdev
 --
 
 CREATE TABLE public.page (
     id integer NOT NULL,
     name character varying(255) NOT NULL,
-    label character varying(255) NOT NULL
+    label character varying(255) NOT NULL,
+    weight smallint
 );
 
 
-ALTER TABLE public.page OWNER TO datong;
+ALTER TABLE public.page OWNER TO datongdev;
 
 --
--- Name: page_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: page_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.page_id_seq
@@ -524,10 +525,10 @@ CREATE SEQUENCE public.page_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.page_id_seq OWNER TO datong;
+ALTER SEQUENCE public.page_id_seq OWNER TO postgres;
 
 --
--- Name: refund; Type: TABLE; Schema: public; Owner: datong
+-- Name: refund; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.refund (
@@ -541,17 +542,17 @@ CREATE TABLE public.refund (
 );
 
 
-ALTER TABLE public.refund OWNER TO datong;
+ALTER TABLE public.refund OWNER TO postgres;
 
 --
--- Name: COLUMN refund.created_at; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN refund.created_at; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN public.refund.created_at IS '(DC2Type:datetime_immutable)';
 
 
 --
--- Name: refund_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: refund_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.refund_id_seq
@@ -562,10 +563,10 @@ CREATE SEQUENCE public.refund_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.refund_id_seq OWNER TO datong;
+ALTER SEQUENCE public.refund_id_seq OWNER TO postgres;
 
 --
--- Name: region; Type: TABLE; Schema: public; Owner: datong
+-- Name: region; Type: TABLE; Schema: public; Owner: datongdev
 --
 
 CREATE TABLE public.region (
@@ -576,21 +577,22 @@ CREATE TABLE public.region (
     count smallint NOT NULL,
     icon character varying(20) DEFAULT NULL::character varying,
     fields text,
-    description character varying(255) DEFAULT NULL::character varying
+    description character varying(255) DEFAULT NULL::character varying,
+    weight smallint
 );
 
 
-ALTER TABLE public.region OWNER TO datong;
+ALTER TABLE public.region OWNER TO datongdev;
 
 --
--- Name: COLUMN region.fields; Type: COMMENT; Schema: public; Owner: datong
+-- Name: COLUMN region.fields; Type: COMMENT; Schema: public; Owner: datongdev
 --
 
 COMMENT ON COLUMN public.region.fields IS '(DC2Type:simple_array)';
 
 
 --
--- Name: region_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: region_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.region_id_seq
@@ -601,10 +603,10 @@ CREATE SEQUENCE public.region_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.region_id_seq OWNER TO datong;
+ALTER SEQUENCE public.region_id_seq OWNER TO postgres;
 
 --
--- Name: spec; Type: TABLE; Schema: public; Owner: datong
+-- Name: spec; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.spec (
@@ -615,10 +617,10 @@ CREATE TABLE public.spec (
 );
 
 
-ALTER TABLE public.spec OWNER TO datong;
+ALTER TABLE public.spec OWNER TO postgres;
 
 --
--- Name: spec_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: spec_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.spec_id_seq
@@ -629,10 +631,10 @@ CREATE SEQUENCE public.spec_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.spec_id_seq OWNER TO datong;
+ALTER SEQUENCE public.spec_id_seq OWNER TO postgres;
 
 --
--- Name: tag; Type: TABLE; Schema: public; Owner: datong
+-- Name: tag; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.tag (
@@ -642,10 +644,10 @@ CREATE TABLE public.tag (
 );
 
 
-ALTER TABLE public.tag OWNER TO datong;
+ALTER TABLE public.tag OWNER TO postgres;
 
 --
--- Name: tag_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: tag_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.tag_id_seq
@@ -656,10 +658,10 @@ CREATE SEQUENCE public.tag_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tag_id_seq OWNER TO datong;
+ALTER SEQUENCE public.tag_id_seq OWNER TO postgres;
 
 --
--- Name: user; Type: TABLE; Schema: public; Owner: datong
+-- Name: user; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."user" (
@@ -675,10 +677,10 @@ CREATE TABLE public."user" (
 );
 
 
-ALTER TABLE public."user" OWNER TO datong;
+ALTER TABLE public."user" OWNER TO postgres;
 
 --
--- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: datong
+-- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.user_id_seq
@@ -689,10 +691,10 @@ CREATE SEQUENCE public.user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.user_id_seq OWNER TO datong;
+ALTER SEQUENCE public.user_id_seq OWNER TO postgres;
 
 --
--- Name: user_node; Type: TABLE; Schema: public; Owner: datong
+-- Name: user_node; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.user_node (
@@ -701,25 +703,28 @@ CREATE TABLE public.user_node (
 );
 
 
-ALTER TABLE public.user_node OWNER TO datong;
+ALTER TABLE public.user_node OWNER TO postgres;
 
 --
--- Name: messenger_messages id; Type: DEFAULT; Schema: public; Owner: datong
+-- Name: messenger_messages id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.messenger_messages ALTER COLUMN id SET DEFAULT nextval('public.messenger_messages_id_seq'::regclass);
 
 
 --
--- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: datongdev
 --
 
 COPY public.category (id, name, label) FROM stdin;
+1	旅游险	lvyouxian
+2	医责险	yizexian
+3	住院险	zhuyuanxian
 \.
 
 
 --
--- Data for Name: conf; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: conf; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.conf (id, language_id, sitename, keywords, description, address, phone, email, logo, updated_at, note) FROM stdin;
@@ -728,16 +733,18 @@ COPY public.conf (id, language_id, sitename, keywords, description, address, pho
 
 
 --
--- Data for Name: doctrine_migration_versions; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: doctrine_migration_versions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.doctrine_migration_versions (version, executed_at, execution_time) FROM stdin;
 DoctrineMigrations\\Version20241007034449	2024-10-07 03:44:56	396
+DoctrineMigrations\\Version20241016152337	2024-10-16 15:45:29	6
+DoctrineMigrations\\Version20241016152656	2024-10-16 15:45:29	0
 \.
 
 
 --
--- Data for Name: feedback; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: feedback; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.feedback (id, node_id, firstname, lastname, email, phone, title, body, country, sex, province, city, note, name, type) FROM stdin;
@@ -753,28 +760,12 @@ COPY public.feedback (id, node_id, firstname, lastname, email, phone, title, bod
 10	\N	\N	\N	z@alz.ee	\N	aa	aa	\N	\N	\N	\N	\N	aa	\N
 11	\N	\N	\N	dotcra@gmail.com	\N	aa	aa	\N	\N	\N	\N	\N	aa	\N
 12	\N	\N	\N	z@alz.ee	\N	aa	aa	\N	\N	\N	\N	\N	aa	\N
-13	\N	\N	\N	a@b.com	\N	aa	abc	\N	\N	\N	\N	\N	aa	0
-14	\N	\N	\N	a@b.com	\N	11	11	\N	\N	\N	\N	\N	aa	0
-15	\N	\N	\N	a@b.com	\N	11	gg	\N	\N	\N	\N	\N	a	0
-16	\N	\N	\N	a@b.com	\N	ff	bb	\N	\N	\N	\N	\N	aa	0
-17	\N	\N	\N	a@b.com	\N	ff	bb	\N	\N	\N	\N	\N	aa	0
-18	\N	\N	\N	z@alz.ee	\N	aa	a	\N	\N	\N	\N	\N	a	0
-19	\N	\N	\N	a@b.com	\N	aa	a	\N	\N	\N	\N	\N	aa	0
-20	\N	\N	\N	a@b.com	\N	a	a	\N	\N	\N	\N	\N	aa	0
-21	\N	\N	\N	z@alz.ee	\N	a	a	\N	\N	\N	\N	\N	a	0
 22	\N	\N	\N	z@alz.ee	\N	a	a	\N	\N	\N	\N	\N	a	0
-23	\N	\N	\N	z@alz.ee	\N	a	a	\N	\N	\N	\N	\N	a	0
-24	\N	\N	\N	a@b.com	\N	a	a	\N	\N	\N	\N	\N	a	0
-25	\N	\N	\N	a@b.com	\N	a	a	\N	\N	\N	\N	\N	a	0
-26	\N	\N	\N	z@alz.ee	\N	a	a	\N	\N	\N	\N	\N	a	0
-27	\N	\N	\N	a@b.com	\N	11	11	\N	\N	\N	\N	\N	a	0
-28	\N	\N	\N	a@b.com	\N	a	a	\N	\N	\N	\N	\N	a	0
-29	\N	\N	\N	a@b.com	1111	11	1111	\N	\N	11	1111	\N	11	1
 \.
 
 
 --
--- Data for Name: image; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: image; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.image (id, node_id, image, title) FROM stdin;
@@ -782,7 +773,7 @@ COPY public.image (id, node_id, image, title) FROM stdin;
 
 
 --
--- Data for Name: language; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: language; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.language (id, language, prefix, locale) FROM stdin;
@@ -790,7 +781,7 @@ COPY public.language (id, language, prefix, locale) FROM stdin;
 
 
 --
--- Data for Name: link; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: link; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.link (id, menu_id, title, link, weight) FROM stdin;
@@ -798,7 +789,7 @@ COPY public.link (id, menu_id, title, link, weight) FROM stdin;
 
 
 --
--- Data for Name: menu; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: menu; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.menu (id, name, label) FROM stdin;
@@ -806,7 +797,7 @@ COPY public.menu (id, name, label) FROM stdin;
 
 
 --
--- Data for Name: messenger_messages; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: messenger_messages; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.messenger_messages (id, body, headers, queue_name, created_at, available_at, delivered_at) FROM stdin;
@@ -814,11 +805,10 @@ COPY public.messenger_messages (id, body, headers, queue_name, created_at, avail
 
 
 --
--- Data for Name: node; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: node; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.node (id, language_id, category_id, parent_id, title, body, image, summary, video, audio, qr, phone, latitude, longitude, address, price, created_at, updated_at) FROM stdin;
-2	\N	\N	\N	请走进湖北大同保险经纪	<p style="text-align:justify;">怀抱“经世济民，天下大同”的美好愿景，十三、九年前的那个春天，大同经纪在荆楚大地播下了希望的种子。十九年后的今天，历经楚风汉雨的滋润和洗礼，大同经纪凤凰涅槃，在精彩的绽放中实现了华丽转身，在林林总总的保险中介机构中，独树一帜，引领风潮。</p><p style="text-align:justify;">作为湖北地区注册的保险经纪一级法人机构，经过十九年的探索、传承和丰富发展，大同经纪已经形成了风险管理、风险转移、损失善后等诸多保险经纪服务的成熟经营模式。选择大同，牵手大同，无疑是智者的首选。因为，相比于同业，大同经纪至少具有六大显著优势：</p><p style="text-align:justify;"><strong>一是资本实力优势。</strong>大同经纪注册资本金5000万元。控股股东联想控股集团创办于1984年，2012年综合营业额2266亿元，总资产1872亿元，是世界500强企业。联保投资集团是全产业链的大型金融保险服务集团，注册资本金1.2亿元，是国家保监会第一批批准筹建的五家保险中介集团之一。</p><p style="text-align:justify;"><strong>二是理论技术优势。</strong>雄厚的经济实力支撑和推动了深入的理论研究。在教育、医疗卫生、环境保护等领域的风险管理研究方面纂写了13个行业的风险管理报告，拥有同业公司无法企及的理论水平和技术实力。</p><p style="text-align:justify;"><strong>三是类似项目经验优势。</strong>大同经纪积极参与湖北省教育、医疗、环保等行业风险管理服务方面的研究与实践，在诸多行业建立并完善了“政府推动、政策引导、多方参与、市场运作”的行业风险管理服务体系，<strong>迄今已与湖北省内17个县市行业行政主管部门，以及67家企业或行业协会、163个居民社区签订风险管理服务协议。</strong></p><p style="text-align:justify;">2022年公司实现保险经纪保费5.5亿元，实现营收1.23亿元，在全国同业排名第33名。公司响应“保险新国十条”精神，着手保险之于社会治理重要功能，积极参与医疗、民政、教育、环境等行业风险管理。尤其是在咸宁、十堰、荆州多地通过“保险+调解”参与推动医疗纠纷第三方人民调解，以保险作为风险转移工具，真正实现了“群众满意、政府省心、社会和谐”，得到社会各方的肯定。在此基础上，迅速扩展到交通、校园纠纷调解和风险管理服务。此外公司还致力于涉及国计民生的重大建设项目和法人客户业务开发，近三年已为包括中建三局、中国燃气、东风集团、湖南高速等大型企业或项目提供保险经纪服务。</p><p style="text-align:justify;">大同经纪对行业风险管理服务体系建设有着自己独特的推广方式和管理经验，并集合了一大批有经验的保险经纪和风险管理专业人员。</p><p style="text-align:justify;"><strong>四是总部区位优势。大同经纪成立于2004年5月，是湖北地区第一家获批的全国性保险经纪公司。</strong>湖北省人民政府金融办为公司的设立专门发文督办支持并寄予厚望，武汉市政府及省保监局对公司的设立也给予了大力支持和高度关注。湖北大同总部位于武汉，相对于同业，其决策程序高效，服务速度快捷，资源倾斜力度有保证，本地公共关系紧密，突发事件应对能力强的优势非常明显。</p><p style="text-align:justify;"><strong>五是机构网络优势。</strong>2014年，大同经纪资产重组后，在省政府及各职能部门的全力支持下，高点起步，快速布局，在全省各市州设立了分支机构，形成了在全省范围内通行达业、通城达镇、通乡达村、通街达巷的城乡经纪服务网络。目前，公司机构已根植湖北走向全国：下辖28家机构，其中湖北省内分公司18家，省外分公司6家，省内营业部 4 家。&nbsp;</p><p style="text-align:justify;"><strong>六是服务能力优势。</strong>建设行业风险管理服务体系，既是一项功在千秋的利民工程，又是一项社会涉及面广的科学系统工程。唯有同时具备理论研究能力、合作协调能力、风险管理能力和服务基层能力的现代企业方能肩负起这样的历史使命。大同经纪在风险识别、风险估测、风险评价、风险控制、风险管理和风险转移等环节展示过自己的思想理念、专业能力与风采。</p><p style="text-align:justify;">公司与湖北当地34家省级保险公司签订合作协议，并与多家保险公司完成了系统与网络的对接，是为数不多实现与保险公司网络数据互联互通、相互对接的经纪公司，也是湖北地区合作伙伴最为广泛的保险经纪公司。</p><p style="text-align:justify;"><strong>我公司的业务范围是为投保人拟定投保方案、选择保险人、办理投保手续；协助被保险人进行索赔；为委托人提供防灾、防损或风险评估、风险管理咨询服务等。</strong></p><p style="text-align:justify;">雄厚的资本实力，领先的理论研究水平、类似的项目经营经验、独特的总部区位优势、健全的机构服务网络、强大的风险服务能力成就了不同凡响的大同经纪。在各级政府部门的支持下，大同经纪正在纵深推进以教育、医疗、环保等为主体的行业风险管理服务体系建设，以最大限度的努力帮助各级政府和职能部门扭转“风险分散管理、责任集中承担”的不利局面，进而建立“风险集中管理、责任分散承担”的科学管理体系。分担医疗风险，大同经纪有责。我们将勇于担当，创新进取，以最快速度、最强技术支持、最贴近的服务方式、最极致的医疗风险管理服务体验，为湖北、为郧阳的和谐稳定和经济繁荣作出积极的贡献。</p><p style="text-align:justify;">感谢您的支持，祝您工作顺利！</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:51:00	2024-10-14 06:51:00
 4	\N	\N	\N	2021年度年中工作会议	<figure class="image"><img style="aspect-ratio:1440/1080;" src="/images/670cc079a4f10-微信图片_20210916160938.jpg" width="1440" height="1080"></figure><figure class="image"><img style="aspect-ratio:1440/1080;" src="/images/670cc0849a4e9-微信图片_20210916160907.jpg" width="1440" height="1080"></figure><p>为做好2021年1-8月份业务经营工作分析，部署规划2021年度下阶段工作，大同经纪于2021年9月15日-16日在武汉召开“大同经纪2021年度年中工作会议”。会议对2021年1-8月份各分支机构经营情况进行分析；结合银保监局监管规定及要求，规范财务、业务、人事和行政等各项工作；规划展望2021年度下阶段工作。</p>	1-670e92812aea8515819708.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:56:07	2024-10-15 16:04:17
 9	\N	\N	\N	2019年度半年工作会议	<figure class="image"><img style="aspect-ratio:1440/1080;" src="/images/670cc3cca6227-微信图片_20190814112102.jpg" width="1440" height="1080"></figure><figure class="image"><img style="aspect-ratio:1440/1080;" src="/images/670cc3ccbf64b-微信图片_20190814112045.jpg" width="1440" height="1080"></figure><p>2019年8月1日-2日，大同经纪在武汉召开2019年度半年工作会议，会议分析近期市场动态、监管方向，总结2019年度上半年公司工作得失，研讨、部署2019年度下半年工作目标、规划和举措。</p>	wei-xin-tu-pian-20190814112045-670cc3d172cf6328450425.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:10:08	2024-10-14 07:10:09
 10	\N	\N	\N	郧阳医调简报[ 2019]第1期(2)	<h3 style="text-align:center;">十堰南化中心卫生院“2.10”医疗纠纷群体聚集事件经调解结案</h3><p>2 月 12 日下午 5:30,经过两昼一夜连续奋战的调解工作，南化中心卫生院“2.10”叶永强猝死医疗纠纷案的医方、患方代表以及郧阳区医患纠纷人民调解委调解员，在协议书上郑重签字，医患双方同意经调解结案。因案在十堰市南化中心卫生院聚集的两百多人逐渐散去。</p><p>事由起于 2019 年 2 月 10 日，患者叶永强当日因“间断反复发作胸痛 2 天”在南化中心卫生院就诊，其既往有高血压病、糖尿病、吸烟史，行心电图检查提示：窦性心动过缓、ST 段水平延长、TШ倒置，心肌酶正常。就诊后患者自行回家，在家中突然意识丧失，再次入院抢救时急查心电图为一条直线。医院立即组织行一系列抢救措施，经抢救无效死亡。根据相关病史、辅检回顾，初步会诊诊断意见为：冠心病急性冠脉综合症（不稳定型心绞痛、急性心肌梗死）心脏性猝死可能性大，确诊需行尸体解剖检查明确，但家属不同意作司法鉴定。</p><p>患者在卫生院病亡，家属认定属院方诊疗不力，未给予入院 2 收治或转上级医院治疗导致贻误最佳抢救时机，提出高额赔偿要求。次日清晨，患方家属及亲人乡邻等200 余人聚集南化中心卫生院，患方群体因亡者缘故而言行明显偏激，事态随时可能进一步激化。南化中心卫生院迅速将情况向上级部门报告。</p><p>鉴于群体聚集随时可能向恶性事件演变，郧阳区政法委迅速召集区卫计局、区公安局、南化镇政府、区医患纠纷调解委和医疗专家等人员，两个小时后的上午10 时就赶到南化中心卫生院。到场的还有南化派出所、关帝村委的负责同志。相关部门人员到场后，争执混乱的场面逐步得以控制，但引导双方理性地坐下来谈，到析因辨理、弥合差距，殊是不易。</p><p>首先是患方情绪较为激动，执传统的“死者为大”为由，提出高额赔偿条件不容讨论，甚至任何人都“无资格”说话。“政府、卫生、公安和所谓医疗专家，要么是连带关系官官相护，要么是只知控制场面息事宁人，维护群众利益时候没有一个可信！”患方家属放言，而且谁要说话就对谁挥拳相向。这时，区医患纠纷调解委的同志毫不回避地顶在最前面。冒着被袭的风险，刘道成、肖阳文调解员首先站出来与患方进行沟通。患方在对医调组织设立的宗旨、调解员身份，以及第三方人民调解组织的专业医疗调解、中立不涉利益的情况了解后，才同意推选代表参与调解。&nbsp;</p><p>其次是调解过程曲折，现场多次受到冲击，统一双方认识并弥合赔偿差距异常艰难。亡者时值49 岁，尚有妻子和三个子女，亲属对家中顶梁柱的壮年去世难以接受，且有家庭经济困难的实际情况。对于患者最终死亡，认为院方诊疗处置不到位是主要原因，故提出高额赔偿要求。而患者当地家族群体大，多人的参与也导致了意见难以统一，群体一直处于较为躁动的状态，以至于患方外围人员三次冲击调解现场质疑调解工作人员，两 3 次变更参与调解的代表。</p><p>&nbsp;秉着公平、公正、公开的原则，肩负人民内部矛盾只能化解不可激化的责任，医疗专家在应患方要求不作尸检司法鉴定的条件下，认真仔细地对患者既往和当前病症、对医院诊疗操作进行梳理分析，调解员耐心地与医患双方沟通，双方最终统一意见：叶永强猝死主要原因系自身急性心脏疾病，看诊医生经验不足致其处置方式不够周密，也负有一定责任。综合考虑到患方家庭的实际困难，由医方给予患方一次性经济赔偿及补偿。维稳调解队伍历经两昼一夜的连续奋战，争议、鉴定、调解，数次把可能失控的场面稳定下来，使得医患双方能理性地了解事件过程真相，认清患者病亡的原因，以及认识非理性行为可能带来的后果，双方终于达成调解协议。</p><p>这次南化中心卫生院“2.10”医疗纠纷群体聚集事件的顺利解决，是在区政法委的正确领导下，迅速组织地方政府、卫生、公安部门和专业人民调解组织共同协作完成，是对郧阳区高度重视法制建设，紧抓人民调解，化解社会矛盾，提升综合治理能力的一次检验。事实表明，在处理极端的专业纠纷和群体事件中，专业有效的调解工作和强大的外部震慑力量缺一不可。借此契机，郧阳区在民政、教育等多领域推动专业人民调解建设工作正在进行中。&nbsp;</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:13:45	2024-10-14 07:13:45
@@ -829,8 +819,6 @@ COPY public.node (id, language_id, category_id, parent_id, title, body, image, s
 18	\N	\N	\N	保险销售行为管理办法	<p style="text-align:center;"><span style="background-color:#fefefe;color:#333333;">保险销售行为管理办法</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#333333;">(2023</span><span style="color:#333333;">年9月20日国家金融监督管理总局令2023年第2号公布 自2024年3月1日起施行)</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#666666;">第一章 总 则</span></p><p><span style="background-color:#fefefe;color:#666666;">第一条 为保护投保人、被保险人、受益人的合法权益，规范保险销售行为，统一保险销售行为监管要求，根据《中华人民共和国保险法》《国务院办公厅关于加强金融消费者权益保护工作的指导意见》等法律、行政法规和文件，制定本办法。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二条 保险公司为订立保险合同所开展的销售行为，保险中介机构、保险销售人员受保险公司委托或者与保险公司合作为订立保险合同所开展的销售行为，应当遵守本办法的规定。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">本办法所称保险公司不包括再保险公司。</span></p><p><span style="background-color:#fefefe;color:#666666;">本办法所称保险中介机构包括：保险代理机构和保险经纪人。保险代理机构包括专业代理机构和兼业代理机构。</span></p><p><span style="background-color:#fefefe;color:#666666;">本办法所称保险销售人员包括：保险公司中从事保险销售的员工、个人保险代理人及纳入销售人员管理的其他用工形式的人员，保险代理机构中从事保险代理的人员，保险经纪人中从事保险经纪业务的人员。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三条 除下列机构和人员外，其他机构和个人不得从事保险销售行为：</span></p><p><span style="background-color:#fefefe;color:#666666;">（一）保险公司和保险中介机构；</span></p><p><span style="background-color:#fefefe;color:#666666;">（二）保险销售人员。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司、保险中介机构应当为其所属的保险销售人员办理执业登记。</span></p><p><span style="background-color:#fefefe;color:#666666;">第四条 保险销售行为应当遵循依法合规、平等自愿、公平适当、诚实守信等原则，尊重和保障投保人、被保险人、受益人的合法权益。</span></p><p><span style="background-color:#fefefe;color:#666666;">第五条 本办法所称保险销售行为包括保险销售前行为、保险销售中行为和保险销售后行为。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险销售前行为是指保险公司及受其委托或者与其合作的保险中介机构、保险销售人员为订立保险合同创造环境、准备条件、招揽保险合同相对人的行为。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险销售中行为是指保险公司及受其委托或者与其合作的保险中介机构、保险销售人员与特定相对人为订立保险合同就合同内容进行沟通、商谈，作出要约或承诺的行为。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险销售后行为是指保险公司及受其委托或者与其合作的保险中介机构、保险销售人员履行依照法律法规和监管制度规定的以及基于保险合同订立而产生的保单送达、回访、信息通知等附随义务的行为。</span></p><p><span style="background-color:#fefefe;color:#666666;">第六条 保险公司、保险中介机构应当以适当方式、通俗易懂的语言定期向公众介绍保险知识、发布保险消费风险提示，重点讲解保险条款中的专业性词语、集中性疑问、容易引发争议纠纷的行为以及保险消费中的各类风险等内容。</span></p><p><span style="background-color:#fefefe;color:#666666;">第七条 保险公司、保险中介机构应当按照合法、正当、必要、诚信的原则收集处理投保人、被保险人、受益人以及保险业务活动相关当事人的个人信息，并妥善保管，防止信息泄露；未经该个人同意，保险公司、保险中介机构、保险销售人员不得向他人提供该个人的信息，法律法规规章另有规定以及开展保险业务所必需的除外。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司、保险中介机构应当加强对与其合作的其他机构收集处理投保人、被保险人、受益人以及保险业务活动相关当事人个人信息的行为管控，在双方合作协议中明确其他机构的信息收集处理行为要求，定期了解其他机构执行协议要求情况，发现其他机构存在违反协议要求情形时，应当及时采取措施予以制止和督促纠正，并依法追究该机构责任。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第八条 保险公司、保险中介机构应当履行销售管理主体责任，建立健全保险销售各项管理制度，加强对与其有委托代理关系的保险销售人员身份和保险销售业务真实性管理，定期自查、评估制度有效性和落实情况；应当明确各级机构及其高级管理人员销售管理责任，建立销售制度执行、销售管控和内部责任追究机制，不得违法违规开展保险销售业务，不得利用开展保险销售业务为其他机构或者个人牟取不正当利益。</span></p><p><span style="background-color:#fefefe;color:#666666;">第九条 具有保险销售业务合作关系的保险公司、保险中介机构应当在相关协议中确定合作范围，明确双方的权利义务。保险公司与保险中介机构的保险销售业务合作关系应当真实，不得通过虚假合作套取费用。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险中介机构应当依照相关法律法规规定及双方业务合作约定，并以相关业务开展所必需为限，将所销售的保险业务相关信息以及投保人、被保险人、受益人信息如实完整及时地提供给与其具有保险销售业务合作关系的保险公司，以利于保险公司与投保人订立保险合同。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司应当支持与其具有保险销售业务合作关系的保险中介机构为投保人提供专业服务，依照相关法律法规规定及双方业务合作约定，并以相关业务开展所必需为限，将该保险中介机构所销售的保险业务相关保单存续期管理信息如实完整及时地提供给该保险中介机构，以利于该保险中介机构为投保人提供后续服务。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司应当加强对与其具有保险销售业务合作关系的保险中介机构保险销售行为合规性监督，定期了解该保险中介机构在合作范围内的保险销售行为合规情况，发现该保险中介机构在从事保险销售中存在违反法律法规及合作协议要求情形时，应当及时采取措施予以制止和督促纠正，并依法追究该保险中介机构责任。</span></p><p><span style="background-color:#fefefe;color:#666666;">具有保险销售业务合作关系的保险公司、保险中介机构应当通过技术手段，实现双方业务信息系统的互联互通、数据对接。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十条 国家金融监督管理总局（以下简称金融监管总局）依据《中华人民共和国保险法》，对保险销售行为履行监督管理职责。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">金融监管总局派出机构依据授权对保险销售行为履行监督管理职责。</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#666666;">第二章 保险销售前行为管理</span></p><p><span style="background-color:#fefefe;color:#666666;">第十一条 保险公司、保险中介机构不得超出法律法规和监管制度规定以及监管机构批准核准的业务范围和区域范围从事保险销售行为。保险销售人员不得超出所属机构的授权范围从事保险销售行为。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十二条 保险公司、保险中介机构开展保险销售行为，应当具备相应的业务、财务、人员等信息管理系统和核心业务系统，确保系统数据准确、完整、更新及时，并与监管机构要求录入各类监管信息系统中的数据信息保持一致。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十三条 保险公司应当依法依规制订保险合同条款，不得违反法律法规和监管制度规定，确保保险合同双方权利义务公平合理；按照要素完整、结构清晰、文字准确、表述严谨、通俗易懂等原则制订保险合同条款，推进合同文本标准化。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险合同及相关文件中使用的专业名词术语，其含义应当符合国家标准、行业标准或者通用标准。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十四条 保险公司应当按照真实、准确、完整的原则，在其官方网站、官方APP</span><span style="color:#666666;">等官方线上平台公示本公司现有保险产品条款信息和该保险产品说明。保险产品说明应当重点突出该产品所使用条款的审批或者备案名称、保障范围、保险期间、免除或者减轻保险人责任条款以及保单预期利益等内容。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险产品条款发生变更的，保险公司应当于变更条款正式实施前更新所对外公示的该保险产品条款信息和该保险产品说明。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司决定停止使用保险产品条款的，除法律法规及监管制度另有规定的外，应当在官方线上平台显著位置和营业场所公告，并在公示的该保险产品条款信息和该保险产品说明的显著位置标明停止使用的起始日期，该起始日期不得早于公告日期。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十五条 保险公司应当建立保险产品分级管理制度，根据产品的复杂程度、保险费负担水平以及保单利益的风险高低等标准，对本机构的保险产品进行分类分级。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十六条 保险公司、保险中介机构应当支持行业自律组织发挥优势推动保险销售人员销售能力分级工作，在行业自律组织制定的销售能力分级框架下，结合自身实际情况建立本机构保险销售能力资质分级管理体系，以保险销售人员的专业知识、销售能力、诚信水平、品行状况等为主要标准，对所属保险销售人员进行分级，并与保险公司保险产品分级管理制度相衔接，区分销售能力资质实行差别授权，明确所属各等级保险销售人员可以销售的保险产品。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十七条 保险公司、保险中介机构应当建立保险销售宣传管理制度，确保保险销售宣传符合下列要求：</span></p><p><span style="background-color:#fefefe;color:#666666;">（一）在形式上和实质上未超出保险公司、保险中介机构合法经营资质所载明的业务许可范围及区域；</span></p><p><span style="background-color:#fefefe;color:#666666;">（二）明示所销售宣传的是保险产品；</span></p><p><span style="background-color:#fefefe;color:#666666;">（三）不得引用不真实、不准确的数据和资料，不得隐瞒限制条件，不得进行虚假或者夸大表述，不得使用偷换概念、不当类比、隐去假设等不当宣传手段；</span></p><p><span style="background-color:#fefefe;color:#666666;">（四）不得以捏造、散布虚假事实等手段恶意诋毁竞争对手，不得通过不当评比、不当排序等方式进行宣传，不得冒用、擅自使用与他人相同或者近似等可能引起混淆的注册商标、字号、宣传册页；</span></p><p><span style="background-color:#fefefe;color:#666666;">（五）不得利用监管机构对保险产品的审核或者备案程序，不得使用监管机构为该保险产品提供保证等引人误解的不当表述；</span></p><p><span style="background-color:#fefefe;color:#666666;">（六）不得违反法律、行政法规和监管制度规定的其他行为。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十八条 保险销售人员未经授权不得发布保险销售宣传信息。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司、保险中介机构对所属保险销售人员发布保险销售宣传信息的行为负有管理主体责任，对保险销售人员发布的保险销售宣传信息，应当进行事前审核及授权发布；发现保险销售人员自行编发或者转载未经其审核授权发布的保险销售宣传信息的，应当及时予以制止并采取有效措施进行处置。</span></p><p><span style="background-color:#fefefe;color:#666666;">第十九条 保险公司决定停止销售某一保险产品或者调整某一保险产品价格的，应当在官方线上平台显著位置和营业场所公告，但保险公司在经审批或者备案的费率浮动区间或者费率参数调整区间内调整价格的除外。公告内容应当包括停止销售或者调整价格的保险产品名称、停止销售或者价格调整的起始日期等信息，其中起始日期不得早于公告日期。</span></p><p><span style="background-color:#fefefe;color:#666666;">前款公告的停止销售或者调整价格的起始日期经过后，保险公司应当按照公告内容停止销售相应保险产品或者调整相应保险产品价格。</span></p><p><span style="background-color:#fefefe;color:#666666;">在保险公司未就某一保险产品发出停止销售或者调整价格的公告前，保险销售人员不得在保险销售中向他人宣称某一保险产品即将停止销售或者调整价格。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十条 保险公司、保险中介机构应当加强保险销售渠道业务管理，落实对保险销售渠道业务合规性的管控责任，完善保险销售渠道合规监督，不得利用保险销售渠道开展违法违规活动。</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#666666;">第三章 保险销售中行为管理</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第二十一条 保险公司应当通过合法方式，了解投保人的保险需求、风险特征、保险费承担能力、已购买同类保险的情况以及其他与销售保险产品相关的信息，根据前述信息确定该投保人可以购买本公司保险产品类型和等级范围，并委派合格保险销售人员销售该等级范围内的保险产品。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险中介机构应当协助所合作的保险公司了解前款规定的投保人相关信息，并按照所合作保险公司确定的该投保人可以购买的保险产品类型和等级范围，委派合格保险销售人员销售该等级范围内的保险产品。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十二条 保险公司、保险中介机构销售人身保险新型产品的，应当向投保人提示保单利益的不确定性，并准确、全面地提示相关风险；法律、行政法规和监管制度规定要求对投保人进行风险承受能力测评的，应当进行测评，并根据测评结果销售相适应的保险产品。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十三条 保险公司、保险中介机构及其保险销售人员不得使用强制搭售、信息系统或者网页默认勾选等方式与投保人订立保险合同。</span></p><p><span style="background-color:#fefefe;color:#666666;">前款所称强制搭售是指因保险公司、保险中介机构的原因，致使投保人不能单独就某一个保险产品或者产品组合与保险公司订立保险合同的情形，以及自然人、法人、非法人组织在购买某一非保险类金融产品或者金融服务时，在未被告知保险产品或者保险服务的存在、未被提供自主选择权利行使条件的情况下，被要求必须同时与指定保险公司就指定保险产品订立保险合同的情形。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十四条 保险公司、保险中介机构以互联网方式销售保险产品的，应当向对方当事人提示本机构足以识别的名称。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险销售人员以面对面方式销售保险产品的，应当向对方当事人出示执业证件；以非面对面方式销售保险产品的，应当向对方当事人说明本人姓名、所属保险公司或者保险中介机构全称、本人执业证件编号。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十五条 订立保险合同，采用保险公司提供的格式条款的，保险公司或者受其委托及与其合作的保险中介机构、保险销售人员应当在投保人投保前以适当方式向投保人提供格式条款及该保险产品说明，并就以下内容向投保人作出明确提示：</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">（一）双方订立的是保险合同；</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">（二）保险合同的基本内容，包括保险产品名称、主要条款、保障范围、保险期间、保险费及交费方式、赔偿限额、免除或者减轻保险人责任的条款、索赔程序、退保及其他费用扣除、人身保险的现金价值、犹豫期、宽限期、等待期、保险合同效力中止与恢复等；</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">（三）提示投保人违反如实告知义务的后果；</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">（四）保险公司、保险中介机构服务电话，以及咨询、报案、投诉等的途径方式；</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">（五）金融监管总局规定的其他提示内容。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">保险公司、保险中介机构在销售保险产品时，经投保人同意，对于权利义务简单且投保人在三个月内再次投保同一保险公司的同一保险产品的，可以合理简化相应的提示内容。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第二十六条 订立保险合同时，保险公司及受其委托及与其合作的保险中介机构、保险销售人员应当对免除或者减轻保险人责任的条款，以足以引起投保人注意的文字、字体、符号或者其他明显标志作出提示，并对有关免除保险人责任条款的概念、内容及其法律后果以书面或者口头形式向投保人作出明确的常人能够理解的解释说明。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">免除或者减轻保险人责任的条款包括责任免除条款、免赔额、免赔率、比例赔付或者给付等。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第二十七条 订立保险合同，保险公司应当提示投保人履行如实告知义务。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">保险公司及受其委托及与其合作的保险中介机构、保险销售人员应当就保险标的或者被保险人的有关情况提出有具体内容的询问，以投保单询问表方式进行询问的，投保单询问表中不得有概括性条款，但该概括性条款有具体内容的除外。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">投保人的如实告知义务限于保险公司及受其委托的保险中介机构、保险销售人员询问范围和内容，法律法规另有规定的除外。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十八条 保险公司、保险中介机构、保险销售人员在销售保险时，发现投保人具有下列情形之一的，应当建议投保人终止投保：</span></p><p><span style="background-color:#fefefe;color:#666666;">（一）投保人的保险需求与所销售的保险产品明显不符的；</span></p><p><span style="background-color:#fefefe;color:#666666;">（二）投保人持续承担保险费的能力明显不足的；</span></p><p><span style="background-color:#fefefe;color:#666666;">（三）投保人已购买以补偿损失为目的的同类型保险，继续投保属于重复保险或者超额保险的。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">投保人不接受终止投保建议，仍然要求订立保险合同的，保险公司、保险中介机构应当向投保人说明有关风险，并确认销售行为的继续是出于投保人的自身意愿。</span></p><p><span style="background-color:#fefefe;color:#666666;">第二十九条 保险公司、保险中介机构应当按照有关法律法规和监管制度规定，要求投保人以书面或者其他可保存的形式，签署或者确认投保声明、投保提示书、免除或者减轻保险人责任条款的说明等文件，以及监管规定的相关文书材料。通过电话销售保险的，可以以签署投保单或者电话录音等方式确认投保人投保意愿。通过互联网开展保险销售的，可以通过互联网保险销售行为可回溯方式确认投保人投保意愿，并符合监管制度规定。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">投保文书材料应当由投保人或者其书面委托的人员以签字、盖章或者其他法律法规认可的方式进行确认。保险销售人员不得代替保险业务活动相关当事人在订立保险合同的有关文书材料中确认。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十条 保险公司、保险中介机构应当严格按照经金融监管总局及其派出机构审批或者备案的保险条款和保险费率销售保险产品。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十一条 保险公司、保险中介机构应当按照相关监管制度规定，根据不同销售方式，采取录音、录像、销售页面管理和操作轨迹记录等方法，对保险产品销售行为实施可回溯管理。对可回溯管理过程中产生的视听资料及电子资料，应当做好备份存档。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十二条 保险公司、保险中介机构应当加强资金管理，建立资金管理机制，严格按照相关规定进行资金收付管理。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险销售人员不得接受投保人、被保险人、受益人委托代缴保险费、代领退保金、代领保险金，不得经手或者通过非投保人、被保险人、受益人本人账户支付保险费、领取退保金、领取保险金。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十三条 投保人投保后，保险销售人员应当将所销售的保险业务相关信息以及投保人、被保险人、受益人信息如实完整及时地提供给其所在的保险公司、保险中介机构，以利于保险公司与投保人订立保险合同。</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#666666;">第四章 保险销售后行为管理</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十四条 保险公司在核保通过后应当及时向投保人提供纸质或者电子保单，并按照相关政策提供发票。电子保单应当符合国家电子签名相关法律规定。保险公司应当在官方线上平台设置保单查询功能。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十五条 保险合同订立后，保险公司应当按照有关监管制度规定，通过互联网、电话等方式对金融监管总局规定的相关保险产品业务进行回访。回访内容包括确认投保人身份和投保信息的真实性、是否完整知悉合同主要内容以及其他应当披露的信息等。在回访中，保险公司工作人员应当如实与投保人进行答问，不得有误导、欺骗、隐瞒等行为，并如实记录回访过程。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司在回访中发现存在销售误导的，应当按照规定及时予以处理。</span></p><p><span style="background-color:#fefefe;color:#666666;">按照相关监管制度规定，对保险产品销售行为实施可回溯管理，且对有关信息已确认的，可以根据监管规定合理简化回访要求。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十六条 保险公司、保险中介机构与其所属的保险销售人员解除劳动合同及其他用工合同或者委托合同，通过该保险销售人员签订的一年期以上的人身保险合同尚未履行完毕的，保险公司、保险中介机构应当在该保险销售人员的离职手续办理完成后的30</span><span style="color:#666666;">日内</span><span style="background-color:#fefefe;color:#666666;">明确通知投保人或者被保险人有关该保险销售人员的离职信息、保险合同状况以及获得后续服务的途径，不因保险销售人员离职损害投保人、被保险人合法利益。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司与保险中介机构终止合作，通过该保险中介机构签订的一年期以上的人身保险合同尚未履行完毕的，保险公司应当在与该保险中介机构终止合作后的</span>30日内<span style="background-color:#fefefe;color:#666666;">明确通知投保人或者被保险人有关该保险公司与该保险中介机构终止合作的信息、保险合同状况以及获得后续服务的途径，不因终止合作损害投保人、被保险人合法利益。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险销售人员因工作岗位变动无法继续提供服务的，适用上述条款规定。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十七条 保险销售人员离职后、保险中介机构与保险公司终止合作后，不得通过怂恿退保等方式损害投保人合法利益。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司、保险中介机构应当在与保险销售人员签订劳动、劳务等用工合同或者委托合同时，保险公司应当在与保险中介机构签订委托合同时，要求保险销售人员或者保险中介机构就不从事本条第一款规定的禁止性行为作出书面承诺。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十八条 行业自律组织应当针对本办法第三十六条、第三十七条的规定建立行业自律约束机制，并督促成员单位及相关人员切实执行。</span></p><p><span style="background-color:#fefefe;color:#666666;">第三十九条 任何机构、组织或者个人不得违法违规开展保险退保业务推介、咨询、代办等活动，诱导投保人退保，扰乱保险市场秩序。</span></p><p><span style="background-color:#fefefe;color:#666666;">第四十条 保险公司应当健全退保管理制度，细化各项保险产品的退保条件标准，优化退保流程，不得设置不合法不合理的退保阻却条件。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司应当在官方线上平台披露各项保险产品的退保条件标准和退保流程时限，并在保险合同签订前明确提示投保人该保险产品的退保条件标准和退保流程时限。</span></p><p><span style="background-color:#fefefe;color:#666666;">保险公司应当设立便捷的退保渠道，在收到投保人的退保申请后，及时一次性告知投保人办理退保所需要的全部材料。</span></p><p><span style="background-color:#fefefe;color:#666666;">第四十一条 保险公司、保险中介机构应当建立档案管理制度，妥善保管业务档案、会计账簿、业务台账、人员档案、投保资料以及开展可回溯管理产生的视听资料、电子数据等档案资料，明确管理责任，规范归档资料和数据的保管、保密和调阅程序。档案保管期限应当符合相关法律法规及监管制度规定。</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#666666;">第五章 监督管理</span></p><p><span style="background-color:#fefefe;color:#666666;">第四十二条 保险公司、保险中介机构应当按照金融监管总局及其派出机构的规定，记录、保存、报送有关保险销售的报告、报表、文件和资料。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第四十三条 违反本办法第三条、第三十九条规定的，由金融监管总局及其派出机构依照《中华人民共和国保险法》等法律法规和监管制度的相关规定处理。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第四十四条 保险公司、保险中介机构、保险销售人员违反本办法规定和金融监管总局关于财产保险、人身保险、保险中介销售管理的其他相关规定，情节严重或者造成严重后果的，由金融监管总局及其派出机构依照法律、行政法规进行处罚；法律、行政法规没有规定的，金融监管总局及其派出机构可以视情况给予警告或者通报批评，处以一万元以上十万元以下罚款。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第四十五条 保险公司、保险中介机构违反本办法规定和金融监管总局关于财产保险、人身保险、保险中介销售管理的其他相关规定，情节严重或者造成严重后果的，金融监管总局及其派出机构除分别依照本办法有关规定对该单位给予处罚外，对其直接负责的主管人员和其他直接责任人员依照法律、行政法规进行处罚；法律、行政法规没有规定的，金融监管总局及其派出机构对其直接负责的主管人员和其他直接责任人员可以视情况给予警告或者通报批评，处以一万元以上十万元以下罚款。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第四十六条 违反本办法第三十六条、第三十七条规定的，金融监管总局及其派出机构可以视情况予以通报并督促行业自律组织对相关人员、保险公司、保险中介机构给予行业自律约束处理。</span></p><p style="text-align:center;"><span style="background-color:#fefefe;color:#666666;">第六章 附 则</span></p><p><span style="background-color:#fefefe;color:#666666;">第四十七条 保险公司、保险中介机构开展保险销售行为，除遵守本办法相关规定外，应当符合法律法规和金融监管总局关于财产保险、人身保险、保险中介销售管理的其他相关规定。</span></p><p style="text-align:justify;"><span style="background-color:#fefefe;color:#666666;">第四十八条 相互保险组织、外国保险公司分公司、保险集团公司适用本办法。</span></p><p><span style="background-color:#fefefe;color:#666666;">第四十九条 本办法由金融监管总局负责解释。</span></p><p><span style="background-color:#fefefe;color:#666666;">第五十条 本办法自2024</span><span style="color:#666666;">年3月1日起施行。</span></p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:24:40	2024-10-14 07:24:40
 19	\N	\N	\N	湖北省保险行业协会 湖北省保险中介行业协会	<p>鄂保协发〔2024〕9号</p><p><strong>关于印发《湖北省保险销售人员执业规范</strong> <strong>指引》的通知</strong></p><p>各会员公司：</p><p style="text-align:justify;">为贯彻落实国家金融监督管理总局《保险销售行为管理 办法》,进一步加强全省保险销售人员诚信体系建设，将诚 信执业规范落实到保险销售全流程。根据国家金融监督管理 总局湖北监管局相关工作安排，经过全省保险业共同探讨交 流和征求意见，湖北省保险行业协会(以下简称“湖北保协”)、 湖北省保险中介行业协会(以下简称“中介协会”)共同编 制了《湖北省保险销售人员执业规范指引》(以下简称“《执 业规范指引》”),现将《执业规范指引》予以印发，并就 有关事项通知如下：</p><p><strong>一、高度重视提高认识</strong></p><p>保险销售行为直接影响保险消费者权益，近年来监管部</p><p>门、行业协会收到了大量因保险销售不规范导致的纠纷投诉。 《执业规范执引》的制定正是基于当前我省保险行业销售从 业人员诚信自律管理的实际需要，旨在帮助保险销售人员更 好地掌握合规要求，提升保险机构内控合规及操作风险管理 水平，保护保险合同当事人的合法权益。各会员单位要充分 认识规范保险销售执业行为和加强行业诚信建设的重要性、</p><p>紧迫性，以行业诚信建设为基石，以《执业规范指引》为准 绳，进一步规范保险销售行为。</p><p><strong>二、严格执行落实责任</strong></p><p style="text-align:justify;">《执业规范指引》对保险销售售前、售中及售后的行为 均作出正面指引，可操作性强，各会员单位应认真对照各项 条款的具体内容，进一步规范从业人员保险销售“全链条” 执业行为，全面履行销售职责，进一步明确监管要求，严格 落实公司对销售行为的管理责任。</p><p><strong>三</strong> <strong>、组织学习加强培训</strong></p><p style="text-align:justify;">各会员单位诚信建设领导小组在收到本通知后，应尽快 组织公司内外勤认真学习《执业规范指引》内容，开展一次 专项培训，湖北保协、中介协会将对辖内机构和从业人员的 学习情况开展相关督导抽查工作。各会员单位在落实和推进 《执业规范指引》过程中发现有好的经验做法或存在的问题， 应及时向协会反映。</p><p>&nbsp;</p><p><strong>第一章总则</strong></p><p>第 一条【目的】为帮助保险销售人员更好掌握合规要求，规范销售行为，提升保险机构内控合规及操作风险管理水平，保护保险合同当事人的合法权益，不断促进保险行业高质量发展，根据《中华人民共和国保险法》《保险代理人监管规定》《保险经纪人监管规定》《保险销售行为管理办法》《互 联网保险业务监管办法》《银行保险机构消费者权益保护管 理办法》等相关法律法规和监管规定，特制定本指引。</p><p style="text-align:justify;">第二条【销售人员定义】本文所称销售人员是指保险公 司中从事保险销售的员工、个人保险代理人及纳入销售人员 管理的其他用工形式的人员，保险代理机构中从事保险代理 业务的人员，保险经纪人中从事保险经纪业务的人员。</p><p style="text-align:justify;">第三条【保险机构定义】本文所称保险机构是指保险公 司、保险代理机构和保险经纪人。保险代理机构包括专业代 理机构和兼业代理机构。</p><p style="text-align:justify;">第四条【销售行为定义】本文所称保险销售行为是指销 售人员取得合法销售资质后开展的营销宣传，联系招揽潜在 客户，就保险合同内容进行沟通、商谈，接受咨询，收集投 保信息，协助订立保险合同、回访、续保、理赔、保全，以 及提供保单送达、通知、提醒等后续保险合同随附服务等活动。</p><p style="text-align:justify;">第五条【客户合法权益】保险机构及其保险销售人员实 施保险销售行为，应当遵循依法合规、平等自愿、诚实守信 等原则，充分尊重并自觉保障保险消费者的基本权利，包括 知情权、自主选择权、公平交易权、财产安全权、依法求偿 权、受教育权和受尊重权、信息安全权等。</p><p><br>&nbsp;</p><p><br>&nbsp;</p><p><strong>第二章售前行为规范</strong></p><p><br>&nbsp;</p><p>第六条【销售资质】保险销售人员应选择取得监管部门 业务许可的保险机构进行执业登记。根据执业登记所属保险 机构的要求，提供本人真实身份信息，签订劳动合同、代理 合同或其他形式用工协议。销售人员应接受机构合规管理， 遵守管理制度，积极参加所属机构组织的保险法律法规、监 管规章制度、从业规则标准、职业道德规范的培训教育，通 过所属机构的入职培训考核评估。</p><p>第七条【个人营销宣传】保险销售人员通过各类平台、 渠道开展销售宣传，发布的保险销售宣传信息应当事前经过 所属保险机构的审核及授权，转载信息应保证真实可靠以及 信息源可追溯。</p><p>第八条【营销信息发送】保险销售人员通过电话呼叫、 信息群发、网络推送等方式向客户发送营销信息，客户明确 表示拒绝投保的，应当立即停止主动营销，避免干扰其正常</p><p>工作和生活。</p><p style="text-align:justify;">第九条【客户告知】保险销售人员接洽客户时应主动说 明所属保险机构全称、机构属性和业务性质，主动向客户展 示执业登记信息及查询渠道。保险代理机构、经纪人的保险 销售人员还应出示统一制定的客户告知书，作为投保资料留 存客户签章的回执。</p><p><strong>第三章销售行为规范</strong></p><p><br>&nbsp;</p><p><strong>第十条</strong>【投保方案拟定】保险销售人员应当周全、妥当 地为客户拟定投保方案：</p><p>(一)【需求分析】主动询问和收集客户既有保障、历 年出险和赔付情况，交由保险机构结合其他客户信息形成是 否适合所销售保险产品的评估结果，作为投保资料保存；</p><p>(二)【方案调整】根据客户保险需求和保险保障缺口， 提出保险建议、拟订投保方案；充分听取客户对投保方案的 意见，如根据客户要求调整投保方案的，应提醒、说明调整 的内容并提出专业化建议；投保方案应取得客户认可；</p><p>(三)【风险提示】对缴费能力可能不足、重复购买或 超额购买²的客户应进行风险提示并调整投保方案或中止投</p><p><br>&nbsp;</p><p><br>&nbsp;</p><p style="text-align:justify;">1【机构全称】是指保险机构营业执照、业务许可证上登记的公司名称，互联网保险业务应告知具备合法 保险销售资质的运营主体的机构全称。后续环节采用简称的，应当使用“XX保险公司/XX银行/XX 保险代理 /XX保险经纪”等规范简称，不得使用“某某保险”等混淆主体身份类别的简称。</p><p>【机构属性】是指保险公司、专业代理机构、兼业代理机构或经纪人。 【业务性质】是指保险销售业务。</p><p>²【范例1】对于缴费期限超过退休年限、家庭年收入少于年缴保费金额的客户重点询问是否具备缴费能力， 提示保费断缴风险，调整保额并取得客户书面同意文件，规避后期因保单失效引发的合同纠纷或投诉举报。 【范例2】为避免道德风险，《中国保监会关于父母为其未成年子女投保以死亡为给付保险金条件人身保 险有关问题的通知(保监发〔2015〕90号)》对投保人为其未成年子女购买的以被保险人死亡为给付条件</p><p>保。</p><p>销售短期保险产品的，可根据所属保险机构要求，适当 简化上述第(一)(二)项流程。</p><p>第十一条【产品讲解】保险销售人员在介绍产品时，应 主动告知客户保险产品的全称及产品类型，主动提供保险产 品条款，并就条款重点内容进行明确说明³ ,帮助客户正确理 解保险产品。</p><p>第十二条【条款重要内容】保险销售人员应提醒投保人 仔细完整地阅读保险条款，完整准确地介绍保险责任、责任 免除、投保人及被保险人的权利和义务、免赔额或免赔率、 赔付比例的计算、申请保险金的手续等重要内容。</p><p>第十三条【产品对比】客户对保险产品收益情况与银行 存款、理财产品进行对比时，保险销售人员应明确告知保险 产品与银行存款、理财产品等其他非保险金融产品的区别⁵ , 避免容易引人误解的表述。⁶</p><p><strong>第十四条</strong>【缴费方式】保险销售人员应完整准确地告知 客户保险期限、犹豫期、现金价值等关键内容。应明确告知</p><p><img src="file:///tmp/lu27915cntxj.tmp/lu27915cnu4n_tmp_ea8a3539564fd492.png" width="195" height="1">&nbsp;<br>&nbsp;</p><p>的保险金总和规定了上限(10岁以下20万元，10-18岁50万元)。</p><p>【相关法规】《健康保险管理办法》第四十一条：保险公司不得诱导投保人为同一被保险人重复购买保障 功能相同或者类似的费用补偿型医疗保险产品。</p><p style="text-align:justify;">3【范例】根据保险合同条款和保险公司宣传文案进行说明，假如对客户提出有关保险产品的问题当场不 能解答的，销售人员对不确定的内容不擅自解读，应收集客户对相关产品疑问后联系公司客服、产品或培 训相关部门人员协助解答。</p><p>4【范例】该保险条款第x 条是保险责任及责任免除的内容，对您的权益有重要关系，请重点关注。具体 为xxx (口述应完整陈述条款内容，不得遗漏特别约定，避免进行不准确的简化解读)。</p><p>5【范例话术】:“这是一款保险产品，承保保险公司为xxx, 销售渠道为xxx, 与银行存款、基金等其他 非保险金融产品不同”。</p><p>6【范例】避免使用利益返还、存款、本金、利息等表述，而应使用保额、保险金、保险费、现金价值、 投资账户收益等保险规范用语。</p><p style="text-align:justify;">投保人交费方式、年交保费金额，提示客户确认是否有稳定 的缴费能力并明确说明保费断缴对其权益的不良影响。保险 产品有现金价值垫交续期保费条款的，应明确告知投保人。</p><p style="text-align:justify;"><strong>第十五条</strong>【非保证续保产品】保险销售人员对于非保证 续保的保险合同，应明确告知客户续保条件、续保保费、可 能变动情形，以及续保时保险公司是否有权调整保险费率或 决定是否接受续保等事项。</p><p><strong>第十六条</strong>【投保提示书】保险销售人员应当向投保人提 供经保险机构统一制定的投保提示书，由客户签章确认。</p><p><strong>第十七条</strong>【健康保险】保险销售人员应根据条款明确向 客户说明医疗费用补偿原则、免赔额或赔付比例、疾病观察 期(等待期)、指定医疗机构、续保政策与条件，疾病定义 以及是否有附条件赔付或除外情形等内容；应向投保人询问 被保险人是否拥有公费医疗、基本医疗保险或者其他费用补 偿型医疗保险的情况；应询问客户是否有既往病史、住院记 录等影响核保核赔的相关信息。</p><p><strong>第十八条【</strong>新型人身保险产品特别提示】保险销售人员 销售分红保险、投资连结保险、万能保险等人身保险新型产 品，应取得所属保险机构授权，进一步提示投保人关注下列 事项并亲笔签署风险提示语句：</p><p>(一)【分红保险】保险销售人员应根据条款向客户明确 说明“红利分配是不确定的，产品说明书或保险利益测算书</p><p style="text-align:justify;">中关于未来保险合同利益的预测是基于精算假设而非承诺 收益。历史分红情况可以查阅相关保险公司官方网站的公开 披露信息”。</p><p>(二)【投资连结保险】保险销售人员应根据条款向客户 明确说明费用扣除情况，包括初始费用、买入卖出差价、死 亡风险保险费、保单管理费、资产管理费、手续费、退保费 用等；明确说明投资连结保险账户价值的计算方法；提醒投 保人“投资回报具有不确定性，可能出现亏损，投资风险全 部由投保人承担”。</p><p>(三)【万能保险】保险销售人员应根据条款向客户明确 说明费用扣除情况，包括初始费用、死亡风险保险费、保单 管理费、手续费、退保费用等；明确说明万能保险账户价值 的详细计算方法及收益的不确定性；明确说明“最低保证利 率仅针对投资账户中的资金”。</p><p style="text-align:justify;"><strong>第十九条</strong>【投保信息收集】保险销售人员应告知客户由 其本人如实完整地填写投保单的投保信息，重点包括投保人 和被保险人的姓名、性别、出生日期、身份证号、联系方式、 工作单位、住址、年收入、既往病史等内容，明确告知客户 应当履行如实告知义务并说明未如实告知的法律后果，确保 保险公司取得的客户信息真实有效。</p><p><strong>第二十条【</strong>可回溯】保险销售人员应按照有关法律法规</p><p><img src="file:///tmp/lu27915cntxj.tmp/lu27915cnu4n_tmp_a8971e6d7a7de408.jpg" width="195" height="1">&nbsp;<br>&nbsp;</p><p>⁷【相关法规】《中国保监会关于印发&lt;保险销售行为可回溯管理暂行办法&gt;的通知(保监发(2017)54号)》 《中国银保监会关于规范互联网保险销售行为可回溯管理的通知(银保监发(2020)26号)》</p><p>配合保险机构做好可回溯信息收集工作，取得客户同意后对 销售过程关键环节以同步录音录像的方式予以记录。</p><p><strong>第二十一条</strong>【签名】保险销售人员应确认投保提示书、 投保单、保险合同回执等文本资料由投保人或被保险人亲自 填写和签名(被保险人为无民事行为能力人时由其监护人签 署)。客户无法履行本人签署要求、提出协助需求的，保险 销售人员应当报经所属保险机构同意后，取得客户(投保人、 被保险人)有效书面授权或在录音录像情况下的口头授权， 由保险机构审核授权资料真实性后作为投保资料留存。</p><p><strong>第二十二条</strong>【电话销售】保险销售人员通过电话向客户 销售保险时，讲解保险产品应严格按照所属保险机构统一制 定的标准话术，向客户进行告知并明确说明保险合同的重要 内容⁸,通过客户签署投保单或电话录音的方式确认投保人投 保意愿。通过银行转账方式或其他电子支付方式收取保险费 的，应通过书面或电话录音的方式明确说明并取得客户授权 同意'。</p><p style="text-align:justify;"><strong>第二十三条【</strong>互联网销售】客户通过保险机构自营平台 或互联网投保链接等互联网保险渠道投保时提出服务需求 的，保险销售人员根据客户需求明确说明，对互联网保险产 品属性、特点、投保流程的关键环节0等内容予以重点说明，</p><p>由客户自主完成投保过程。</p><p>8参照本文第十一至十八条要求执行。</p><p>9《人身保险电话销售业务管理办法》(保监发(2013)40号)第三十条、第三十一条。 10参照本文第十一至十八条要求执行。</p><p style="text-align:justify;">第二十四条【产品停售】保险销售人员销售即将停售或 调整价格的保险产品，应根据保险公司发出的停售或者调整 价格的公告，向客户明确说明停售产品名称、停售时间，不 得炒作停售、调整价格等信息诱导客户投保。</p><p><strong>第四章售后服务规范</strong></p><p><br>&nbsp;</p><p><strong>第二十五条【</strong>咨询答复】对于客户后期咨询，保险销售 人员应当按照销售规范进行解答。不能详细解答的，应当提 供保险机构客服电话引导客户通过官方渠道咨询解答疑问， 避免对客户做出笼统、易引人误解的表述。</p><p><strong>第二十六条【</strong>保单送达】保险销售人员接受保险机构委 托送达保单，应取得客户保险合同签收回执，交由保险机构 保管。保险机构提供电子保单的，应当告知客户电子保单或 纸质保单的申领方式。</p><p style="text-align:justify;"><strong>第二十七条【</strong>回访提示】保险销售人员应告知投保人在 犹豫期内注意接听回访电话或点击回访链接，如实回答回访 问 题 。</p><p style="text-align:justify;"><strong>第二十八条【</strong>续保申请】保险销售人员可提醒客户及时 向保险公司发出续保申请，协助客户及保险公司完成保单或 批单的出具和送达工作。保险销售人员可在缴费日前三十天 提醒客户及时续缴保费，保险合同因保费断缴失效的，应提</p><p>11【话术范例】签署保险合同后有15天犹豫期，为保障客户权益，期间保险公司会通过电话或电子方式</p><p><img src="file:///tmp/lu27915cntxj.tmp/lu27915cnu4n_tmp_5182665c7a4b6d9.png" width="195" height="1">&nbsp;<br>&nbsp;</p><p>对你进行回访，对销售过程和合同重要内容知晓情况进行确认。请保持联系方式畅通，如实回答相关问题。 不得采用“请对回访问题说明白了、清楚了、知道了”等诱导客户不真实回答回访问题的表述。</p><p>示客户保险合同中断的风险，积极配合客户办理保单复效或 退保手续。</p><p style="text-align:justify;"><strong>第二十九条【</strong>协助批改/保全】保险销售人员应提醒客户 及时履行保险合同约定的告知义务，在保险合同有效期内发 生联系方式、通讯地址及职业变更，保险标的增减、名称变 更、占用性质改变、风险状况变化、权利转让等约定告知情 况的，协助客户向保险公司申请办理批改/保全手续。</p><p style="text-align:justify;"><strong>第三十条【</strong>协助理赔】保险销售人员知悉客户发生保险 合同约定的赔付/给付责任后，应当及时提醒客户向保险公 司报案，协助客户收集理赔资料、办理保险金领取等相关手 续，不得擅自承诺理赔责任。</p><p><strong>第三十一条</strong>【投诉举报】保险销售人员所售保单出现投 诉举报的，应配合保险机构调查，及时妥善处理客户诉求。</p><p><strong>第三十二条</strong>【退保】客户提出退保的，保险销售人员应 当向客户再次说明退保条款以及可能导致的损失和风险，并 协助客户办理有关手续。</p><p style="text-align:justify;"><strong>第三十三条【</strong>离职告知】²保险机构应当对一年期以上尚 未履行完毕的人身保险合同的销售人员离职手续办理完成 后的30 日内告知其所售保单的投保人或者被保险人原销 售人员的离职信息、保单状况以及获得后续服务的途径。</p><p><img src="file:///tmp/lu27915cntxj.tmp/lu27915cnu4n_tmp_24e7c88120def536.png" width="194" height="1">&nbsp;<br>&nbsp;</p><p style="text-align:justify;">12【商业银行保险销售人员离职】根据《中国银监会湖北监管局办公室关于加强银行业员工行为“十大” 风险管控的通知》第九条第三点“销售人员离职所在机构应按照要求立即以短信通知、客户电话通知或在 其解除或终止劳动关系后至少10个工作日在网点公示等形式及时告知该销售人员原管理的客户，并安排新 的销售人员及时对接，做好客户的解释及后期维护工作。”</p><p><br>&nbsp;</p><p><br>&nbsp;</p><p><strong>第五章禁止行为</strong></p><p><br>&nbsp;</p><p><strong>第三十四条【</strong>销售禁止行为】保险销售人员在执业过程 中不得有以下行为¹³ :</p><p>(一)【无资质展业】未持有《执业证书》从事保险销售， 或超出保险机构授权范围开展保险销售业务；为不具备合法 资质的机构或个人提供出单渠道；</p><p>(二)【违规宣传】混淆产品属性，将保险产品利益与银 行存款、国债等其他金融产品的收益进行片面比较，或套用</p><p style="text-align:justify;">“本金、利息、存款”等概念；混淆销售主体，以其他保险 机构及销售人员名义开展保险营销宣传；自行编发或者转载 未经所属机构审核授权发布的保险销售宣传信息4;</p><p>(三)【销售误导】夸大保险责任或保证收益；故意隐瞒 关于保险责任、责任免除、犹豫期、观察期、退保损失、缴 费期限等保险合同重要信息，进行不实陈述或误导性描述， 片面宣传或虚假宣传，使用易与其他金融产品混淆的描述， 发布片面比较保险产品价格和简单排名的内容，影响客户合 法权益的；</p><p>(四)【退旧买新】以“产品保障不全”“保单升级”“减</p><p>额交清”“赠送保险”等为由，误导客户通过保单退保、保</p><p>&nbsp;</p><p>13【主要依据】《中华人民共和国保险法》第一百三十一条</p><p>14【主动消除不良影响】未经审核发布存在误导内容的宣传资料，保险销售人员应当主动消除不良影响， 对误导内容进行明确说明更正，并删除不当内容。</p><p>单贷款等方式购买新保险产品，损害客户合法权益；</p><p>(五)【代理退保】从事或变相从事代理退保黑产，以“全 额退保”“代理退保维权”名义误导客户进行投诉举报；</p><p>(六)【阻碍如实告知】阻碍投保人履行如实告知义务或 者诱导其不履行如实告知义务¹5;</p><p>(七)【返佣】以诱导客户投保为目的，直接或间接地给 予或承诺给予保险合同约定以外的利益；</p><p>(八)【捆绑强制销售】利用职务或者职业便利以及其他 不正当手段强迫、限制投保人订立保险合同；使用强制搭售、 网页或者信息系统默认勾选等方式与投保人订立保险合同；</p><p>(九)【提供虚假投保信息】诱导客户填写虚假的联系方 式、地址、保险标的等投保信息，或提供虚假的体检报告、 收入证明、验标文件等资料；</p><p>(十)【代签名】未经授权代替客户确认保险风险提示语、 签署投保单、保险合同回执以及其他需要由投保人、被保险 人亲笔签署的文件；</p><p style="text-align:justify;">(十一)【超时】接受委托后未在规定时间内向客户送达 保险合同或其他有效单证；未及时协助客户向保险公司递交 投保、核保、保全、理赔等相关材料；</p><p>(<img src="file:///tmp/lu27915cntxj.tmp/lu27915cnu4n_tmp_52cfe36438432b34.png" width="193" height="1"> 十二)【未经授权】未经客户授权代为办理保全/批改、 退保、满期给付、红利领取、保单贷(借)款等手续，或擅</p><p>15【范例】某投保人主动告诉销售人员其直系亲属有高血压等遗传病史，销售人员告知投保人此类情况不 属于需要告知的内容，让投保人在投保单告知事项栏目中不如实填写。</p><p>自伪造、变造保险合同导致客户利益受到损害；</p><p>(十三)【不配合调查】对于涉访涉诉案件拒绝配合监管 部门或保险机构的调查；</p><p>(十四)【买卖信息】非法收集、使用、加工、提供、买 卖客户个人信息、商业秘密；</p><p style="text-align:justify;">(十五)【保险诈骗】通过编造保险事故、虚构保险合同 或夸大保险事故损失等手段串通投保人、被保险人、受益人 进行虚假理赔，骗取保险金或牟取其他不正当利益；</p><p>(十六)【侵占资金】侵占、截留、挪用保险费、保险金、 保单贷款等；</p><p>(十七)【非法活动】非法销售非保险类金融产品，或利 用职场、营销渠道和客户资源从事传销、非法集资、洗钱、 电信诈骗等活动；</p><p style="text-align:justify;">(十八)【破坏秩序】唆使、伙同客户或他人冲击、围堵 办公职场，严重影响正常秩序；伪造、散布虚假信息诋毁同 业、误导社会公众，或以其他不正当竞争行为扰乱保险市场 秩序。</p><p><br>&nbsp;</p><p><br>&nbsp;</p><p><strong>第六章机构管理职责</strong></p><p><br>&nbsp;</p><p style="text-align:justify;">第三十五条【内控管理】保险机构应当建立健全覆盖保 险销售行为的销售管理制度，包括但不限于保险销售人员教 育培训、宣传授权、销售适当性、销售品质、售后服务等重</p><p style="text-align:justify;">点内容，明确管理责任人，建立内控制度执行自查机制，严 格对制度执行情况的考核及责任追究，确保制度有效、落实 到位。</p><p><strong>第三十六条</strong>【综合考核】保险机构应加强保单继续率、 投诉情况等业务合规考核指标权重，建立健全佣金套利防范 工作机制，合理制定佣金及各项奖励延时发放和追溯扣回机 制，强化业务品质管理。确保各销售人员获取的当期佣金及 综合奖励收益、保单退保现金价值之和不超过当期保费。</p><p><strong>第三十七条【</strong>人员招录】保险机构应严格保险销售人员 招录管理，加强团队建设规划，坚持审慎有序、严格选人、 持续育人、事业留人导向，制定人员招录管理办法，规范招 录信息发布。</p><p style="text-align:justify;"><strong>第<img src="file:///tmp/lu27915cntxj.tmp/lu27915cnu4n_tmp_c0529d250813e657.png" width="194" height="1"> 三十八条</strong>【人员培训】保险机构应严格保险销售人员 培训管理，切实加强保险销售人员合规守法教育。法律法规、 监管规则、职业道德规范等内容的培训应当开展考核并记录 成绩，培训时间每年不得低于30小时¹⁶。保险机构应建立完 整的保险销售人员培训档案，在信息系统中完整记录培训情 况。保险机构授权保险销售人员销售新的保险产品前应组织 开展专项培训和适销性评估。</p><p style="text-align:justify;">16中国银保监会办公厅关于切实加强保险专业中介机构从业人员管理的通知(银保监办发(2020)42号) 中国银保监会办公厅关于落实保险公司主体责任加强保险销售人员管理的通知(银保监办发〔2020〕41号) 中国银保监会办公厅关于印发《商业银行代理保险业务管理办法》的通知(银保监办发〔2019〕179号)</p><p>【商业银行销售人员培训】:根据《商业银行代理保险业务管理办法》商业银行应当加强对其保险销售从 业人员的岗前培训和后续教育，组织其定期接受法律法规、业务知识、职业道德、消费者权益保护等相关 培训。其中，商业银行保险销售从业人员销售投资连结型保险产品还应至少有1年以上的保险销售经验， 每年接受不少于40小时的专项培训，并无不良记录。</p><p style="text-align:justify;">第三十九条【执业登记】保险机构应当按照规定在保险 销售人员签订合同/协议后、正式开展保险销售活动前进行 执业登记。保险销售人员变更所属保险机构的，原所属机构 应当在合同/协议约定时间内及时注销执业登记，再由新所 属机构为其进行执业登记。</p><p><strong>第四十条</strong>【权益保护】保险机构应当切实履行消费者权 益保护职责，建立健全投诉处理工作机制，畅通投诉渠道， 规范投诉处理流程，加强投诉统计分析。积极主动与消费者 协商解决矛盾纠纷，提示客户依法通过调解、仲裁、诉讼等 方式促进矛盾纠纷化解，以避免客户反复投诉、升级投诉、 群访群诉或出现媒体负面舆情等情况。如因代理退保黑产或 其他原因无法及时妥善处理的，应向客户讲解代理退保黑产 风险，积极主动收集代理退保黑产证据后由所属保险机构向 公安机关进行报案，并将相关情况报送监管部门。</p><p>第四十一条【销售品质管理】保险机构应加强销售品质 管理，将投保资料审核和存档情况、回访成功率、保单继续 率、投诉率等指标作为销售品质管理的重要内容。销售品质 管理结果应纳入保险机构、相关管理人员和保险销售人员考 核管理体系，对销售品质出现重大问题的保单，应建立薪酬 和佣金追溯扣回机制。</p><p><strong>第四十二条【</strong>诚信管理】保险机构应严格保险销售人员 诚信管理，积极配合行业协会做好诚信自律建设工作，对保</p><p style="text-align:justify;">险销售人员违法违规行为要进行及时惩戒和内部追责，并在 行业协会诚信自律平台以及中介监管信息系统中准确、及时、 完整地录入获得表彰奖励、违反诚信自律公约、受到监管行 政处罚等相关信息。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:26:55	2024-10-14 07:26:55
 20	\N	\N	\N	中华人民共和国保险法	<p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">中华人民共和国保险法</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（</span><span style="color:#333333;">1995年6月30日第八届全国人民代表大会常务委员会第十四次会议通过 根据2002年10月28日第九届全国人民代表大会常务委员会第三十次会议《关于修改〈中华人民共和国保险法〉的决定》第一次修正 2009年2月28日第十一届全国人民代表大会常务委员会第七次会议修订 根据2014年8月31日第十二届全国人民代表大会常务委员会第十次会议《关于修改〈中华人民共和国保险法〉等五部法律的决定》第二次修正 根据2015年4月24日第十二届全国人民代表大会常务委员会第十四次会议《关于修改〈中华人民共和国计量法〉等五部法律的决定》第三次修正）</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;"><strong>目 录</strong></span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第一章 总则</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第二章 保险合同</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第一节 一般规定</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第二节 人身保险合同</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第三节 财产保险合同</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第三章 保险公司</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第四章 保险经营规则</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第五章 保险代理人和保险经纪人</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第六章 保险业监督管理</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第七章 法律责任</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第八章 附则</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第一章 总则</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一条</strong> 为了规范保险活动，保护保险活动当事人的合法权益，加强对保险业的监督管理，维护社会经济秩序和社会公共利益，促进保险事业的健康发展，制定本法。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二条</strong> 本法所称保险，是指投保人根据合同约定，向保险人支付保险费，保险人对于合同约定的可能发生的事故因其发生所造成的财产损失承担赔偿保险金责任，或者当被保险人死亡、伤残、疾病或者达到合同约定的年龄、期限等条 件时承担给付保险金责任的商业保险行为。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三条</strong> 在中华人民共和国境内从事保险活动，适用本法。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四条 </strong>从事保险活动必须遵守法律、行政法规，尊重社会公德，不得损害社会公共利益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五条 </strong>保险活动当事人行使权利、履行义务应当遵循诚实信用原则。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六条 </strong>保险业务由依照本法设立的保险公司以及法律、行政法规规定的其他保险组织经营，其他单位和个人不得经营保险业务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七条 </strong>在中华人民共和国境内的法人和其他组织需要办理境内保险的，应当向中华人民共和国境内的保险公司投保。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八条 </strong>保险业和银行业、证券业、信托业实行分业经营、分业管理，保险公司与银行、证券、信托业务机构分别设立。国家另有规定的除外。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九条 </strong>国务院保险监督管理机构依法对保险业实施监督管理。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">国务院保险监督管理机构根据履行职责的需要设立派出机构。派出机构按照国务院保险监督管理机构的授权履行监督管理职责。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第二章 保险合同</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;"><strong>第一节 一般规定</strong></span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十条</strong> 保险合同是投保人与保险人约定保险权利义务关系的协议。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人是指与保险人订立保险合同，并按照合同约定负有支付保险费义务的人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人是指与投保人订立保险合同，并按照合同约定承担赔偿或者给付保险金责任的保险公司。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十一条</strong> 订立保险合同，应当协商一致，遵循公平原则确定各方的权利和义务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">除法律、行政法规规定必须保险的外，保险合同自愿订立。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十二条</strong> 人身保险的投保人在保险合同订立时，对被保险人应当具有保险利益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">财产保险的被保险人在保险事故发生时，对保险标的应当具有保险利益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">人身保险是以人的寿命和身体为保险标的的保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">财产保险是以财产及其有关利益为保险标的的保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被保险人是指其财产或者人身受保险合同保障，享有保险金请求权的人。投保人可以为被保险人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险利益是指投保人或者被保险人对保险标的具有的法律上承认的利益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十三条</strong> 投保人提出保险要求，经保险人同意承保，保险合同成立。保险人应当及时向投保人签发保险单或者其他保险凭证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险单或者其他保险凭证应当载明当事人双方约定的合同内容。当事人也可以约定采用其他书面形式载明合同内容。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">依法成立的保险合同，自成立时生效。投保人和保险人可以对合同的效力约定附条件或者附期限。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十四条 </strong>保险合同成立后，投保人按照约定交付保险费，保险人按照约定的时间开始承担保险责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十五条 </strong>除本法另有规定或者保险合同另有约定外，保险合同成立后，投保人可以解除合同，保险人不得解除合同。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十六条 </strong>订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除合同。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">前款规定的合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿或者给付保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿或者给付保险金的责任，并不退还保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿或者给付保险金的责任，但应当退还保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿或者给付保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险事故是指保险合同约定的保险责任范围内的事故。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十七条 </strong>订立保险合同，采用保险人提供的格式条款的，保险人向投保人提供的投保单应当附格式条款，保险人应当向投保人说明合同的内容。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">对保险合同中免除保险人责任的条款，保险人在订立合同时应当在投保单、保险单或者其他保险凭证上作出足以引起投保人注意的提示，并对该条款的内容以书面或者口头形式向投保人作出明确说明；未作提示或者明确说明的，该条款不产生效力。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十八条 </strong>保险合同应当包括下列事项：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）保险人的名称和住所；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）投保人、被保险人的姓名或者名称、住所，以及人身保险的受益人的姓名或者名称、住所；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）保险标的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）保险责任和责任免除；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）保险期间和保险责任开始时间；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）保险金额；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）保险费以及支付办法；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（八）保险金赔偿或者给付办法；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（九）违约责任和争议处理；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十）订立合同的年、月、日。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人和保险人可以约定与保险有关的其他事项。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">受益人是指人身保险合同中由被保险人或者投保人指定的享有保险金请求权的人。投保人、被保险人可以为受益人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险金额是指保险人承担赔偿或者给付保险金责任的最高限额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第十九条 </strong>采用保险人提供的格式条款订立的保险合同中的下列条款无效：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）免除保险人依法应承担的义务或者加重投保人、被保险人责任的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）排除投保人、被保险人或者受益人依法享有的权利的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十条 </strong>投保人和保险人可以协商变更合同内容。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">变更保险合同的，应当由保险人在保险单或者其他保险凭证上批注或者附贴批单，或者由投保人和保险人订立变更的书面协议。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十一条 </strong>投保人、被保险人或者受益人知道保险事故发生后，应当及时通知保险人。故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿或者给付保险金的责任，但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十二条</strong> 保险事故发生后，按照保险合同请求保险人赔偿或者给付保险金时，投保人、被保险人或者受益人应当向保险人提供其所能提供的与确认保险事故的性质、原因、损失程度等有关的证明和资料。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人按照合同的约定，认为有关的证明和资料不完整的，应当及时一次性通知投保人、被保险人或者受益人补充提供。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十三条</strong> 保险人收到被保险人或者受益人的赔偿或者给付保险金的请求后，应当及时作出核定；情形复杂的，应当在三十日内作出核定，但合同另有约定的除外。保险人应当将核定结果通知被保险人或者受益人；对属于保险责任的，在与被保险人或者受益人达成赔偿或者给付保险金的协议后十日内，履行赔偿或者给付保险金义务。保险合同对赔偿或者给付保险金的期限有约定的，保险人应当按照约定履行赔偿或者给付保险金义务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人未及时履行前款规定义务的，除支付保险金外，应当赔偿被保险人或者受益人因此受到的损失。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">任何单位和个人不得非法干预保险人履行赔偿或者给付保险金的义务，也不得限制被保险人或者受益人取得保险金的权利。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十四条 </strong>保险人依照本法第二十三条的规定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人或者受益人发出拒绝赔偿或者拒绝给付保险金通知书，并说明理由。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十五条</strong> 保险人自收到赔偿或者给付保险金的请求和有关证明、资料之日起六十日内，对其赔偿或者给付保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿或者给付保险金的数额后，应当支付相应的差额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十六条 </strong>人寿保险以外的其他保险的被保险人或者受益人，向保险人请求赔偿或者给付保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">人寿保险的被保险人或者受益人向保险人请求给付保险金的诉讼时效期间为五年，自其知道或者应当知道保险事故发生之日起计算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十七条 </strong>未发生保险事故，被保险人或者受益人谎称发生了保险事故，向保险人提出赔偿或者给付保险金请求的，保险人有权解除合同，并不退还保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人、被保险人故意制造保险事故的，保险人有权解除合同，不承担赔偿或者给付保险金的责任；除本法第四十三条规定外，不退还保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险事故发生后，投保人、被保险人或者受益人以伪造、变造的有关证明、资料或者其他证据，编造虚假的事故原因或者夸大损失程度的，保险人对其虚报的部分不承担赔偿或者给付保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人、被保险人或者受益人有前三款规定行为之一，致使保险人支付保险金或者支出费用的，应当退回或者赔偿。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十八条 </strong>保险人将其承担的保险业务，以分保形式部分转移给其他保险人的，为再保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">应再保险接受人的要求，再保险分出人应当将其自负责任及原保险的有关情况书面告知再保险接受人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第二十九条 </strong>再保险接受人不得向原保险的投保人要求支付保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">原保险的被保险人或者受益人不得向再保险接受人提出赔偿或者给付保险金的请求。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">再保险分出人不得以再保险接受人未履行再保险责任为由，拒绝履行或者迟延履行其原保险责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十条 </strong>采用保险人提供的格式条款订立的保险合同，保险人与投保人、被保险人或者受益人对合同条款有争议的，应当按照通常理解予以解释。对合同条款有两种以上解释的，人民法院或者仲裁机构应当作出有利于被保险人和受益人的解释。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;"><strong>第二节 人身保险合同</strong></span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十一条 </strong>投保人对下列人员具有保险利益：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）本人；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）配偶、子女、父母；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）前项以外与投保人有抚养、赡养或者扶养关系的家庭其他成员、近亲属；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）与投保人有劳动关系的劳动者。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">除前款规定外，被保险人同意投保人为其订立合同的，视为投保人对被保险人具有保险利益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">订立合同时，投保人对被保险人不具有保险利益的，合同无效。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十二条 </strong>投保人申报的被保险人年龄不真实，并且其真实年龄不符合合同约定的年龄限制的，保险人可以解除合同，并按照合同约定退还保险单的现金价值。保险人行使合同解除权，适用本法第十六条第三款、第六款的规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人申报的被保险人年龄不真实，致使投保人支付的保险费少于应付保险费的，保险人有权更正并要求投保人补交保险费，或者在给付保险金时按照实付保险费与应付保险费的比例支付。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人申报的被保险人年龄不真实，致使投保人支付的保险费多于应付保险费的，保险人应当将多收的保险费退还投保人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十三条 </strong>投保人不得为无民事行为能力人投保以死亡为给付保险金条件的人身保险，保险人也不得承保。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">父母为其未成年子女投保的人身保险，不受前款规定限制。但是，因被保险人死亡给付的保险金总和不得超过国务院保险监督管理机构规定的限额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十四条</strong> 以死亡为给付保险金条件的合同，未经被保险人同意并认可保险金额的，合同无效。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">按照以死亡为给付保险金条件的合同所签发的保险单，未经被保险人书面同意，不得转让或者质押。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">父母为其未成年子女投保的人身保险，不受本条第一款规定限制。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十五条 </strong>投保人可以按照合同约定向保险人一次支付全部保险费或者分期支付保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十六条</strong> 合同约定分期支付保险费，投保人支付首期保险费后，除合同另有约定外，投保人自保险人催告之日起超过三十日未支付当期保险费，或者超过约定的期限六十日未支付当期保险费的，合同效力中止，或者由保险人按照合同约定的条件减少保险金额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被保险人在前款规定期限内发生保险事故的，保险人应当按照合同约定给付保险金，但可以扣减欠交的保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十七条</strong> 合同效力依照本法第三十六条规定中止的，经保险人与投保人协商并达成协议，在投保人补交保险费后，合同效力恢复。但是，自合同效力中止之日起满二年双方未达成协议的，保险人有权解除合同。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人依照前款规定解除合同的，应当按照合同约定退还保险单的现金价值。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十八条 </strong>保险人对人寿保险的保险费，不得用诉讼方式要求投保人支付。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第三十九条 </strong>人身保险的受益人由被保险人或者投保人指定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人指定受益人时须经被保险人同意。投保人为与其有劳动关系的劳动者投保人身保险，不得指定被保险人及其近亲属以外的人为受益人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被保险人为无民事行为能力人或者限制民事行为能力人的，可以由其监护人指定受益人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十条 </strong>被保险人或者投保人可以指定一人或者数人为受益人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">受益人为数人的，被保险人或者投保人可以确定受益顺序和受益份额；未确定受益份额的，受益人按照相等份额享有受益权。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十一条 </strong>被保险人或者投保人可以变更受益人并书面通知保险人。保险人收到变更受益人的书面通知后，应当在保险单或者其他保险凭证上批注或者附贴批单。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人变更受益人时须经被保险人同意。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十二条 </strong>被保险人死亡后，有下列情形之一的，保险金作为被保险人的遗产，由保险人依照《中华人民共和国继承法》的规定履行给付保险金的义务：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）没有指定受益人，或者受益人指定不明无法确定的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）受益人先于被保险人死亡，没有其他受益人的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）受益人依法丧失受益权或者放弃受益权，没有其他受益人的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">受益人与被保险人在同一事件中死亡，且不能确定死亡先后顺序的，推定受益人死亡在先。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十三条 </strong>投保人故意造成被保险人死亡、伤残或者疾病的，保险人不承担给付保险金的责任。投保人已交足二年以上保险费的，保险人应当按照合同约定向其他权利人退还保险单的现金价值。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">受益人故意造成被保险人死亡、伤残、疾病的，或者故意杀害被保险人未遂的，该受益人丧失受益权。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十四条 </strong>以被保险人死亡为给付保险金条件的合同，自合同成立或者合同效力恢复之日起二年内，被保险人自杀的，保险人不承担给付保险金的责任，但被保险人自杀时为无民事行为能力人的除外。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人依照前款规定不承担给付保险金责任的，应当按照合同约定退还保险单的现金价值。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十五条 </strong>因被保险人故意犯罪或者抗拒依法采取的刑事强制措施导致其伤残或者死亡的，保险人不承担给付保险金的责任。投保人已交足二年以上保险费的，保险人应当按照合同约定退还保险单的现金价值。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十六条 </strong>被保险人因第三者的行为而发生死亡、伤残或者疾病等保险事故的，保险人向被保险人或者受益人给付保险金后，不享有向第三者追偿的权利，但被保险人或者受益人仍有权向第三者请求赔偿。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十七条</strong> 投保人解除合同的，保险人应当自收到解除合同通知之日起三十日内，按照合同约定退还保险单的现金价值。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;"><strong>第三节 财产保险合同</strong></span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十八条 </strong>保险事故发生时，被保险人对保险标的不具有保险利益的，不得向保险人请求赔偿保险金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第四十九条</strong> 保险标的转让的，保险标的的受让人承继被保险人的权利和义务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险标的转让的，被保险人或者受让人应当及时通知保险人，但货物运输保险合同和另有约定的合同除外。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">因保险标的转让导致危险程度显著增加的，保险人自收到前款规定的通知之日起三十日内，可以按照合同约定增加保险费或者解除合同。保险人解除合同的，应当将已收取的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被保险人、受让人未履行本条第二款规定的通知义务的，因转让导致保险标的危险程度显著增加而发生的保险事故，保险人不承担赔偿保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十条 </strong>货物运输保险合同和运输工具航程保险合同，保险责任开始后，合同当事人不得解除合同。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十一条 </strong>被保险人应当遵守国家有关消防、安全、生产操作、劳动保护等方面的规定，维护保险标的的安全。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人可以按照合同约定对保险标的的安全状况进行检查，及时向投保人、被保险人提出消除不安全因素和隐患的书面建议。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人为维护保险标的的安全，经被保险人同意，可以采取安全预防措施。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十二条 </strong>在合同有效期内，保险标的的危险程度显著增加的，被保险人应当按照合同约定及时通知保险人，保险人可以按照合同约定增加保险费或者解除合同。保险人解除合同的，应当将已收取的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被保险人未履行前款规定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十三条</strong> 有下列情形之一的，除合同另有约定外，保险人应当降低保险费，并按日计算退还相应的保险费：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）据以确定保险费率的有关情况发生变化，保险标的的危险程度明显减少的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）保险标的的保险价值明显减少的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十四条 </strong>保险责任开始前，投保人要求解除合同的，应当按照合同约定向保险人支付手续费，保险人应当退还保险费。保险责任开始后，投保人要求解除合同的，保险人应当将已收取的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十五条 </strong>投保人和保险人约定保险标的的保险价值并在合同中载明的，保险标的发生损失时，以约定的保险价值为赔偿计算标准。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">投保人和保险人未约定保险标的的保险价值的，保险标的发生损失时，以保险事故发生时保险标的的实际价值为赔偿计算标准。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险金额不得超过保险价值。超过保险价值的，超过部分无效，保险人应当退还相应的保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险金额低于保险价值的，除合同另有约定外，保险人按照保险金额与保险价值的比例承担赔偿保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十六条 </strong>重复保险的投保人应当将重复保险的有关情况通知各保险人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">重复保险的各保险人赔偿保险金的总和不得超过保险价值。除合同另有约定外，各保险人按照其保险金额与保险金额总和的比例承担赔偿保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">重复保险的投保人可以就保险金额总和超过保险价值的部分，请求各保险人按比例返还保险费。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">重复保险是指投保人对同一保险标的、同一保险利益、同一保险事故分别与两个以上保险人订立保险合同，且保险金额总和超过保险价值的保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十七条 </strong>保险事故发生时，被保险人应当尽力采取必要的措施，防止或者减少损失。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险事故发生后，被保险人为防止或者减少保险标的的损失所支付的必要的、合理的费用，由保险人承担；保险人所承担的费用数额在保险标的损失赔偿金额以外另行计算，最高不超过保险金额的数额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十八条</strong> 保险标的发生部分损失的，自保险人赔偿之日起三十日内，投保人可以解除合同；除合同另有约定外，保险人也可以解除合同，但应当提前十五日通知投保人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">合同解除的，保险人应当将保险标的未受损失部分的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第五十九条</strong> 保险事故发生后，保险人已支付了全部保险金额，并且保险金额等于保险价值的，受损保险标的的全部权利归于保险人；保险金额低于保险价值的，保险人按照保险金额与保险价值的比例取得受损保险标的的部分权利。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十条</strong> 因第三者对保险标的的损害而造成保险事故的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对第三者请求赔偿的权利。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">前款规定的保险事故发生后，被保险人已经从第三者取得损害赔偿的，保险人赔偿保险金时，可以相应扣减被保险人从第三者已取得的赔偿金额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人依照本条第一款规定行使代位请求赔偿的权利，不影响被保险人就未取得赔偿的部分向第三者请求赔偿的权利。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十一条 </strong>保险事故发生后，保险人未赔偿保险金之前，被保险人放弃对第三者请求赔偿的权利的，保险人不承担赔偿保险金的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对第三者请求赔偿的权利的，该行为无效。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十二条</strong> 除被保险人的家庭成员或者其组成人员故意造成本法第六十条第一款规定的保险事故外，保险人不得对被保险人的家庭成员或者其组成人员行使代位请求赔偿的权利。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十三条</strong> 保险人向第三者行使代位请求赔偿的权利时，被保险人应当向保险人提供必要的文件和所知道的有关情况。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十四条 </strong>保险人、被保险人为查明和确定保险事故的性质、原因和保险标的的损失程度所支付的必要的、合理的费用，由保险人承担。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十五条 </strong>保险人对责任保险的被保险人给第三者造成的损害，可以依照法律的规定或者合同的约定，直接向该第三者赔偿保险金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">责任保险的被保险人给第三者造成损害，被保险人对第三者应负的赔偿责任确定的，根据被保险人的请求，保险人应当直接向该第三者赔偿保险金。被保险人怠于请求的，第三者有权就其应获赔偿部分直接向保险人请求赔偿保险金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">责任保险的被保险人给第三者造成损害，被保险人未向该第三者赔偿的，保险人不得向被保险人赔偿保险金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">责任保险是指以被保险人对第三者依法应负的赔偿责任为保险标的的保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十六条 </strong>责任保险的被保险人因给第三者造成损害的保险事故而被提起仲裁或者诉讼的，被保险人支付的仲裁或者诉讼费用以及其他必要的、合理的费用，除合同另有约定外，由保险人承担。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第三章 保险公司</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第六十七条</strong> 设立保险公司应当经国务院保险监督管理机构批准。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">国务院保险监督管理机构审查保险公司的设立申请时，应当考虑保险业的发展和公平竞争的需要。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第六十八条 设立保险公司应当具备下列条件：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）主要股东具有持续盈利能力，信誉良好，最近三年内无重大违法违规记录，净资产不低于人民币二亿元；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）有符合本法和《中华人民共和国公司法》规定的章程；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）有符合本法规定的注册资本；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）有具备任职专业知识和业务工作经验的董事、监事和高级管理人员；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）有健全的组织机构和管理制度；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）有符合要求的营业场所和与经营业务有关的其他设施；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）法律、行政法规和国务院保险监督管理机构规定的其他条件。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">第六十九条 设立保险公司，其注册资本的最低限额为人民币二亿元。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">国务院保险监督管理机构根据保险公司的业务范围、经营规模，可以调整其注册资本的最低限额，但不得低于本条第一款规定的限额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司的注册资本必须为实缴货币资本。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十条 </strong>申请设立保险公司，应当向国务院保险监督管理机构提出书面申请，并提交下列材料：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）设立申请书，申请书应当载明拟设立的保险公司的名称、注册资本、业务范围等；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）可行性研究报告；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）筹建方案；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）投资人的营业执照或者其他背景资料，经会计师事务所审计的上一年度财务会计报告；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）投资人认可的筹备组负责人和拟任董事长、经理名单及本人认可证明；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）国务院保险监督管理机构规定的其他材料。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十一条</strong> 国务院保险监督管理机构应当对设立保险公司的申请进行审查，自受理之日起六个月内作出批准或者不批准筹建的决定，并书面通知申请人。决定不批准的，应当书面说明理由。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十二条 </strong>申请人应当自收到批准筹建通知之日起一年内完成筹建工作；筹建期间不得从事保险经营活动。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十三条</strong> 筹建工作完成后，申请人具备本法第六十八条规定的设立条件的，可以向国务院保险监督管理机构提出开业申请。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">国务院保险监督管理机构应当自受理开业申请之日起六十日内，作出批准或者不批准开业的决定。决定批准的，颁发经营保险业务许可证；决定不批准的，应当书面通知申请人并说明理由。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十四条 </strong>保险公司在中华人民共和国境内设立分支机构，应当经保险监督管理机构批准。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司分支机构不具有法人资格，其民事责任由保险公司承担。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十五条 </strong>保险公司申请设立分支机构，应当向保险监督管理机构提出书面申请，并提交下列材料：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）设立申请书；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）拟设机构三年业务发展规划和市场分析材料；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）拟任高级管理人员的简历及相关证明材料；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）国务院保险监督管理机构规定的其他材料。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十六条 </strong>保险监督管理机构应当对保险公司设立分支机构的申请进行审查，自受理之日起六十日内作出批准或者不批准的决定。决定批准的，颁发分支机构经营保险业务许可证；决定不批准的，应当书面通知申请人并说明理由。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十七条</strong> 经批准设立的保险公司及其分支机构，凭经营保险业务许可证向工商行政管理机关办理登记，领取营业执照。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十八条</strong> 保险公司及其分支机构自取得经营保险业务许可证之日起六个月内，无正当理由未向工商行政管理机关办理登记的，其经营保险业务许可证失效。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第七十九条</strong> 保险公司在中华人民共和国境外设立子公司、分支机构，应当经国务院保险监督管理机构批准。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十条 </strong>外国保险机构在中华人民共和国境内设立代表机构，应当经国务院保险监督管理机构批准。代表机构不得从事保险经营活动。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十一条 </strong>保险公司的董事、监事和高级管理人员，应当品行良好，熟悉与保险相关的法律、行政法规，具有履行职责所需的经营管理能力，并在任职前取得保险监督管理机构核准的任职资格。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司高级管理人员的范围由国务院保险监督管理机构规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十二条 </strong>有《中华人民共和国公司法》第一百四十六条规定的情形或者下列情形之一的，不得担任保险公司的董事、监事、高级管理人员：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）因违法行为或者违纪行为被金融监督管理机构取消任职资格的金融机构的董事、监事、高级管理人员，自被取消任职资格之日起未逾五年的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）因违法行为或者违纪行为被吊销执业资格的律师、注册会计师或者资产评估机构、验证机构等机构的专业人员，自被吊销执业资格之日起未逾五年的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十三条 </strong>保险公司的董事、监事、高级管理人员执行公司职务时违反法律、行政法规或者公司章程的规定，给公司造成损失的，应当承担赔偿责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十四条 </strong>保险公司有下列情形之一的，应当经保险监督管理机构批准：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）变更名称；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）变更注册资本；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）变更公司或者分支机构的营业场所；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）撤销分支机构；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）公司分立或者合并；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）修改公司章程；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）变更出资额占有限责任公司资本总额百分之五以上的股东，或者变更持有股份有限公司股份百分之五以上的股东；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（八）国务院保险监督管理机构规定的其他情形。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十五条 </strong>保险公司应当聘用专业人员，建立精算报告制度和合规报告制度。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十六条 </strong>保险公司应当按照保险监督管理机构的规定，报送有关报告、报表、文件和资料。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司的偿付能力报告、财务会计报告、精算报告、合规报告及其他有关报告、报表、文件和资料必须如实记录保险业务事项，不得有虚假记载、误导性陈述和重大遗漏。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十七条 </strong>保险公司应当按照国务院保险监督管理机构的规定妥善保管业务经营活动的完整账簿、原始凭证和有关资料。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">前款规定的账簿、原始凭证和有关资料的保管期限，自保险合同终止之日起计算，保险期间在一年以下的不得少于五年，保险期间超过一年的不得少于十年。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十八条 </strong>保险公司聘请或者解聘会计师事务所、资产评估机构、资信评级机构等中介服务机构，应当向保险监督管理机构报告；解聘会计师事务所、资产评估机构、资信评级机构等中介服务机构，应当说明理由。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第八十九条</strong> 保险公司因分立、合并需要解散，或者股东会、股东大会决议解散，或者公司章程规定的解散事由出现，经国务院保险监督管理机构批准后解散。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">经营有人寿保险业务的保险公司，除因分立、合并或者被依法撤销外，不得解散。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司解散，应当依法成立清算组进行清算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十条 </strong>保险公司有《中华人民共和国企业破产法》第二条规定情形的，经国务院保险监督管理机构同意，保险公司或者其债权人可以依法向人民法院申请重整、和解或者破产清算；国务院保险监督管理机构也可以依法向人民法院申请对该保险公司进行重整或者破产清算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十一条 </strong>破产财产在优先清偿破产费用和共益债务后，按照下列顺序清偿：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）所欠职工工资和医疗、伤残补助、抚恤费用，所欠应当划入职工个人账户的基本养老保险、基本医疗保险费用，以及法律、行政法规规定应当支付给职工的补偿金；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）赔偿或者给付保险金；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）保险公司欠缴的除第（一）项规定以外的社会保险费用和所欠税款；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）普通破产债权。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">破产财产不足以清偿同一顺序的清偿要求的，按照比例分配。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">破产保险公司的董事、监事和高级管理人员的工资，按照该公司职工的平均工资计算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十二条</strong> 经营有人寿保险业务的保险公司被依法撤销或者被依法宣告破产的，其持有的人寿保险合同及责任准备金，必须转让给其他经营有人寿保险业务的保险公司；不能同其他保险公司达成转让协议的，由国务院保险监督管理机构指定经营有人寿保险业务的保险公司接受转让。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">转让或者由国务院保险监督管理机构指定接受转让前款规定的人寿保险合同及责任准备金的，应当维护被保险人、受益人的合法权益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十三条</strong> 保险公司依法终止其业务活动，应当注销其经营保险业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十四条</strong> 保险公司，除本法另有规定外，适用《中华人民共和国公司法》的规定。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第四章 保险经营规则</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十五条 </strong>保险公司的业务范围：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）人身保险业务，包括人寿保险、健康保险、意外伤害保险等保险业务；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）财产保险业务，包括财产损失保险、责任保险、信用保险、保证保险等保险业务；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）国务院保险监督管理机构批准的与保险有关的其他业务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险人不得兼营人身保险业务和财产保险业务。但是，经营财产保险业务的保险公司经国务院保险监督管理机构批准，可以经营短期健康保险业务和意外伤害保险业务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司应当在国务院保险监督管理机构依法批准的业务范围内从事保险经营活动。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十六条 </strong>经国务院保险监督管理机构批准，保险公司可以经营本法第九十五条规定的保险业务的下列再保险业务：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）分出保险；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）分入保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十七条</strong> 保险公司应当按照其注册资本总额的百分之二十提取保证金，存入国务院保险监督管理机构指定的银行，除公司清算时用于清偿债务外，不得动用。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十八条</strong> 保险公司应当根据保障被保险人利益、保证偿付能力的原则，提取各项责任准备金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司提取和结转责任准备金的具体办法，由国务院保险监督管理机构制定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第九十九条 </strong>保险公司应当依法提取公积金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百条 </strong>保险公司应当缴纳保险保障基金。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险保障基金应当集中管理，并在下列情形下统筹使用：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）在保险公司被撤销或者被宣告破产时，向投保人、被保险人或者受益人提供救济；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）在保险公司被撤销或者被宣告破产时，向依法接受其人寿保险合同的保险公司提供救济；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）国务院规定的其他情形。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险保障基金筹集、管理和使用的具体办法，由国务院制定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零一条 </strong>保险公司应当具有与其业务规模和风险程度相适应的最低偿付能力。保险公司的认可资产减去认可负债的差额不得低于国务院保险监督管理机构规定的数额；低于规定数额的，应当按照国务院保险监督管理机构的要求采取相应措施达到规定的数额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零二条 </strong>经营财产保险业务的保险公司当年自留保险费，不得超过其实有资本金加公积金总和的四倍。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零三条 </strong>保险公司对每一危险单位，即对一次保险事故可能造成的最大损失范围所承担的责任，不得超过其实有资本金加公积金总和的百分之十；超过的部分应当办理再保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司对危险单位的划分应当符合国务院保险监督管理机构的规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零四条 </strong>保险公司对危险单位的划分方法和巨灾风险安排方案，应当报国务院保险监督管理机构备案。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零五条 </strong>保险公司应当按照国务院保险监督管理机构的规定办理再保险，并审慎选择再保险接受人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零六条</strong> 保险公司的资金运用必须稳健，遵循安全性原则。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司的资金运用限于下列形式：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）银行存款；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）买卖债券、股票、证券投资基金份额等有价证券；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）投资不动产；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）国务院规定的其他资金运用形式。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司资金运用的具体管理办法，由国务院保险监督管理机构依照前两款的规定制定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零七条 </strong>经国务院保险监督管理机构会同国务院证券监督管理机构批准，保险公司可以设立保险资产管理公司。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险资产管理公司从事证券投资活动，应当遵守《中华人民共和国证券法》等法律、行政法规的规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险资产管理公司的管理办法，由国务院保险监督管理机构会同国务院有关部门制定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零八条 </strong>保险公司应当按照国务院保险监督管理机构的规定，建立对关联交易的管理和信息披露制度。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百零九条</strong> 保险公司的控股股东、实际控制人、董事、监事、高级管理人员不得利用关联交易损害公司的利益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十条 </strong>保险公司应当按照国务院保险监督管理机构的规定，真实、准确、完整地披露财务会计报告、风险管理状况、保险产品经营情况等重大事项。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十一条 </strong>保险公司从事保险销售的人员应当品行良好，具有保险销售所需的专业能力。保险销售人员的行为规范和管理办法，由国务院保险监督管理机构规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十二条</strong> 保险公司应当建立保险代理人登记管理制度，加强对保险代理人的培训和管理，不得唆使、诱导保险代理人进行违背诚信义务的活动。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十三条 </strong>保险公司及其分支机构应当依法使用经营保险业务许可证，不得转让、出租、出借经营保险业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十四条 </strong>保险公司应当按照国务院保险监督管理机构的规定，公平、合理拟订保险条款和保险费率，不得损害投保人、被保险人和受益人的合法权益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险公司应当按照合同约定和本法规定，及时履行赔偿或者给付保险金义务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十五条</strong> 保险公司开展业务，应当遵循公平竞争的原则，不得从事不正当竞争。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十六条</strong> 保险公司及其工作人员在保险业务活动中不得有下列行为：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）欺骗投保人、被保险人或者受益人；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）对投保人隐瞒与保险合同有关的重要情况；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）阻碍投保人履行本法规定的如实告知义务，或者诱导其不履行本法规定的如实告知义务；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）给予或者承诺给予投保人、被保险人、受益人保险合同约定以外的保险费回扣或者其他利益；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）拒不依法履行保险合同约定的赔偿或者给付保险金义务；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）故意编造未曾发生的保险事故、虚构保险合同或者故意夸大已经发生的保险事故的损失程度进行虚假理赔，骗取保险金或者牟取其他不正当利益；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）挪用、截留、侵占保险费；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（八）委托未取得合法资格的机构从事保险销售活动；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（九）利用开展保险业务为其他机构或者个人牟取不正当利益；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十）利用保险代理人、保险经纪人或者保险评估机构，从事以虚构保险中介业务或者编造退保等方式套取费用等违法活动；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十一）以捏造、散布虚假事实等方式损害竞争对手的商业信誉，或者以其他不正当竞争行为扰乱保险市场秩序；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十二）泄露在业务活动中知悉的投保人、被保险人的商业秘密；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十三）违反法律、行政法规和国务院保险监督管理机构规定的其他行为。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第五章 保险代理人和保险经纪人</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十七条</strong> 保险代理人是根据保险人的委托，向保险人收取佣金，并在保险人授权的范围内代为办理保险业务的机构或者个人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险代理机构包括专门从事保险代理业务的保险专业代理机构和兼营保险代理业务的保险兼业代理机构。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十八条 </strong>保险经纪人是基于投保人的利益，为投保人与保险人订立保险合同提供中介服务，并依法收取佣金的机构。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百一十九条</strong> 保险代理机构、保险经纪人应当具备国务院保险监督管理机构规定的条件，取得保险监督管理机构颁发的经营保险代理业务许可证、保险经纪业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十条</strong> 以公司形式设立保险专业代理机构、保险经纪人，其注册资本最低限额适用《中华人民共和国公司法》的规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">国务院保险监督管理机构根据保险专业代理机构、保险经纪人的业务范围和经营规模，可以调整其注册资本的最低限额，但不得低于《中华人民共和国公司法》规定的限额。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险专业代理机构、保险经纪人的注册资本或者出资额必须为实缴货币资本。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十一条 </strong>保险专业代理机构、保险经纪人的高级管理人员，应当品行良好，熟悉保险法律、行政法规，具有履行职责所需的经营管理能力，并在任职前取得保险监督管理机构核准的任职资格。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十二条 </strong>个人保险代理人、保险代理机构的代理从业人员、保险经纪人的经纪从业人员，应当品行良好，具有从事保险代理业务或者保险经纪业务所需的专业能力。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十三条 </strong>保险代理机构、保险经纪人应当有自己的经营场所，设立专门账簿记载保险代理业务、经纪业务的收支情况。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十四条 </strong>保险代理机构、保险经纪人应当按照国务院保险监督管理机构的规定缴存保证金或者投保职业责任保险。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十五条 </strong>个人保险代理人在代为办理人寿保险业务时，不得同时接受两个以上保险人的委托。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十六条 </strong>保险人委托保险代理人代为办理保险业务，应当与保险代理人签订委托代理协议，依法约定双方的权利和义务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十七条 </strong>保险代理人根据保险人的授权代为办理保险业务的行为，由保险人承担责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险代理人没有代理权、超越代理权或者代理权终止后以保险人名义订立合同，使投保人有理由相信其有代理权的，该代理行为有效。保险人可以依法追究越权的保险代理人的责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十八条 </strong>保险经纪人因过错给投保人、被保险人造成损失的，依法承担赔偿责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百二十九条 </strong>保险活动当事人可以委托保险公估机构等依法设立的独立评估机构或者具有相关专业知识的人员，对保险事故进行评估和鉴定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">接受委托对保险事故进行评估和鉴定的机构和人员，应当依法、独立、客观、公正地进行评估和鉴定，任何单位和个人不得干涉。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">前款规定的机构和人员，因故意或者过失给保险人或者被保险人造成损失的，依法承担赔偿责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十条 </strong>保险佣金只限于向保险代理人、保险经纪人支付，不得向其他人支付。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十一条 </strong>保险代理人、保险经纪人及其从业人员在办理保险业务活动中不得有下列行为：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）欺骗保险人、投保人、被保险人或者受益人；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）隐瞒与保险合同有关的重要情况；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）阻碍投保人履行本法规定的如实告知义务，或者诱导其不履行本法规定的如实告知义务；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）给予或者承诺给予投保人、被保险人或者受益人保险合同约定以外的利益；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）利用行政权力、职务或者职业便利以及其他不正当手段强迫、引诱或者限制投保人订立保险合同；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）伪造、擅自变更保险合同，或者为保险合同当事人提供虚假证明材料；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）挪用、截留、侵占保险费或者保险金；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（八）利用业务便利为其他机构或者个人牟取不正当利益；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（九）串通投保人、被保险人或者受益人，骗取保险金；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十）泄露在业务活动中知悉的保险人、投保人、被保险人的商业秘密。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十二条 </strong>本法第八十六条第一款、第一百一十三条的规定，适用于保险代理机构和保险经纪人。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第六章 保险业监督管理</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十三条</strong> 保险监督管理机构依照本法和国务院规定的职责，遵循依法、公开、公正的原则，对保险业实施监督管理，维护保险市场秩序，保护投保人、被保险人和受益人的合法权益。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十四条</strong> 国务院保险监督管理机构依照法律、行政法规制定并发布有关保险业监督管理的规章 。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十五条 </strong>关系社会公众利益的保险险种、依法实行强制保险的险种和新开发的人寿保险险种等的保险条款和保险费率，应当报国务院保险监督管理机构批准。国务院保险监督管理机构审批时，应当遵循保护社会公众利益和防止不正当竞争的原则。其他保险险种的保险条款和保险费率，应当报保险监督管理机构备案。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险条款和保险费率审批、备案的具体办法，由国务院保险监督管理机构依照前款规定制定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十六条</strong> 保险公司使用的保险条款和保险费率违反法律、行政法规或者国务院保险监督管理机构的有关规定的，由保险监督管理机构责令停止使用，限期修改；情节 严重的，可以在一定期限内禁止申报新的保险条 款和保险费率。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十七条 </strong>国务院保险监督管理机构应当建立健全保险公司偿付能力监管体系，对保险公司的偿付能力实施监控。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十八条 </strong>对偿付能力不足的保险公司，国务院保险监督管理机构应当将其列为重点监管对象，并可以根据具体情况采取下列措施：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）责令增加资本金、办理再保险；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）限制业务范围；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）限制向股东分红；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）限制固定资产购置或者经营费用规模；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）限制资金运用的形式、比例；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）限制增设分支机构；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）责令拍卖不良资产、转让保险业务；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（八）限制董事、监事、高级管理人员的薪酬水平；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（九）限制商业性广告；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（十）责令停止接受新业务。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百三十九条 </strong>保险公司未依照本法规定提取或者结转各项责任准备金，或者未依照本法规定办理再保险，或者严重违反本法关于资金运用的规定的，由保险监督管理机构责令限期改正，并可以责令调整负责人及有关管理人员。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十条 </strong>保险监督管理机构依照本法第一百三十九条的规定作出限期改正的决定后，保险公司逾期未改正的，国务院保险监督管理机构可以决定选派保险专业人员和指定该保险公司的有关人员组成整顿组，对公司进行整顿。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">整顿决定应当载明被整顿公司的名称、整顿理由、整顿组成员和整顿期限，并予以公告。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十一条 </strong>整顿组有权监督被整顿保险公司的日常业务。被整顿公司的负责人及有关管理人员应当在整顿组的监督下行使职权。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十二条 </strong>整顿过程中，被整顿保险公司的原有业务继续进行。但是，国务院保险监督管理机构可以责令被整顿公司停止部分原有业务、停止接受新业务，调整资金运用。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十三条</strong> 被整顿保险公司经整顿已纠正其违反本法规定的行为，恢复正常经营状况的，由整顿组提出报告，经国务院保险监督管理机构批准，结束整顿，并由国务院保险监督管理机构予以公告。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十四条</strong> 保险公司有下列情形之一的，国务院保险监督管理机构可以对其实行接管：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）公司的偿付能力严重不足的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）违反本法规定，损害社会公共利益，可能严重危及或者已经严重危及公司的偿付能力的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">被接管的保险公司的债权债务关系不因接管而变化。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十五条 </strong>接管组的组成和接管的实施办法，由国务院保险监督管理机构决定，并予以公告。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十六条 </strong>接管期限届满，国务院保险监督管理机构可以决定延长接管期限，但接管期限最长不得超过二年。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十七条 </strong>接管期限届满，被接管的保险公司已恢复正常经营能力的，由国务院保险监督管理机构决定终止接管，并予以公告。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十八条 </strong>被整顿、被接管的保险公司有《中华人民共和国企业破产法》第二条规定情形的，国务院保险监督管理机构可以依法向人民法院申请对该保险公司进行重整或者破产清算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百四十九条</strong> 保险公司因违法经营被依法吊销经营保险业务许可证的，或者偿付能力低于国务院保险监督管理机构规定标准，不予撤销将严重危害保险市场秩序、损害公共利益的，由国务院保险监督管理机构予以撤销并公告，依法及时组织清算组进行清算。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十条</strong> 国务院保险监督管理机构有权要求保险公司股东、实际控制人在指定的期限内提供有关信息和资料。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十一条</strong> 保险公司的股东利用关联交易严重损害公司利益，危及公司偿付能力的，由国务院保险监督管理机构责令改正。在按照要求改正前，国务院保险监督管理机构可以限制其股东权利；拒不改正的，可以责令其转让所持的保险公司股权。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十二条 </strong>保险监督管理机构根据履行监督管理职责的需要，可以与保险公司董事、监事和高级管理人员进行监督管理谈话，要求其就公司的业务活动和风险管理的重大事项作出说明。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十三条</strong> 保险公司在整顿、接管、撤销清算期间，或者出现重大风险时，国务院保险监督管理机构可以对该公司直接负责的董事、监事、高级管理人员和其他直接责任人员采取以下措施：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）通知出境管理机关依法阻止其出境；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）申请司法机关禁止其转移、转让或者以其他方式处分财产，或者在财产上设定其他权利。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十四条 </strong>保险监督管理机构依法履行职责，可以采取下列措施：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）对保险公司、保险代理人、保险经纪人、保险资产管理公司、外国保险机构的代表机构进行现场检查；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）进入涉嫌违法行为发生场所调查取证；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）询问当事人及与被调查事件有关的单位和个人，要求其对与被调查事件有关的事项作出说明；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）查阅、复制与被调查事件有关的财产权登记等资料；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）查阅、复制保险公司、保险代理人、保险经纪人、保险资产管理公司、外国保险机构的代表机构以及与被调查事件有关的单位和个人的财务会计资料及其他相关文件和资料；对可能被转移、隐匿或者毁损的文件和资料予以封存；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）查询涉嫌违法经营的保险公司、保险代理人、保险经纪人、保险资产管理公司、外国保险机构的代表机构以及与涉嫌违法事项有关的单位和个人的银行账户；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）对有证据证明已经或者可能转移、隐匿违法资金等涉案财产或者隐匿、伪造、毁损重要证据的，经保险监督管理机构主要负责人批准，申请人民法院予以冻结或者查封。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险监督管理机构采取前款第（一）项、第（二）项、第（五）项措施的，应当经保险监督管理机构负责人批准；采取第（六）项措施的，应当经国务院保险监督管理机构负责人批准。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险监督管理机构依法进行监督检查或者调查，其监督检查、调查的人员不得少于二人，并应当出示合法证件和监督检查、调查通知书；监督检查、调查的人员少于二人或者未出示合法证件和监督检查、调查通知书的，被检查、调查的单位和个人有权拒绝。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十五条</strong> 保险监督管理机构依法履行职责，被检查、调查的单位和个人应当配合。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十六条 </strong>保险监督管理机构工作人员应当忠于职守，依法办事，公正廉洁，不得利用职务便利牟取不正当利益，不得泄露所知悉的有关单位和个人的商业秘密。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十七条 </strong>国务院保险监督管理机构应当与中国人民银行、国务院其他金融监督管理机构建立监督管理信息共享机制。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险监督管理机构依法履行职责，进行监督检查、调查时，有关部门应当予以配合。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第七章 法律责任</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十八条</strong> 违反本法规定，擅自设立保险公司、保险资产管理公司或者非法经营商业保险业务的，由保险监督管理机构予以取缔，没收违法所得，并处违法所得一倍以上五倍以下的罚款；没有违法所得或者违法所得不足二十万元的，处二十万元以上一百万元以下的罚款。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百五十九条 </strong>违反本法规定，擅自设立保险专业代理机构、保险经纪人，或者未取得经营保险代理业务许可证、保险经纪业务许可证从事保险代理业务、保险经纪业务的，由保险监督管理机构予以取缔，没收违法所得，并处违法所得一倍以上五倍以下的罚款；没有违法所得或者违法所得不足五万元的，处五万元以上三十万元以下的罚款。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十条 </strong>保险公司违反本法规定，超出批准的业务范围经营的，由保险监督管理机构责令限期改正，没收违法所得，并处违法所得一倍以上五倍以下的罚款；没有违法所得或者违法所得不足十万元的，处十万元以上五十万元以下的罚款。逾期不改正或者造成严重后果的，责令停业整顿或者吊销业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十一条 </strong>保险公司有本法第一百一十六条规定行为之一的，由保险监督管理机构责令改正，处五万元以上三十万元以下的罚款；情节 严重的，限制其业务范围、责令停止接受新业务或者吊销业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十二条 </strong>保险公司违反本法第八十四条规定的，由保险监督管理机构责令改正，处一万元以上十万元以下的罚款。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十三条 </strong>保险公司违反本法规定，有下列行为之一的，由保险监督管理机构责令改正，处五万元以上三十万元以下的罚款：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">一)超额承保，情节严重的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">二)为无民事行为能力人承保以死亡为给付保险金条件的保险的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十四条 </strong>违反本法规定，有下列行为之一的，由保险监督管理机构责令改正，处五万元以上三十万元以下的罚款；情节严重的，可以限制其业务范围、责令停止接受新业务或者吊销业务许可证：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）未按照规定提存保证金或者违反规定动用保证金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）未按照规定提取或者结转各项责任准备金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）未按照规定缴纳保险保障基金或者提取公积金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（四）未按照规定办理再保险的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（五）未按照规定运用保险公司资金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（六）未经批准设立分支机构的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（七）未按照规定申请批准保险条款、保险费率的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十五条 </strong>保险代理机构、保险经纪人有本法第一百三十一条规定行为之一的，由保险监督管理机构责令改正，处五万元以上三十万元以下的罚款；情节严重的，吊销业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十六条</strong> 保险代理机构、保险经纪人违反本法规定，有下列行为之一的，由保险监督管理机构责令改正，处二万元以上十万元以下的罚款；情节严重的，责令停业整顿或者吊销业务许可证：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">一)未按照规定缴存保证金或者投保职业责任保险的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">二)未按照规定设立专门账簿记载业务收支情况的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十七条</strong> 违反本法规定，聘任不具有任职资格的人员的，由保险监督管理机构责令改正，处二万元以上十万元以下的罚款。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十八条</strong> 违反本法规定，转让、出租、出借业务许可证的，由保险监督管理机构处一万元以上十万元以下的罚款；情节严重的，责令停业整顿或者吊销业务许可证。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百六十九条</strong> 违反本法规定，有下列行为之一的，由保险监督管理机构责令限期改正；逾期不改正的，处一万元以上十万元以下的罚款：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">一)未按照规定报送或者保管报告、报表、文件、资料的，或者未按照规定提供有关信息、资料的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">二)未按照规定报送保险条款、保险费率备案的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">三)未按照规定披露信息的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十条 </strong>违反本法规定，有下列行为之一的，由保险监督管理机构责令改正，处十万元以上五十万元以下的罚款；情节严重的，可以限制其业务范围、责令停止接受新业务或者吊销业务许可证：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">一)编制或者提供虚假的报告、报表、文件、资料的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">二)拒绝或者妨碍依法监督检查的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">三)未按照规定使用经批准或者备案的保险条款、保险费率的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十一条 </strong>保险公司、保险资产管理公司、保险专业代理机构、保险经纪人违反本法规定的，保险监督管理机构除分别依照本法第一百六十条至第一百七十条的规定对该单位给予处罚外，对其直接负责的主管人员和其他直接责任人员给予警告，并处一万元以上十万元以下的罚款；情节严重的，撤销任职资格。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十二条 </strong>个人保险代理人违反本法规定的，由保险监督管理机构给予警告，可以并处二万元以下的罚款；情节严重的，处二万元以上十万元以下的罚款。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十三条 </strong>外国保险机构未经国务院保险监督管理机构批准，擅自在中华人民共和国境内设立代表机构的，由国务院保险监督管理机构予以取缔，处五万元以上三十万元以下的罚款。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">外国保险机构在中华人民共和国境内设立的代表机构从事保险经营活动的，由保险监督管理机构责令改正，没收违法所得，并处违法所得一倍以上五倍以下的罚款；没有违法所得或者违法所得不足二十万元的，处二十万元以上一百万元以下的罚款；对其首席代表可以责令撤换；情节严重的，撤销其代表机构。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十四条</strong> 投保人、被保险人或者受益人有下列行为之一，进行保险诈骗活动，尚不构成犯罪的，依法给予行政处罚：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（一）投保人故意虚构保险标的，骗取保险金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（二）编造未曾发生的保险事故，或者编造虚假的事故原因或者夸大损失程度，骗取保险金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">（三）故意造成保险事故，骗取保险金的。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险事故的鉴定人、评估人、证明人故意提供虚假的证明文件，为投保人、被保险人或者受益人进行保险诈骗提供条件的，依照前款规定给予处罚。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十五条 </strong>违反本法规定，给他人造成损害的，依法承担民事责任。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十六条 </strong>拒绝、阻碍保险监督管理机构及其工作人员依法行使监督检查、调查职权，未使用暴力、威胁方法的，依法给予治安管理处罚。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十七条 </strong>违反法律、行政法规的规定，情节严重的，国务院保险监督管理机构可以禁止有关责任人员一定期限直至终身进入保险业。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十八条</strong> 保险监督管理机构从事监督管理工作的人员有下列情形之一的，依法给予处分：</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">一)违反规定批准机构的设立的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">二)违反规定进行保险条款、保险费率审批的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">三)违反规定进行现场检查的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">四)违反规定查询账户或者冻结资金的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">五)泄露其知悉的有关单位和个人的商业秘密的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">六)违反规定实施行政处罚的；</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">(</span><span style="color:#333333;">七)滥用职权、玩忽职守的其他行为。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百七十九条 </strong>违反本法规定，构成犯罪的，依法追究刑事责任。</span></p><p style="text-align:center;"><span style="background-color:#ffffff;color:#333333;">第八章 附则</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百八十条 </strong>保险公司应当加入保险行业协会。保险代理人、保险经纪人、保险公估机构可以加入保险行业协会。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">保险行业协会是保险业的自律性组织，是社会团体法人。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百八十一条</strong> 保险公司以外的其他依法设立的保险组织经营的商业保险业务，适用本法。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百八十二条</strong> 海上保险适用《中华人民共和国海商法》的有关规定；《中华人民共和国海商法》未规定的，适用本法的有关规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百八十三条</strong> 中外合资保险公司、外资独资保险公司、外国保险公司分公司适用本法规定；法律、行政法规另有规定的，适用其规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百八十四条 </strong>国家支持发展为农业生产服务的保险事业。农业保险由法律、行政法规另行规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;">强制保险，法律、行政法规另有规定的，适用其规定。</span></p><p style="text-align:justify;"><span style="background-color:#ffffff;color:#333333;"><strong>第一百八十五条 </strong>本法自2009</span><span style="color:#333333;">年10月1日起施行。</span></p><p><br>&nbsp;</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:27:27	2024-10-14 07:27:27
-15	\N	\N	\N	法人机构部门设置	\N	fa-ren-ji-gou-bu-men-she-zhi-670cc6623a4dc465342708.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:21:05	2024-10-14 07:21:06
-14	\N	\N	\N	机构组织架构图	\N	ji-gou-zu-zhi-jia-gou-tu-670cc6414261a466377619.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:20:32	2024-10-14 07:20:33
 1	\N	\N	\N	网点分布	\N	map-670e812b772e2401479077.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:46:56	2024-10-15 14:50:19
 5	\N	\N	\N	湖北大同保险经纪有限公司2020年度工作总结暨2021年度工作会	<figure class="image"><img style="aspect-ratio:1440/1080;" src="/images/670cc0c42a747-微信图片_20210409144516.jpg" width="1440" height="1080"></figure><figure class="image"><img style="aspect-ratio:1440/1080;" src="/images/670cc0ceddf44-微信图片_20210409144452.jpg" width="1440" height="1080"></figure>	1-670e929eabd2c138511670.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:57:24	2024-10-15 16:04:46
 6	\N	\N	\N	2021.12.14信息系统培训	<figure class="image"><img style="aspect-ratio:1705/1279;" src="/images/670cc0f9d2d5d-微信图片_20211217162019.jpg" width="1705" height="1279"></figure><figure class="image"><img style="aspect-ratio:1705/1279;" src="/images/670cc0f9ec62a-微信图片_20211217162013.jpg" width="1705" height="1279"></figure>	1-670e92b49e673663661422.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:58:11	2024-10-15 16:05:08
@@ -838,14 +826,17 @@ COPY public.node (id, language_id, category_id, parent_id, title, body, image, s
 8	\N	\N	\N	大同经纪召开2019 年一季度工作暨合规经营培训会议	<figure class="image"><img style="aspect-ratio:1920/1080;" src="/images/670cc37de46fb-微信图片_20190313164317.jpg" width="1920" height="1080"></figure><figure class="image"><img style="aspect-ratio:2386/1080;" src="/images/670cc37e087e8-微信图片_20190313162219.jpg" width="2386" height="1080"></figure><p>3 月 6 日，湖北大同保险经纪有限公司2019 年一季度工作暨合规经营培训会在武汉总部会议室召开。大同经纪执行董事兼总经理刘波、副总经理陈寅尧、副总经理兼武汉分公司总经理罗瑄、省内各分支机构负责人和负责行政业务内勤工作同志，以及总部全体员工等 50 余人参加会议，会议由副总经理陈寅尧主持。&nbsp;</p><p>首先，刘波总对 2019 年公司的发展思路和目标任务作阐述与分解，并代表公司与 24 个机构负责人签署年度经营目标责任书。</p><p>&nbsp;随后，陈寅尧副总经理、财务部廖纪求经理、人力部陈艳萍经理、行政部罗兰主管分别就公司业务、财务、人力和行政管理规范进行了为期一天的授课。这次会议是公司对门店布局战略调整以来最大规模的一次工作会，对照2014 年重组后五年发展历程的背景，具有重要意义。</p><p>“以行业风险管理为立司之基，一主两辅，一地一特色”、“长线谋发展，短线作补充，以短辅长”，自2016年以来的公司发展战略调整初见成效！尤其是在2018 年，通过公司上下齐心共同奋斗，行业风险管理方面实现了医疗调解与医责险拓展的协同模式多地成功复制，燃气、机场等项目开花结实并具规模，通过“寻找同路人”成功牵手省内外多个在寿险、车险和项目方面各有擅长的优秀业务团队，充实和组建了多家分支机构，实现了机构、人员和业务总量同步快速发展！当前，我们最迫切任务是如何抓住公司当前有利发展形势，将新老员工的思想统一起来，积极性调动起来，各项优势资源整合起来。</p><p><strong>刘波总指出这次工作会的目的：一是整合共有资源，支持所有机构共同健康发展；二是鼓舞士气，开好局，稳中求进。</strong>简化成 12 个字就是“立规矩、找朋友、共携手、再发展”。</p><p>今年初，集团工作会议对大同经纪未予指定具体的年度目标任务，正是对我司目前探索经纪人的多险种齐头并进、相互支撑、互学致用的发展模式予以呵护和信任。实际情况也是如此！有别于其他保险经纪公司，或者股东业务为主，或者仅车险、寿险、行业险某一专业方向的发展模式，大同经纪通过培育和引进，涌现出多家在各自专攻方向颇具建树的机构，也使得我们有机会尝试综合性保险经纪公司的发展路子。同时我们也注意到，由于业务多元使得公司管理复杂性的增加，甚至不啻于一家中型保险公司，对于大同经纪一家基础员工尚不满百的公司具有极大挑战。&nbsp;</p><p>大同经纪的发展历经曲折，大好局面来之不易，更加懂得掌控复杂局面、把握良好机遇的重要。尽管有难度，但职责所在，不容回避！任何创新惟有大胆尝试、小心求证下才能闯出一片天地，因此，对这次下达的经营目标任务，公司管理层是经历了较长时间的酝酿，本着客观、科学的原则，对各机构业务形态特点和历年数据仔细推敲而制订的。签署目标责任书，就是要明确年度目标任务和行动方向。在前进的路上，通过科学管 3 理、优化调配，业务领先机构贡献利润帮助后发阶段的机构，成长阶段的机构贡献业务规模，实现共同健康发展！</p><p>2019 年，公司总体经营目标是保费2 亿元，佣金6千万，毛利 4 百万，机构数量从 24 家增长至30 家。经营管理上从此前的“自主经营，养活自己”，转向“提升业务质量，提高管理水平，落实奖惩机制”。有省内机构的共同参与，有省外机构的助力，我们有足够的信心全面实现公司各项年度目标。</p><p>“公司是大家施展才华的事业平台，做工作既要目光高远，又要脚踏实地” ，刘波总对与会同志提出如下要求：</p><p>一、定好位&nbsp;</p><p>作为一个职业保险经纪人，首先我们要知道自己是干什么的！我们不是保险公司的业务员，也不是代理公司的销售员，我们不推销保险，也不卖保险，我们是风险管理师。虽然常常落地在保险上，但那只是风险管理过程中化解、转移风险损失的重要手段。所以，我们在日常工作中一定要给自己定好位，特别是在跟客户打交道的时候，始终把客户的利益放在首位，一切以客户需求为中心，依法合规提供差异性的贴心服务。只有这样，才能展示我们的专业性，才能区别于专业代理公司和保险公司，才能与客户建立割不断的联系，成人达己，实现公司业务可持续发展。&nbsp;</p><p>二、谋好事&nbsp;</p><p>首先要加强学习，自己首先要懂，开展业务才能够专业。做好事、做对事，不要一味地追求利益，却砸了牌子。找好载体，做一些差异性的服务，提升客户信任度，增强客户粘性。也就是，“嘴要专（业）、腿要勤、找准点、会讲故事”。 4三、守住线&nbsp;</p><p>业务、财务、人事、行政等内控工作是公司正常运转的基础，如果说经营业绩如鲜花果实，运营内控工作则如根茎，默默支撑和保证大树的枝繁叶茂。2018 年，通过保监部门的外部检查，暴露出我们过去管理工作的严重不足，值得深刻反省。放长眼光看，在银保监合并后强监管的大环境下，也是促进我司苦练内功、实现长远发展的一个契机。守住线，就是要守住合规经营这条底线！&nbsp;</p><p>四、再发展</p><p>&nbsp;5 年来，公司在实践中不断修正发展方向，也希望各机构因地制宜谋划好自己的一亩三分地。借助兄弟公司的成功经验，有条件的可以复制，没条件的可以拓展思路，找准行业风险点，开疆辟土，谋划一片新天地。总而言之，所有东西不要照搬照靠，都要有差异性的地方特色，只有这样不断创新提升，公司发展才能集聚新的生产力，实现长远发展。</p>	1-670e9318cd3d0968065393.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:07:44	2024-10-15 16:06:48
 13	\N	\N	\N	营业执照	\N	license-1-670e9c23296c6416661799.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:19:10	2024-10-15 16:45:23
 21	\N	\N	\N	法律法规 （链接网址）	<ol><li><strong>中华人民共和国保险法：</strong>http://www.cbirc.gov.cn/cn/view/pages/governmentDetail.html?docId=879931&amp;itemId=860&amp;generaltype=0</li><li><strong>保险经纪人监管规定：</strong>http://www.cbirc.gov.cn/cn/view/pages/ItemDetail.html?docId=372937&amp;itemId=928&amp;generaltype=0</li><li><strong>互联网保险业务监管办法：</strong> http://www.cbirc.gov.cn/cn/view/pages/governmentDetail.html?docId=949137&amp;itemId=861&amp;generaltype=1</li><li><strong>银行保险机构许可证管理办法：</strong>http://www.cbirc.gov.cn/cn/view/pages/rulesDetail.html?docId=981958&amp;itemId=4214&amp;generaltype=1</li><li><strong>保险中介行政许可及备案实施办法：</strong>http://www.cbirc.gov.cn/cn/view/pages/rulesDetail.html?docId=1016457&amp;itemId=4214&amp;generaltype=1</li><li><strong>银行保险机构消费者权益保护管理办法：</strong>http://www.cbirc.gov.cn/cn/view/pages/rulesDetail.html?docId=1087524&amp;itemId=4214&amp;generaltype=1</li><li><strong>人身保险业务基本服务规定：</strong>http://www.cbirc.gov.cn/cn/view/pages/ItemDetail.html?docId=372817&amp;itemId=928&amp;generaltype=0</li><li><strong>保险销售行为管理办法：</strong>http://www.cbirc.gov.cn/cn/view/pages/ItemDetail.html?docId=1129945&amp;itemId=928&amp;generaltype=0</li><li><strong>中国银保监会办公厅关于发展独立个人保险代理人有关事项的通知：</strong>http://www.cbirc.gov.cn/cn/view/pages/governmentDetail.html?docId=953491&amp;itemId=861&amp;generaltype=1</li><li><strong>中国银保监会办公厅关于印发《保险中介机构信息化工作监管办法》的通知：</strong>http://www.cbirc.gov.cn/cn/view/pages/governmentDetail.html?docId=958343&amp;itemId=861&amp;generaltype=1</li><li><strong>中国银保监会办公厅关于切实加强保险专业中介机构从业人员管理的通知：</strong>http://www.cbirc.gov.cn/cn/view/pages/governmentDetail.html?docId=904814&amp;itemId=861&amp;generaltype=1</li><li>关于上线新版执业登记系统更加规范从业人员执业管理有关事项的通知:</li><li>中国银保监会办公厅关于开展保险机构销售人员互联网营销宣传合规性自查整改工作的通知</li><li>中国保监会关于保险中介从业人员管理有关问题的通知</li></ol>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:28:16	2024-10-14 07:28:16
+2	\N	\N	\N	请走进湖北大同保险经纪	<p style="text-align:justify;">怀抱“经世济民，天下大同”的美好愿景，十九年前的那个春天，大同经纪在荆楚大地播下了希望的种子。十九年后的今天，历经楚风汉雨的滋润和洗礼，大同经纪凤凰涅槃，在精彩的绽放中实现了华丽转身，在林林总总的保险中介机构中，独树一帜，引领风潮。</p><p style="text-align:justify;">作为湖北地区注册的保险经纪一级法人机构，经过十九年的探索、传承和丰富发展，大同经纪已经形成了风险管理、风险转移、损失善后等诸多保险经纪服务的成熟经营模式。选择大同，牵手大同，无疑是智者的首选。因为，相比于同业，大同经纪至少具有六大显著优势：</p><p style="text-align:justify;"><strong>一是资本实力优势。</strong>大同经纪注册资本金5000万元。控股股东联想控股集团创办于1984年，2012年综合营业额2266亿元，总资产1872亿元，是世界500强企业。联保投资集团是全产业链的大型金融保险服务集团，注册资本金1.2亿元，是国家保监会第一批批准筹建的五家保险中介集团之一。</p><p style="text-align:justify;"><strong>二是理论技术优势。</strong>雄厚的经济实力支撑和推动了深入的理论研究。在教育、医疗卫生、环境保护等领域的风险管理研究方面纂写了13个行业的风险管理报告，拥有同业公司无法企及的理论水平和技术实力。</p><p style="text-align:justify;"><strong>三是类似项目经验优势。</strong>大同经纪积极参与湖北省教育、医疗、环保等行业风险管理服务方面的研究与实践，在诸多行业建立并完善了“政府推动、政策引导、多方参与、市场运作”的行业风险管理服务体系，<strong>迄今已与湖北省内17个县市行业行政主管部门，以及67家企业或行业协会、163个居民社区签订风险管理服务协议。</strong></p><p style="text-align:justify;">2022年公司实现保险经纪保费5.5亿元，实现营收1.23亿元，在全国同业排名第33名。公司响应“保险新国十条”精神，着手保险之于社会治理重要功能，积极参与医疗、民政、教育、环境等行业风险管理。尤其是在咸宁、十堰、荆州多地通过“保险+调解”参与推动医疗纠纷第三方人民调解，以保险作为风险转移工具，真正实现了“群众满意、政府省心、社会和谐”，得到社会各方的肯定。在此基础上，迅速扩展到交通、校园纠纷调解和风险管理服务。此外公司还致力于涉及国计民生的重大建设项目和法人客户业务开发，近三年已为包括中建三局、中国燃气、东风集团、湖南高速等大型企业或项目提供保险经纪服务。</p><p style="text-align:justify;">大同经纪对行业风险管理服务体系建设有着自己独特的推广方式和管理经验，并集合了一大批有经验的保险经纪和风险管理专业人员。</p><p style="text-align:justify;"><strong>四是总部区位优势。大同经纪成立于2004年5月，是湖北地区第一家获批的全国性保险经纪公司。</strong>湖北省人民政府金融办为公司的设立专门发文督办支持并寄予厚望，武汉市政府及省保监局对公司的设立也给予了大力支持和高度关注。湖北大同总部位于武汉，相对于同业，其决策程序高效，服务速度快捷，资源倾斜力度有保证，本地公共关系紧密，突发事件应对能力强的优势非常明显。</p><p style="text-align:justify;"><strong>五是机构网络优势。</strong>2014年，大同经纪资产重组后，在省政府及各职能部门的全力支持下，高点起步，快速布局，在全省各市州设立了分支机构，形成了在全省范围内通行达业、通城达镇、通乡达村、通街达巷的城乡经纪服务网络。目前，公司机构已根植湖北走向全国：下辖28家机构，其中湖北省内分公司18家，省外分公司6家，省内营业部 4 家。&nbsp;</p><p style="text-align:justify;"><strong>六是服务能力优势。</strong>建设行业风险管理服务体系，既是一项功在千秋的利民工程，又是一项社会涉及面广的科学系统工程。唯有同时具备理论研究能力、合作协调能力、风险管理能力和服务基层能力的现代企业方能肩负起这样的历史使命。大同经纪在风险识别、风险估测、风险评价、风险控制、风险管理和风险转移等环节展示过自己的思想理念、专业能力与风采。</p><p style="text-align:justify;">公司与湖北当地34家省级保险公司签订合作协议，并与多家保险公司完成了系统与网络的对接，是为数不多实现与保险公司网络数据互联互通、相互对接的经纪公司，也是湖北地区合作伙伴最为广泛的保险经纪公司。</p><p style="text-align:justify;"><strong>我公司的业务范围是为投保人拟定投保方案、选择保险人、办理投保手续；协助被保险人进行索赔；为委托人提供防灾、防损或风险评估、风险管理咨询服务等。</strong></p><p style="text-align:justify;">雄厚的资本实力，领先的理论研究水平、类似的项目经营经验、独特的总部区位优势、健全的机构服务网络、强大的风险服务能力成就了不同凡响的大同经纪。在各级政府部门的支持下，大同经纪正在纵深推进以教育、医疗、环保等为主体的行业风险管理服务体系建设，以最大限度的努力帮助各级政府和职能部门扭转“风险分散管理、责任集中承担”的不利局面，进而建立“风险集中管理、责任分散承担”的科学管理体系。分担医疗风险，大同经纪有责。我们将勇于担当，创新进取，以最快速度、最强技术支持、最贴近的服务方式、最极致的医疗风险管理服务体验，为湖北、为郧阳的和谐稳定和经济繁荣作出积极的贡献。</p><p style="text-align:justify;">感谢您的支持，祝您工作顺利！</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:51:00	2024-10-14 06:51:00
 22	\N	\N	\N	中国保险监督管理委员会文件	<p style="text-align:center;"><strong>中国保监会关于保险中介从业人员管理 有关问题的通知&nbsp;</strong></p><p>各保监局，中国保险行业协会，各保险公司，各保险中介机构：&nbsp;</p><p>2015 年 4 月 24 日，全国人民代表大会常务委员会第十四次会 议对《中华人民共和国保险法》部分条款作出了修改，取消了保 险销售（含保险代理）、保险经纪从业人员资格核准审批事项。为 确保新旧制度平稳过度，现将有关事项通知如下：&nbsp;</p><p>一、各保监局不得受理保险销售（含保险代理）、保险经纪从 业人员资格核准审批事项，并依法妥善做好后续工作。</p><p>&nbsp;二、根据《国务院审改办关于严肃纪律巩固行政审批制度改 革成果的通知》（审改办发〔2015〕2 号）相关要求，我会决定废 止《关于保险公估从业人员资格考试有关工作的通知》（保监中 介〔2014〕74 号），不再委托中国保险行业协会组织保险公估从 中国保险监督管理委员会文件 保监中介〔2015〕139 号 - 2 - 业人员资格考试，请各相关单位依法妥善做好后续工作。&nbsp;</p><p>三、保险中介从业人员执业前，所属公司应当为其在中国保 监会保险中介监管信息系统进行执业登记，资格证书不作为执业 登记管理的必要条件。&nbsp;</p><p>四、保险公司、保险中介机构应当按照修改后的保险法第 111 条和第 122 条规定，规范从业人员准入管理，认真对从业人员 进行甄选，加强专业培训，确保从业人员品行良好，具有相应的 专业能力。&nbsp;</p><p>五、保监局要认真督促辖内保险公司和保险中介机构严把准 入关，加强风险监控。对于把关不严，造成客户投诉率、保单退 保率等风险指标异常的机构，保监局应采取相关监管措施。 请各保监局将本通知内容及时转至辖内各有关单位，切实贯 彻保险中介从业人员资格核准审批制度改革工作，在放开前端的 同时，严格管控后端，做到无缝对接。中国保监会将尽快制定完 善保险中介从业人员相关管理制度,具体事项另行通知。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 07:42:10	2024-10-14 07:42:10
 3	\N	\N	\N	大同经纪2022年度经营分析暨2023年度工作会议纪要	<figure class="image"><img style="aspect-ratio:1706/1280;" src="/images/670cbfff5fc71-微信图片_20230228143423.jpg" width="1706" height="1280"></figure><figure class="image"><img style="aspect-ratio:1706/1280;" src="/images/670cc00d780b8-石峰.jpg" width="1706" height="1280"></figure><p><span style="color:#000000;">2023</span>年2<span style="color:#000000;">月23日湖北大同保险经纪有限公司在咸宁召开“湖北大同保险经纪2022</span>年度经营分析暨2023年度工作会议<span style="color:#000000;">”。会议中，公司领导对2022</span>年度的经营情况进行了详细的分析和总结，指出了公司在<span style="color:#000000;">业务发展、客户服务、机构建设等方面取得的成绩和经验，并对存在的问题和不足提出了改进措施。同时，公司领导还对2023</span>年的工作进行了规划和部署，明确了公司的发展目标和重点工作，提出了具体的实施方案和工作要求。<span style="color:#000000;">总部领导、各分公司、直属营业部负责人及总部全体员工参加了会议。刘</span>纯德首席督导也亲临会场，并作了重要讲话。&nbsp;</p>	670cbfff5fc71-wei-xin-tu-pian-20230228143423-670e9264a0486712897950.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-14 06:52:56	2024-10-15 16:03:48
-23	\N	\N	\N	保险中介许可证	\N	license-2-670e9c31ad755107504754.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-15 16:45:37	2024-10-15 16:45:37
+24	\N	\N	\N	保险中介许可证	\N	wechatimg196-671f3e29385a8887108471.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-16 07:05:16	2024-10-28 07:32:57
+25	\N	\N	\N	法人治理结构	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-29 01:19:40	2024-10-29 01:19:40
+26	\N	\N	\N	组织结构	\N	zu-zhi-jie-gou-6720384876ea3271212078.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-10-29 01:20:08	2024-10-29 01:20:08
 \.
 
 
 --
--- Data for Name: node_region; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: node_region; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.node_region (node_id, region_id) FROM stdin;
@@ -862,8 +853,6 @@ COPY public.node_region (node_id, region_id) FROM stdin;
 11	4
 12	4
 13	5
-14	3
-15	3
 16	6
 17	6
 18	6
@@ -871,12 +860,14 @@ COPY public.node_region (node_id, region_id) FROM stdin;
 20	6
 21	6
 22	6
-23	5
+24	5
+25	12
+26	13
 \.
 
 
 --
--- Data for Name: node_tag; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: node_tag; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.node_tag (node_id, tag_id) FROM stdin;
@@ -884,7 +875,7 @@ COPY public.node_tag (node_id, tag_id) FROM stdin;
 
 
 --
--- Data for Name: order; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: order; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public."order" (id, node_id, consumer_id, quantity, amount, created_at, paid_at, used_at, status, price, cancelled_at, refunded_at, deleted_at, sn, wx_trans_id, bank_type, wx_prepay_id, deleted) FROM stdin;
@@ -892,26 +883,29 @@ COPY public."order" (id, node_id, consumer_id, quantity, amount, created_at, pai
 
 
 --
--- Data for Name: page; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: page; Type: TABLE DATA; Schema: public; Owner: datongdev
 --
 
-COPY public.page (id, name, label) FROM stdin;
-1	首页	home
-5	业务	business
-6	公告	announcement
-7	加入我们	hire
-8	党建	dangjian
-2	关于我们	about
-4	产品服务	services
-3	新闻公告	news
-9	信息披露	information
-10	联系我们	contact
-11	业务咨询	feedback
+COPY public.page (id, name, label, weight) FROM stdin;
+5	业务	business	\N
+6	公告	announcement	\N
+7	加入我们	hire	\N
+8	党建	dangjian	\N
+11	业务咨询	feedback	\N
+1	首页	home	1
+2	关于我们	about	2
+12	产品中心	products	3
+15	企业文化	qiyewenhua	5
+13	消保专栏	xiaobaozhuanlan	6
+3	资讯中心	news	4
+4	客户服务	services	7
+10	联系我们	contact	8
+9	信息披露	information	9
 \.
 
 
 --
--- Data for Name: refund; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: refund; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.refund (id, ord_id, created_at, reason, note, sn, wx_refund_id) FROM stdin;
@@ -919,22 +913,37 @@ COPY public.refund (id, ord_id, created_at, reason, note, sn, wx_refund_id) FROM
 
 
 --
--- Data for Name: region; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: region; Type: TABLE DATA; Schema: public; Owner: datongdev
 --
 
-COPY public.region (id, page_id, name, label, count, icon, fields, description) FROM stdin;
-7	3	新闻动态	news	1	list	body,image,summary,tags	\N
-6	3	消保专栏	xiaobao	6	list	body,image,summary,tags	\N
-5	9	信息披露	disclosure	1	list	body,image,summary,tags	\N
-4	3	会议纪要	meeting	1	list	body,image,summary,tags	\N
-3	2	关于我们	about	1	list	body,image,summary,tags	\N
-2	1	网点分布	network	1	list	body,image,summary,tags	\N
-1	\N	页脚	footer	1	list	body,image,summary,tags	\N
+COPY public.region (id, page_id, name, label, count, icon, fields, description, weight) FROM stdin;
+6	3	消保专栏	xiaobao	6	list	body,image,summary,tags	\N	\N
+5	9	信息披露	disclosure	1	list	body,image,summary,tags	\N	\N
+4	3	会议纪要	meeting	1	list	body,image,summary,tags	\N	\N
+1	\N	页脚	footer	1	list	body,image,summary,tags	\N	\N
+8	1	通知公告	announcement	6	list	body,image,summary,tags	\N	\N
+9	1	行业咨询	hangyezixun	6	list	body,image,summary,tags	\N	\N
+10	1	客户培训	kehupeixun	6	list	body	\N	\N
+11	1	风险索赔	fengxiansuopei	6	list	body,image,summary,tags	\N	\N
+3	2	公司介绍	intro	1	list	body,image,summary,tags	\N	\N
+12	2	法人治理机构	farenzhilijigou	6	list	body,image,summary,tags	\N	\N
+13	2	组织结构	zuzhijiegou	6	list	body,image,summary,tags,specs	\N	\N
+14	2	企业荣誉	qiyerongyu	6	list	body,image,summary,tags	\N	\N
+15	2	公司宣传片	gongsixuanchuanpian	6	list	body,image,summary,tags,video	\N	\N
+16	12	产品中心	products	6	list	body,image,summary,tags,category	\N	\N
+2	1	分支机构	branchs	1	list	body,image,summary,tags	\N	\N
+7	3	公司新闻	news	1	list	body,image,summary,tags	\N	\N
+17	15	发展策略	fazhancelve	5	list	image,summary,body	\N	0
+18	13	法律法规	falvfagui	5	list	image,summary,body	\N	0
+19	13	风险提示	fengxiantishi	5	list	image,summary,body	\N	0
+20	13	常见问题	changjianwenti	5	list	image,summary,body	\N	0
+21	4	各类培训	geleipeixun	5	list	image,summary,body	\N	0
+22	4	协助索赔	xiezhusuopei	5	list	image,summary,body	\N	0
 \.
 
 
 --
--- Data for Name: spec; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: spec; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.spec (id, node_id, name, value) FROM stdin;
@@ -942,7 +951,7 @@ COPY public.spec (id, node_id, name, value) FROM stdin;
 
 
 --
--- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.tag (id, name, label) FROM stdin;
@@ -950,16 +959,17 @@ COPY public.tag (id, name, label) FROM stdin;
 
 
 --
--- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public."user" (id, username, roles, password, plain_password, openid, name, phone, avatar) FROM stdin;
 1	root	["ROLE_SUPER_ADMIN"]	$2y$13$8Hifx6r/mJqnKAoccHLPleR3ZTF9s/HWyZrDX/3YF8hzxMlcBg2ia	\N	\N	root	\N	\N
+2	admin	["ROLE_ADMIN"]	$2y$13$W/UaZrI/1KhBGmHAnl6gYePTOm5wIjpwKajSrrhBOyqI7YRIKXa/C	\N	\N	admin	\N	\N
 \.
 
 
 --
--- Data for Name: user_node; Type: TABLE DATA; Schema: public; Owner: datong
+-- Data for Name: user_node; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.user_node (user_id, node_id) FROM stdin;
@@ -967,119 +977,119 @@ COPY public.user_node (user_id, node_id) FROM stdin;
 
 
 --
--- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.category_id_seq', 1, false);
+SELECT pg_catalog.setval('public.category_id_seq', 3, true);
 
 
 --
--- Name: conf_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: conf_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.conf_id_seq', 1, true);
 
 
 --
--- Name: feedback_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: feedback_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.feedback_id_seq', 29, true);
 
 
 --
--- Name: image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.image_id_seq', 1, false);
 
 
 --
--- Name: language_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: language_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.language_id_seq', 1, false);
 
 
 --
--- Name: link_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: link_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.link_id_seq', 1, false);
 
 
 --
--- Name: menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.menu_id_seq', 1, false);
 
 
 --
--- Name: messenger_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: messenger_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.messenger_messages_id_seq', 1, false);
 
 
 --
--- Name: node_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: node_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.node_id_seq', 23, true);
+SELECT pg_catalog.setval('public.node_id_seq', 26, true);
 
 
 --
--- Name: order_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: order_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.order_id_seq', 1, false);
 
 
 --
--- Name: page_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: page_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.page_id_seq', 11, true);
+SELECT pg_catalog.setval('public.page_id_seq', 15, true);
 
 
 --
--- Name: refund_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: refund_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.refund_id_seq', 1, false);
 
 
 --
--- Name: region_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: region_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.region_id_seq', 7, true);
+SELECT pg_catalog.setval('public.region_id_seq', 22, true);
 
 
 --
--- Name: spec_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: spec_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.spec_id_seq', 1, false);
 
 
 --
--- Name: tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.tag_id_seq', 1, false);
 
 
 --
--- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: datong
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.user_id_seq', 1, true);
+SELECT pg_catalog.setval('public.user_id_seq', 2, true);
 
 
 --
--- Name: category category_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: category category_pkey; Type: CONSTRAINT; Schema: public; Owner: datongdev
 --
 
 ALTER TABLE ONLY public.category
@@ -1087,7 +1097,7 @@ ALTER TABLE ONLY public.category
 
 
 --
--- Name: conf conf_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: conf conf_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.conf
@@ -1095,7 +1105,7 @@ ALTER TABLE ONLY public.conf
 
 
 --
--- Name: doctrine_migration_versions doctrine_migration_versions_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: doctrine_migration_versions doctrine_migration_versions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.doctrine_migration_versions
@@ -1103,7 +1113,7 @@ ALTER TABLE ONLY public.doctrine_migration_versions
 
 
 --
--- Name: feedback feedback_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: feedback feedback_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.feedback
@@ -1111,7 +1121,7 @@ ALTER TABLE ONLY public.feedback
 
 
 --
--- Name: image image_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: image image_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.image
@@ -1119,7 +1129,7 @@ ALTER TABLE ONLY public.image
 
 
 --
--- Name: language language_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: language language_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.language
@@ -1127,7 +1137,7 @@ ALTER TABLE ONLY public.language
 
 
 --
--- Name: link link_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: link link_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.link
@@ -1135,7 +1145,7 @@ ALTER TABLE ONLY public.link
 
 
 --
--- Name: menu menu_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: menu menu_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.menu
@@ -1143,7 +1153,7 @@ ALTER TABLE ONLY public.menu
 
 
 --
--- Name: messenger_messages messenger_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: messenger_messages messenger_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.messenger_messages
@@ -1151,7 +1161,7 @@ ALTER TABLE ONLY public.messenger_messages
 
 
 --
--- Name: node node_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: node node_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node
@@ -1159,7 +1169,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- Name: node_region node_region_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: node_region node_region_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node_region
@@ -1167,7 +1177,7 @@ ALTER TABLE ONLY public.node_region
 
 
 --
--- Name: node_tag node_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: node_tag node_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node_tag
@@ -1175,7 +1185,7 @@ ALTER TABLE ONLY public.node_tag
 
 
 --
--- Name: order order_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: order order_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."order"
@@ -1183,7 +1193,7 @@ ALTER TABLE ONLY public."order"
 
 
 --
--- Name: page page_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: page page_pkey; Type: CONSTRAINT; Schema: public; Owner: datongdev
 --
 
 ALTER TABLE ONLY public.page
@@ -1191,7 +1201,7 @@ ALTER TABLE ONLY public.page
 
 
 --
--- Name: refund refund_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: refund refund_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.refund
@@ -1199,7 +1209,7 @@ ALTER TABLE ONLY public.refund
 
 
 --
--- Name: region region_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: region region_pkey; Type: CONSTRAINT; Schema: public; Owner: datongdev
 --
 
 ALTER TABLE ONLY public.region
@@ -1207,7 +1217,7 @@ ALTER TABLE ONLY public.region
 
 
 --
--- Name: spec spec_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: spec spec_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spec
@@ -1215,7 +1225,7 @@ ALTER TABLE ONLY public.spec
 
 
 --
--- Name: tag tag_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: tag tag_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.tag
@@ -1223,7 +1233,7 @@ ALTER TABLE ONLY public.tag
 
 
 --
--- Name: user_node user_node_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: user_node user_node_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_node
@@ -1231,7 +1241,7 @@ ALTER TABLE ONLY public.user_node
 
 
 --
--- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: datong
+-- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."user"
@@ -1239,168 +1249,168 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- Name: idx_14f389a882f1baf4; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_14f389a882f1baf4; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_14f389a882f1baf4 ON public.conf USING btree (language_id);
 
 
 --
--- Name: idx_36ac99f1ccd7e912; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_36ac99f1ccd7e912; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_36ac99f1ccd7e912 ON public.link USING btree (menu_id);
 
 
 --
--- Name: idx_70ac95f8460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_70ac95f8460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_70ac95f8460d9fd7 ON public.node_tag USING btree (node_id);
 
 
 --
--- Name: idx_70ac95f8bad26311; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_70ac95f8bad26311; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_70ac95f8bad26311 ON public.node_tag USING btree (tag_id);
 
 
 --
--- Name: idx_75ea56e016ba31db; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_75ea56e016ba31db; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_75ea56e016ba31db ON public.messenger_messages USING btree (delivered_at);
 
 
 --
--- Name: idx_75ea56e0e3bd61ce; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_75ea56e0e3bd61ce; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_75ea56e0e3bd61ce ON public.messenger_messages USING btree (available_at);
 
 
 --
--- Name: idx_75ea56e0fb7336f0; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_75ea56e0fb7336f0; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_75ea56e0fb7336f0 ON public.messenger_messages USING btree (queue_name);
 
 
 --
--- Name: idx_857fe84512469de2; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_857fe84512469de2; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_857fe84512469de2 ON public.node USING btree (category_id);
 
 
 --
--- Name: idx_857fe845727aca70; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_857fe845727aca70; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_857fe845727aca70 ON public.node USING btree (parent_id);
 
 
 --
--- Name: idx_857fe84582f1baf4; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_857fe84582f1baf4; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_857fe84582f1baf4 ON public.node USING btree (language_id);
 
 
 --
--- Name: idx_bb70e4d3460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_bb70e4d3460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_bb70e4d3460d9fd7 ON public.node_region USING btree (node_id);
 
 
 --
--- Name: idx_bb70e4d398260155; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_bb70e4d398260155; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_bb70e4d398260155 ON public.node_region USING btree (region_id);
 
 
 --
--- Name: idx_c00e173e460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_c00e173e460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_c00e173e460d9fd7 ON public.spec USING btree (node_id);
 
 
 --
--- Name: idx_c53d045f460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_c53d045f460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_c53d045f460d9fd7 ON public.image USING btree (node_id);
 
 
 --
--- Name: idx_d2294458460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_d2294458460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_d2294458460d9fd7 ON public.feedback USING btree (node_id);
 
 
 --
--- Name: idx_f529939837fdbd6d; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_f529939837fdbd6d; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_f529939837fdbd6d ON public."order" USING btree (consumer_id);
 
 
 --
--- Name: idx_f5299398460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_f5299398460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_f5299398460d9fd7 ON public."order" USING btree (node_id);
 
 
 --
--- Name: idx_f62f176c4663e4; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_f62f176c4663e4; Type: INDEX; Schema: public; Owner: datongdev
 --
 
 CREATE INDEX idx_f62f176c4663e4 ON public.region USING btree (page_id);
 
 
 --
--- Name: idx_fffea48c460d9fd7; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_fffea48c460d9fd7; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_fffea48c460d9fd7 ON public.user_node USING btree (node_id);
 
 
 --
--- Name: idx_fffea48ca76ed395; Type: INDEX; Schema: public; Owner: datong
+-- Name: idx_fffea48ca76ed395; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_fffea48ca76ed395 ON public.user_node USING btree (user_id);
 
 
 --
--- Name: uniq_5b2c1458e636d3f5; Type: INDEX; Schema: public; Owner: datong
+-- Name: uniq_5b2c1458e636d3f5; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX uniq_5b2c1458e636d3f5 ON public.refund USING btree (ord_id);
 
 
 --
--- Name: uniq_8d93d649f85e0677; Type: INDEX; Schema: public; Owner: datong
+-- Name: uniq_8d93d649f85e0677; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX uniq_8d93d649f85e0677 ON public."user" USING btree (username);
 
 
 --
--- Name: messenger_messages notify_trigger; Type: TRIGGER; Schema: public; Owner: datong
+-- Name: messenger_messages notify_trigger; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
 CREATE TRIGGER notify_trigger AFTER INSERT OR UPDATE ON public.messenger_messages FOR EACH ROW EXECUTE FUNCTION public.notify_messenger_messages();
 
 
 --
--- Name: conf fk_14f389a882f1baf4; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: conf fk_14f389a882f1baf4; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.conf
@@ -1408,7 +1418,7 @@ ALTER TABLE ONLY public.conf
 
 
 --
--- Name: link fk_36ac99f1ccd7e912; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: link fk_36ac99f1ccd7e912; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.link
@@ -1416,7 +1426,7 @@ ALTER TABLE ONLY public.link
 
 
 --
--- Name: refund fk_5b2c1458e636d3f5; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: refund fk_5b2c1458e636d3f5; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.refund
@@ -1424,7 +1434,7 @@ ALTER TABLE ONLY public.refund
 
 
 --
--- Name: node_tag fk_70ac95f8460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node_tag fk_70ac95f8460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node_tag
@@ -1432,7 +1442,7 @@ ALTER TABLE ONLY public.node_tag
 
 
 --
--- Name: node_tag fk_70ac95f8bad26311; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node_tag fk_70ac95f8bad26311; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node_tag
@@ -1440,7 +1450,7 @@ ALTER TABLE ONLY public.node_tag
 
 
 --
--- Name: node fk_857fe84512469de2; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node fk_857fe84512469de2; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node
@@ -1448,7 +1458,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- Name: node fk_857fe845727aca70; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node fk_857fe845727aca70; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node
@@ -1456,7 +1466,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- Name: node fk_857fe84582f1baf4; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node fk_857fe84582f1baf4; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node
@@ -1464,7 +1474,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- Name: node_region fk_bb70e4d3460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node_region fk_bb70e4d3460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node_region
@@ -1472,7 +1482,7 @@ ALTER TABLE ONLY public.node_region
 
 
 --
--- Name: node_region fk_bb70e4d398260155; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: node_region fk_bb70e4d398260155; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.node_region
@@ -1480,7 +1490,7 @@ ALTER TABLE ONLY public.node_region
 
 
 --
--- Name: spec fk_c00e173e460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: spec fk_c00e173e460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spec
@@ -1488,7 +1498,7 @@ ALTER TABLE ONLY public.spec
 
 
 --
--- Name: image fk_c53d045f460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: image fk_c53d045f460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.image
@@ -1496,7 +1506,7 @@ ALTER TABLE ONLY public.image
 
 
 --
--- Name: feedback fk_d2294458460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: feedback fk_d2294458460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.feedback
@@ -1504,7 +1514,7 @@ ALTER TABLE ONLY public.feedback
 
 
 --
--- Name: order fk_f529939837fdbd6d; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: order fk_f529939837fdbd6d; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."order"
@@ -1512,7 +1522,7 @@ ALTER TABLE ONLY public."order"
 
 
 --
--- Name: order fk_f5299398460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: order fk_f5299398460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."order"
@@ -1520,7 +1530,7 @@ ALTER TABLE ONLY public."order"
 
 
 --
--- Name: region fk_f62f176c4663e4; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: region fk_f62f176c4663e4; Type: FK CONSTRAINT; Schema: public; Owner: datongdev
 --
 
 ALTER TABLE ONLY public.region
@@ -1528,7 +1538,7 @@ ALTER TABLE ONLY public.region
 
 
 --
--- Name: user_node fk_fffea48c460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: user_node fk_fffea48c460d9fd7; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_node
@@ -1536,11 +1546,242 @@ ALTER TABLE ONLY public.user_node
 
 
 --
--- Name: user_node fk_fffea48ca76ed395; Type: FK CONSTRAINT; Schema: public; Owner: datong
+-- Name: user_node fk_fffea48ca76ed395; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_node
     ADD CONSTRAINT fk_fffea48ca76ed395 FOREIGN KEY (user_id) REFERENCES public."user"(id) ON DELETE CASCADE;
+
+
+--
+-- Name: SEQUENCE category_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.category_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE conf; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.conf TO datongdev;
+
+
+--
+-- Name: SEQUENCE conf_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.conf_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE doctrine_migration_versions; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.doctrine_migration_versions TO datongdev;
+
+
+--
+-- Name: TABLE feedback; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.feedback TO datongdev;
+
+
+--
+-- Name: SEQUENCE feedback_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.feedback_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE image; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.image TO datongdev;
+
+
+--
+-- Name: SEQUENCE image_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.image_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE language; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.language TO datongdev;
+
+
+--
+-- Name: SEQUENCE language_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.language_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE link; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.link TO datongdev;
+
+
+--
+-- Name: SEQUENCE link_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.link_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE menu; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.menu TO datongdev;
+
+
+--
+-- Name: SEQUENCE menu_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.menu_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE messenger_messages; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.messenger_messages TO datongdev;
+
+
+--
+-- Name: SEQUENCE messenger_messages_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.messenger_messages_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE node; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.node TO datongdev;
+
+
+--
+-- Name: SEQUENCE node_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.node_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE node_region; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.node_region TO datongdev;
+
+
+--
+-- Name: TABLE node_tag; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.node_tag TO datongdev;
+
+
+--
+-- Name: TABLE "order"; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public."order" TO datongdev;
+
+
+--
+-- Name: SEQUENCE order_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.order_id_seq TO datongdev;
+
+
+--
+-- Name: SEQUENCE page_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.page_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE refund; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.refund TO datongdev;
+
+
+--
+-- Name: SEQUENCE refund_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.refund_id_seq TO datongdev;
+
+
+--
+-- Name: SEQUENCE region_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.region_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE spec; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.spec TO datongdev;
+
+
+--
+-- Name: SEQUENCE spec_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.spec_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE tag; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.tag TO datongdev;
+
+
+--
+-- Name: SEQUENCE tag_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.tag_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE "user"; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public."user" TO datongdev;
+
+
+--
+-- Name: SEQUENCE user_id_seq; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON SEQUENCE public.user_id_seq TO datongdev;
+
+
+--
+-- Name: TABLE user_node; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON TABLE public.user_node TO datongdev;
 
 
 --
