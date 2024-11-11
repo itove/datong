@@ -75,3 +75,12 @@
     }
   }
 }
+
+.page-link, .page-link:hover{
+  color: var(--accent-color);
+}
+.active>.page-link, .page-link.active{
+  background-color: var(--accent-color);
+  border-color:: var(--accent-color);
+}
+
