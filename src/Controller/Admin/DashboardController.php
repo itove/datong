@@ -48,14 +48,16 @@ class DashboardController extends AbstractDashboardController
     {
         // return parent::index();
 
-        $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($adminUrlGenerator
-                    ->setController(NodeCrudController::class)
-                    ->set('region', '3')
-                    // ->setAction('detail')
-                    // ->setEntityId(1)
-                    ->generateUrl()
-        );
+        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
+        // return $this->redirect($adminUrlGenerator
+        //             ->setController(NodeCrudController::class)
+        //             ->set('region', '3')
+        //             // ->setAction('detail')
+        //             // ->setEntityId(1)
+        //             ->generateUrl()
+        // );
+
+        return $this->render('dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
