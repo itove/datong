@@ -1,0 +1,44 @@
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background staff news d-md-block">
+
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            {% for n in huandengpian1 %}
+            <div class="swiper-slide">
+              <div class="testimonial-item row">
+                <img src="{{asset("images/#{n.image}")}}" class="testimonial-img col-12 col-md-6" alt="">
+                <div class="text col-12 col-md-6">
+                  <h3>{{n.title}}</h3>
+                  <h4>{{n.createdAt|date('Y-m-d')}}</h4>
+                  <p>
+                    <span>{{n.summary}}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
