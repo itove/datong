@@ -1,4 +1,8 @@
 {% set route = app.request.get('_route') %}
+{% set route_params = app.request.get('_route_params') %}
+{% if 'regionLabel' not in route_params|keys %}
+{% set route_params = route_params|merge({'regionLabel': ''}) %}
+{% endif %}
 {#
 {% set route = app.request.attributes.get('_route') %}
 #}
@@ -19,25 +23,25 @@
           <li class="dropdown"><a href="#" class="{{ route == 'app_services' ? 'active' }}"><span>产品中心</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ path('app_services') }}">产品服务</a></li>
-              <li><a href="https://bx.hrisk.cn/yhb-mgr/" target="_blank">业务中心</a></li>
+              <li><a href="{{ path('app_node_show', {nid: 40})}}">业务中心</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#" class="{{ route == 'app_news_index' ? 'active' }}"><span>资讯中心</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="{{ route_params['regionLabel'] == 'news' ? 'active' }}"><span>资讯中心</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="{{ path('app_news_index') }}">公司新闻</a></li>
+              <li><a href="{{ path('app_nodes_region', {regionLabel: 'news'}) }}">公司新闻</a></li>
               <li class="dropdown"><a href="#"><span>公告通知</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="{{ path('app_news_index') }}">会议纪要</a></li>
-                  <li><a href="{{ path('app_news_index') }}">下载中心</a></li>
+                  <li><a href="{{ path('app_nodes_region', {regionLabel: 'meeting'}) }}">会议纪要</a></li>
+                  <li><a href="{{ path('app_nodes_region', {regionLabel: 'xiazai'}) }}">下载中心</a></li>
                 </ul>
               </li>
-              <li><a href="{{ path('app_news_index') }}">集团新闻</a></li>
-              <li><a href="{{ path('app_news_index') }}">行业新闻</a></li>
-              <li><a href="{{ path('app_news_index') }}">消保专栏</a></li>
+              <li><a href="{{ path('app_nodes_region', {regionLabel: 'jituan'}) }}">集团新闻</a></li>
+              <li><a href="{{ path('app_nodes_region', {regionLabel: 'hangye'}) }}">行业新闻</a></li>
+              <li><a href="{{ path('app_nodes_region', {regionLabel: 'xiaobao'}) }}">消保专栏</a></li>
             </ul>
           </li>
-          <li><a href="{{ path('app_nodes_region', {regionLabel: 'zhaobiao'}) }}" class="{{ route == 'app_nodes_region' ? 'active' }}">招标公告</a></li>
-          <li><a href="{{ path('app_nodes_region', {regionLabel: 'dangjian'}) }}" class="{{ route == 'app_nodes_region' ? 'active' }}">党建之窗</a></li>
+          <li><a href="{{ path('app_nodes_region', {regionLabel: 'zhaobiao'}) }}" class="{{ route_params['regionLabel'] == 'zhaobiao' ? 'active' }}">招标公告</a></li>
+          <li><a href="{{ path('app_nodes_region', {regionLabel: 'dangjian'}) }}" class="{{ route_params['regionLabel'] == 'dangjian' ? 'active' }}">党建之窗</a></li>
           <li class="dropdown"><a href="{{ path('app_contact') }}" class="{{ route == 'app_contact' ? 'active' }}"><span>联系我们</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ path('app_hire') }}">加入我们</a></li>
