@@ -44,6 +44,7 @@
           <li><a href="{{ path('app_nodes_region', {regionLabel: 'dangjian'}) }}" class="{{ route_params['regionLabel'] == 'dangjian' ? 'active' }}">党建之窗</a></li>
           <li class="dropdown"><a href="{{ path('app_contact') }}" class="{{ route == 'app_contact' ? 'active' }}"><span>联系我们</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
+              <li><a href="{{ path('app_contact') }}">联系我们</a></li>
               <li><a href="{{ path('app_hire') }}">加入我们</a></li>
             </ul>
           </li>
