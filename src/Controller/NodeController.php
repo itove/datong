@@ -212,7 +212,7 @@ class NodeController extends AbstractController
     #[Route('/services', name: 'app_services')]
     public function services(Request $request): Response
     {
-        $data = $this->data->getPageContent('services', $request->getLocale());
+        $data = $this->data->getPageContent('products', $request->getLocale());
         $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
 
         return $this->render('services.html.twig', $data);
