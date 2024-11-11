@@ -36,8 +36,8 @@
               <li><a href="{{ path('app_news_index') }}">消保专栏</a></li>
             </ul>
           </li>
-          <li><a href="{{ path('app_news_index') }}" class="{{ route == 'app_news_index' ? 'active' }}">招标公告</a></li>
-          <li><a href="{{ path('app_news_index') }}" class="{{ route == 'app_news_index' ? 'active' }}">党建之窗</a></li>
+          <li><a href="{{ path('app_nodes_region', {regionLabel: 'zhaobiao'}) }}" class="{{ route == 'app_nodes_region' ? 'active' }}">招标公告</a></li>
+          <li><a href="{{ path('app_nodes_region', {regionLabel: 'dangjian'}) }}" class="{{ route == 'app_nodes_region' ? 'active' }}">党建之窗</a></li>
           <li class="dropdown"><a href="{{ path('app_contact') }}" class="{{ route == 'app_contact' ? 'active' }}"><span>联系我们</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ path('app_hire') }}">加入我们</a></li>

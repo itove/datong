@@ -86,45 +86,34 @@ class NodeController extends AbstractController
         return $this->render('node/show.html.twig', $data);
     }
     
-    #[Route('/news/{regionLabel?}', name: 'app_news_region')]
+    #[Route('/nodes/{regionLabel?}', name: 'app_nodes_region')]
     public function listRegionNodes(string $regionLabel, Request $request): Response
     {
+        $pageLabel = $regionLabel;
         $locale = $request->getLocale();
-        $page = $request->query->get('p');
-        $limit = 5;
-        if (is_null($page) || empty($page)) {
-          $page = 1;
+        $p = $request->query->get('p');
+        $limit = 15;
+        if (is_null($p) || empty($p)) {
+          $p = 1;
         }
-        $offset = $limit * ($page - 1);
-        
-        // $nodes = $this->data->getNodeByRegion($region, $limit, $offset);
-        // $nodes_all = $this->data->getNodeByRegion($region);
+        $offset = $limit * ($p - 1);
+
         $region = $this->data->getRegionByLabel($regionLabel);
         if ($region == null) {
             // 404;
         }
-        
+
         $nodes = $this->data->findNodesByRegion($region, $locale, $limit, $offset);
         $nodes_all = $this->data->findNodesByRegion($region, $locale);
-        
-        // $tag = $this->data->getTagByLabel($region);
-        // $arr = $this->data->getSome();
-        // $arr['node'] = $tag;
-        // $arr['nodes'] = $nodes;
-        // $arr['page'] = $page;
-        // $arr['page_count'] = ceil(count($nodes_all) / $limit);
 
-        $data = $this->data->getMisc($request->getLocale());
-        $data1 = [
-          'nodes' => $nodes,
-          'path' => $region->getName(),
-          'page_title' => $this->translator->trans('News'),
-          'page' => $page,
-          'page_count' => ceil(count($nodes_all) / $limit),
-          'regionLabel' => $regionLabel,
-        ];
+        $data = $this->data->getMisc($pageLabel);
+        $data['page'] = $this->data->getPageInfo($pageLabel);
+        $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
+        $data['nodes'] = $nodes;
+        $data['p'] = $p;
+        $data['page_count'] = ceil(count($nodes_all) / $limit);
 
-        return $this->render('node/index.html.twig', array_merge($data, $data1));
+        return $this->render('news/index.html.twig', array_merge($data));
     }
 
     #[Route('/about', name: 'app_about')]
