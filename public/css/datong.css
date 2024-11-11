@@ -1,0 +1,19 @@
+.hero form .btn-primary {
+  border: 1px var(--accent-color) solid;
+}
+:root{
+  --accent-color: #ea2830; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #1e1e1e; /* Color for headings, subheadings and title throughout the website */
+  --nav-dropdown-hover-color: #ea2830; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+.header{
+  --heading-color: #1e1e1e;
+  --nav-color: rgba(0, 0, 0, 0.6);
+  --nav-hover-color: rgba(0, 0, 0, 1);
+}
+.scrolled .header{
+  --background-color: rgba(var(--bs-light-rgb), 1) !important;
+}
+.faq .faq-container .faq-active{
+  background-color: var(--accent-color);
+}
