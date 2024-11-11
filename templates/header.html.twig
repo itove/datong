@@ -38,8 +38,11 @@
           </li>
           <li><a href="{{ path('app_news_index') }}" class="{{ route == 'app_news_index' ? 'active' }}">招标公告</a></li>
           <li><a href="{{ path('app_news_index') }}" class="{{ route == 'app_news_index' ? 'active' }}">党建之窗</a></li>
-          <li><a href="{{ path('app_hire') }}" class="{{ route == 'app_hire' ? 'active' }}">客户服务</a></li>
-          <li><a href="{{ path('app_contact') }}" class="{{ route == 'app_contact' ? 'active' }}">联系我们</a></li>
+          <li class="dropdown"><a href="{{ path('app_contact') }}" class="{{ route == 'app_contact' ? 'active' }}"><span>联系我们</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{ path('app_hire') }}">加入我们</a></li>
+            </ul>
+          </li>
           <li><a href="{{ path('app_info') }}" class="{{ route == 'app_info' ? 'active' }}">信息披露</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

@@ -1,0 +1,31 @@
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "effect": "fade",
+              "loop": true,
+              "speed": 600,
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            {% for n in huandengpian1 %}
+            <div class="swiper-slide d-flex" style="background-image: url({{asset("images/#{n.image}")}})">
+              <h3 class="aos-init aos-animate">{{n.title}}</h3>
+              <h4>{{n.summary}}</h4>
+            </div>
+            {% endfor %}
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+
+    </section><!-- /Hero Section -->

@@ -17,3 +17,27 @@
 .faq .faq-container .faq-active{
   background-color: var(--accent-color);
 }
+.hero .swiper{
+  height: 880px;
+  .swiper-pagination-bullet-active{
+    background: var(--accent-color);
+  }
+  .swiper-slide{
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3{
+      font-size: 48px;
+      font-weight: 700;
+    }
+    h3, h4{
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+#hero{
+  padding-top: 60px;
+}

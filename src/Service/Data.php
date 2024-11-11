@@ -173,7 +173,7 @@ class Data
         $data = [];
         foreach ($regions as $r) {
             $dataOfRegion = self::findNodesByRegion($r, $locale, $r->getCount());
-            // $data[$r->getLabel()] = $dataOfRegion;
+            $data[$r->getLabel()] = $dataOfRegion;
             $data['nodes'] = $dataOfRegion;
         }
         
