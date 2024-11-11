@@ -75,7 +75,7 @@ class NodeController extends AbstractController
         return $this->render('news/index.html.twig', array_merge($data));
     }
 
-    #[Route('news/{nid}', requirements: ['nid' => '\d+'], name: 'app_node_show')]
+    #[Route('node/{nid}', requirements: ['nid' => '\d+'], name: 'app_node_show')]
     public function showNews(int $nid, Request $request): Response
     {
         $data = $this->data->getMisc($request->getLocale());
