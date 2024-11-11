@@ -246,4 +246,38 @@ class NodeController extends AbstractController
 
         return $this->render('info.html.twig', $data);
     }
+
+    #[Route('/services/{cate?}', name: 'app_services_cate')]
+    public function prodCate(string $cate, Request $request): Response
+    {
+        $regionLabel = 'products';
+        $pageLabel = $regionLabel;
+        $locale = $request->getLocale();
+        $p = $request->query->get('p');
+        $limit = 15;
+        if (is_null($p) || empty($p)) {
+          $p = 1;
+        }
+        $offset = $limit * ($p - 1);
+
+        $region = $this->data->getRegionByLabel($regionLabel);
+        if ($region == null) {
+            // 404;
+        }
+
+        $nodes = $this->data->findNodeByCategory($cate, $limit, $offset);
+        $nodes_all = $this->data->findNodeByCategory($cate);
+
+        $data = $this->data->getMisc($pageLabel);
+        $data['page'] = [
+          'name' => $region->getName(),
+          'label' => $regionLabel,
+        ];
+        $data['page']['intro'] = '怀抱“经世济民，天下大同”的美好愿景，大同经纪在荆楚大地播下了希望的种子。在精彩的绽放中实现华丽转身，独树一帜，引领风潮。';
+        $data['nodes'] = $nodes;
+        $data['p'] = $p;
+        $data['page_count'] = ceil(count($nodes_all) / $limit);
+
+        return $this->render('news/index.html.twig', array_merge($data));
+    }
 }
