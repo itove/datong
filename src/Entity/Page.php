@@ -32,6 +32,9 @@ class Page
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
     private ?int $weight = 0;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
+
     public function __construct()
     {
         $this->regions = new ArrayCollection();
@@ -110,6 +113,18 @@ class Page
     public function setWeight(?int $weight): static
     {
         $this->weight = $weight;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
 
         return $this;
     }

@@ -6,6 +6,7 @@ use App\Entity\Page;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -47,6 +48,7 @@ class PageCrudController extends AbstractCrudController
             ->setDisabled($disabled)
             ->setRequired(false)
         ;
+        yield TextareaField::new('description');
         yield AssociationField::new('regions')->setDisabled($disabled);
     }
 
