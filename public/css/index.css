@@ -1,0 +1,14 @@
+.about{
+  .img-wrapper{
+    height: 570px;
+    img{
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.map{
+  img{
+    width: 100%;
+  }
+}

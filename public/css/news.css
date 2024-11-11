@@ -1,35 +1,13 @@
-.hero .text{
-  position: absolute;
-  bottom: 3rem;
-}
-.news-wrapper{
-  padding-bottom: 3rem;
+.news-list{
   .news-item{
-    padding: 2.5rem 0;
-    margin: 3rem 0;
-    border: var(--grey-light) 1px solid;
     img{
-      width: 100%;
-      height: 230px;
+      height: 225px;
       object-fit: cover;
     }
-    .content{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .title{
-      font-size: 2rem;
-      color: var(--red);
-      margin-bottom: 1rem;
-    }
-    .btn{
-      width: 110px;
-    }
-    .date{
-      font-weight: 600;
-      font-size: 1.2rem;
-      color: var(--red);
+    .card-text{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }
