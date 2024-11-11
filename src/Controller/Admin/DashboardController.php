@@ -111,6 +111,8 @@ class DashboardController extends AbstractDashboardController
         $pages = $this->doctrine->getRepository(Page::class)->findBy([], ['weight' => 'ASC', 'id' => 'ASC']);
         
         yield MenuItem::linkToUrl('Back to Site', 'fas fa-arrow-circle-left', '/');
+
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-chart-pie');
         
         yield MenuItem::section('Content Management')
             // ->setCssClass('test');
