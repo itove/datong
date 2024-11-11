@@ -18,6 +18,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use App\Service\Data;
+use App\Admin\Field\VichImageField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
@@ -33,8 +34,7 @@ class RegionCrudController extends AbstractCrudController
         $disabled = false;
 
         if ($pageName == 'edit') {
-            // if ($_ENV['APP_ENV'] === 'prod') {
-            if (!$this->isGranted('ROLE_SUPER_ADMIN')) {
+            if (!$this->isGranted('ROLE_SUPER_ADMIN') || $_ENV['APP_ENV'] === 'prod') {
                 $disabled = true;
             }
         }
@@ -43,23 +43,25 @@ class RegionCrudController extends AbstractCrudController
         yield AssociationField::new('page')
             ->setDisabled($disabled)
         ;
-        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
-            yield IntegerField::new('weight');
-        }
-        yield TextField::new('name');
+        yield TextField::new('name')
+            ->setDisabled($disabled)
+        ;
         yield TextField::new('label')
             ->setDisabled($disabled)
             ->setRequired(false)
         ;
-        yield TextField::new('icon');
         yield TextField::new('description');
         yield ChoiceField::new('fields')->setChoices(Data::GetProperties(new Node()))->allowMultipleChoices();
-        yield IntegerField::new('count');
+        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
+            yield IntegerField::new('weight');
+            yield TextField::new('icon');
+            yield IntegerField::new('count');
+        }
     }
 
     public function configureActions(Actions $actions): Actions
     {
-        if ($_ENV['APP_ENV'] === 'prod') {
+        if ($_ENV['APP_ENV'] === 'prod' || !$this->isGranted('ROLE_SUPER_ADMIN')) {
             $actions->disable('delete');
         }
 
