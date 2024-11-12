@@ -164,13 +164,13 @@ class NodeCrudController extends AbstractCrudController
     public function configureAssets(Assets $assets): Assets
     {
         return $assets
-            ->addJsFile(
-                Asset::new('/js/ckeditor.js')
+            ->addCssFile(
+                Asset::new('/css/ckeditor.css')
                     ->onlyOnForms()
             )
             ->addJsFile(
-                Asset::new('/js/initCKEditor.js')
-                    ->defer()
+                Asset::new('/js/ckeditor.js')
+                  ->htmlAttr('type', 'module')
                     ->onlyOnForms()
             )
         ;
