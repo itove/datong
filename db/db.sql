@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 15.4
--- Dumped by pg_dump version 15.4
+-- Dumped from database version 16.4 (Debian 16.4-3+b1)
+-- Dumped by pg_dump version 16.4 (Debian 16.4-3+b1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -61,7 +61,7 @@ CREATE SEQUENCE public.category_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.category_id_seq OWNER TO datong;
+ALTER SEQUENCE public.category_id_seq OWNER TO datong;
 
 --
 -- Name: comment; Type: TABLE; Schema: public; Owner: datong
@@ -100,7 +100,7 @@ CREATE SEQUENCE public.comment_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.comment_id_seq OWNER TO datong;
+ALTER SEQUENCE public.comment_id_seq OWNER TO datong;
 
 --
 -- Name: conf; Type: TABLE; Schema: public; Owner: datong
@@ -149,7 +149,7 @@ CREATE SEQUENCE public.conf_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.conf_id_seq OWNER TO datong;
+ALTER SEQUENCE public.conf_id_seq OWNER TO datong;
 
 --
 -- Name: doctrine_migration_versions; Type: TABLE; Schema: public; Owner: datong
@@ -201,7 +201,7 @@ CREATE SEQUENCE public.feedback_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.feedback_id_seq OWNER TO datong;
+ALTER SEQUENCE public.feedback_id_seq OWNER TO datong;
 
 --
 -- Name: image; Type: TABLE; Schema: public; Owner: datong
@@ -229,7 +229,7 @@ CREATE SEQUENCE public.image_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.image_id_seq OWNER TO datong;
+ALTER SEQUENCE public.image_id_seq OWNER TO datong;
 
 --
 -- Name: language; Type: TABLE; Schema: public; Owner: datong
@@ -257,7 +257,7 @@ CREATE SEQUENCE public.language_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.language_id_seq OWNER TO datong;
+ALTER SEQUENCE public.language_id_seq OWNER TO datong;
 
 --
 -- Name: link; Type: TABLE; Schema: public; Owner: datong
@@ -286,7 +286,7 @@ CREATE SEQUENCE public.link_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.link_id_seq OWNER TO datong;
+ALTER SEQUENCE public.link_id_seq OWNER TO datong;
 
 --
 -- Name: menu; Type: TABLE; Schema: public; Owner: datong
@@ -313,7 +313,7 @@ CREATE SEQUENCE public.menu_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.menu_id_seq OWNER TO datong;
+ALTER SEQUENCE public.menu_id_seq OWNER TO datong;
 
 --
 -- Name: messenger_messages; Type: TABLE; Schema: public; Owner: datong
@@ -365,7 +365,7 @@ CREATE SEQUENCE public.messenger_messages_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.messenger_messages_id_seq OWNER TO datong;
+ALTER SEQUENCE public.messenger_messages_id_seq OWNER TO datong;
 
 --
 -- Name: messenger_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: datong
@@ -432,7 +432,7 @@ CREATE SEQUENCE public.node_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.node_id_seq OWNER TO datong;
+ALTER SEQUENCE public.node_id_seq OWNER TO datong;
 
 --
 -- Name: node_region; Type: TABLE; Schema: public; Owner: datong
@@ -540,7 +540,7 @@ CREATE SEQUENCE public.order_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.order_id_seq OWNER TO datong;
+ALTER SEQUENCE public.order_id_seq OWNER TO datong;
 
 --
 -- Name: page; Type: TABLE; Schema: public; Owner: datong
@@ -550,7 +550,8 @@ CREATE TABLE public.page (
     id integer NOT NULL,
     name character varying(255) NOT NULL,
     label character varying(255) NOT NULL,
-    weight smallint
+    weight smallint,
+    description character varying(255) DEFAULT NULL::character varying
 );
 
 
@@ -568,7 +569,7 @@ CREATE SEQUENCE public.page_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.page_id_seq OWNER TO datong;
+ALTER SEQUENCE public.page_id_seq OWNER TO datong;
 
 --
 -- Name: refund; Type: TABLE; Schema: public; Owner: datong
@@ -606,7 +607,7 @@ CREATE SEQUENCE public.refund_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.refund_id_seq OWNER TO datong;
+ALTER SEQUENCE public.refund_id_seq OWNER TO datong;
 
 --
 -- Name: region; Type: TABLE; Schema: public; Owner: datong
@@ -646,7 +647,7 @@ CREATE SEQUENCE public.region_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.region_id_seq OWNER TO datong;
+ALTER SEQUENCE public.region_id_seq OWNER TO datong;
 
 --
 -- Name: spec; Type: TABLE; Schema: public; Owner: datong
@@ -674,7 +675,7 @@ CREATE SEQUENCE public.spec_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.spec_id_seq OWNER TO datong;
+ALTER SEQUENCE public.spec_id_seq OWNER TO datong;
 
 --
 -- Name: tag; Type: TABLE; Schema: public; Owner: datong
@@ -701,7 +702,7 @@ CREATE SEQUENCE public.tag_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tag_id_seq OWNER TO datong;
+ALTER SEQUENCE public.tag_id_seq OWNER TO datong;
 
 --
 -- Name: user; Type: TABLE; Schema: public; Owner: datong
@@ -734,7 +735,7 @@ CREATE SEQUENCE public.user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.user_id_seq OWNER TO datong;
+ALTER SEQUENCE public.user_id_seq OWNER TO datong;
 
 --
 -- Name: user_node; Type: TABLE; Schema: public; Owner: datong
@@ -797,6 +798,7 @@ DoctrineMigrations\\Version20241019164514	2024-11-09 11:46:33	12
 DoctrineMigrations\\Version20241019164819	2024-11-09 11:46:33	3
 DoctrineMigrations\\Version20241019164951	2024-11-09 11:46:33	1
 DoctrineMigrations\\Version20241020082629	2024-11-09 11:46:33	14
+DoctrineMigrations\\Version20241111100000	2024-11-11 10:01:59	7
 \.
 
 
@@ -901,7 +903,6 @@ COPY public.node (id, language_id, category_id, parent_id, title, body, image, s
 41	\N	\N	\N	优势展示	<p>资质优势：公司拥有全国范围的保险经纪业务和政府采购代理双重资质，凭借多年的政府顾问经验，为政府在民生项目中的风险应对提供优质的策略支持。<br>专业优势：大同政保服务团队由一支具备专业技术与丰富实战经验的成员组成，涵盖政府采购、农业、保险、法律、贸易等多个专业领域。团队长期专注于为各级政府提供风险管理服务，在行业内享有较高的声誉。<br>技术优势：公司具备强大的数据分析和风险管理能力，通过专业的保险经纪技能，为政府提供包括风险咨询、数据核查、满意度调查、绩效评估等多项服务支持。<br>角色优势：根据法律规定，保险经纪人应以保护委托方利益为准则。我们秉持客户利益最大化的原则，公平公正地开展业务，确保服务质量。<br>内控优势：在国企风险控制和严格审计的要求下，公司在经营决策中更加严谨，服务流程更加规范透明，为客户提供可靠的服务保障。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:11:28	2024-11-11 06:11:28	\N	0	0	f
 38	\N	1	\N	女职工安康保险案例	<p>大同保险经纪公司同工会组织开展了女职工安康保险项目，针对女性特种重大疾病保险，旨在为公司内部的女性员工提供更全面的健康保障措施。该保险项目专门覆盖了女性常见的重大疾病如乳腺癌、宫颈癌等，以及其他可能因性别特有的健康风险而引发的疾病。通过这一项目，希望能够提高女职工的健康意识，减轻因疾病带来的经济负担，同时促进工作场所的女职工权益保护和综合福利保障落实。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:05:10	2024-11-11 06:05:10	\N	0	0	f
 39	\N	1	\N	医惠保手术意外保险案例	<p>大同保险经纪与医疗机构及医惠保公司紧密合作，通过技术驱动提升手术保险业务的效率和客户满意度。通过API接口，让保险服务在保险公司与医疗服务提供者之间无缝对接，从而加速了保险流程，快速投保、即时理赔处理和高效的客户服务。这种技术整合使得手术保险产品不仅更容易被患者接受，同时也简化了医疗机构在处理保险事务时的复杂性，促进医疗机构手术意外风险管理机制的建立，间接促进了和谐的医患关系。</p><p>此外，这种合作模式为保险业务引入了数据驱动的决策支持，通过分析合作医疗机构提供的临床数据，保险公司能够更精准地评估风险，优化保险产品设计。这不仅有助于降低欺诈风险，还能够确保保险覆盖更贴近患者的实际需要，进一步降低保费。</p><p>通过这种创新的合作和技术应用，大同保险经纪不仅提升了自身的市场竞争力，还为整个医疗意外保险行业提供了如何利用技术提高服务质量和效率的标杆思路。医疗垂直领域的保险产品和服务发展的方向，更加个性化、数据驱动和用户友好。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:06:00	2024-11-11 06:06:00	\N	0	0	f
-40	\N	\N	\N	医惠保医院风险管理系统（手术保）	<p><a href="https://bx.hrisk.cn/yhb-mgr/">https://bx.hrisk.cn/yhb-mgr/</a></p><p>大同保险经纪有限公司与医惠保（武汉）医院管理有限公司联手，基于“专业、健康、守护”的理念，深耕医院医疗风险管理。通过先进的“医惠保”系统和术前谈话视频双录技术，我们积极配合临床科室进行术前风险评估，强化患者教育，并确保医疗意外保险的有效投保与理赔流程的完善。此合作模式已在多家医院成功落地，证实了其在降低医疗意外、保护医院与患者权益，以及优化就医环境方面的显著效益。此成熟的医疗意外风险管理服务方案，共同推进医疗服务质量的提升和医患关系的和谐。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:09:36	2024-11-11 06:09:36	\N	0	0	f
 42	\N	\N	\N	华中港航物流集团有限公司2024年雇主责任险、财产综合险、货物运输险招标公告（招标编号：HBDTJJ202404001）	<p>一、&nbsp;招标条件</p><p>本项目华中港航物流集团有限公司2024年雇主责任险、财产综合险、货物运输险<br>集采项目&nbsp;已批准采购，项目资金来自&nbsp;自筹资金&nbsp;，招标人为湖北港口资本有限公司，项目已具备招标条件，现招标方式为邀请招标。</p><p>二、项目概况与招标内容</p><p>规模：华中港航物流集团有限公司2024年雇主责任险、财产综合险、货物运输险集采项目，具体见采购文件第五章“招标要求”。<br>范围：本项目招标划分为3个标段，本次招标3个标段:<br>其中（01）标段一、雇主责任保险，参保职工430人。<br>（02）标段二、企业财产保险，预算上限20241.00元。<br>（03）标段三、货物运输保险，货物保险价值预估人民币50亿元。<br>投标人可根据需要选择其中一个标段或全部标段投标。</p><p>三、投标人资格要求</p><p>1、投标人必须具有独立承担民事责任的能力。<br>2、投标人须是在湖北省内依法设立的公司、分公司、子公司、分支机构（同一保险公司的不同分（子）公司不得同时参加本项目投标）。<br>3、投标人必须是依照《中华人民共和国保险法》设立的保险公司，持有金融监管部门颁发的且年审合格的《中华人民共和国经营保险业务许可证》。<br>4、具有良好的商业信誉和健全的财务会计制度。<br>5、提供近三年类似保险项目业绩证明：近三年（2021 年 4月 1 日至投标递交截止时间，以合同签订时间为准）类似项目承保业绩，须提供有效合同履约证明(以投标人提供的合同或保单复印件加盖投标人单位公章为准)。<br>5、投标人未被列入“信用中国”网站(www.creditchina.gov.cn)失信被执行人、重大税收违法失信主体、政府采购严重违法失信行为记录名单以及中国政府采购网（http://www.ccgp.gov.cn）政府采购严重违法失信行为记录名单（提供承诺或网上查询结果截图并加盖投标单位公章）；<br>本项目不接受联合体投标。</p><p>四、招标文件的获取</p><p>1、获取时间：2024年&nbsp;4&nbsp;月&nbsp;8&nbsp;日至2024年&nbsp;4&nbsp;月&nbsp;12&nbsp;日，每日&nbsp;09&nbsp;时&nbsp;00&nbsp;分至&nbsp;17&nbsp;时&nbsp;00&nbsp;分（北京时间，下同）。<br>2、招标文件获取方式：<br>参与本次投标的保险公司，携带以下资料到指定地点获取招标文件：营业执照（复印件），法人授权委托书及被授权人身份证，前往地址：湖北大同保险经纪有限公司，武昌区中北路126号尚城国际5层20室，完成获取。<br>文件获取联系人及电话：晏经理15207127275<br>3、招标文件售价&nbsp;500&nbsp;元，售后不退。</p><p>五、投标文件的递交</p><p>1、&nbsp;投标文件递交的截止时间为&nbsp;2024&nbsp;年&nbsp;4&nbsp;月&nbsp;19&nbsp;日&nbsp;09&nbsp;时&nbsp;30&nbsp;分，地点为&nbsp;武昌区中北路126号尚城国际5层20室。<br>2、逾期送达的、未送达指定地点的或者不按照招标文件要求密封的投标文件，招标人将予以拒收。</p><p>六、开标时间及地点</p><p>开评标时间为2024&nbsp;年&nbsp;4&nbsp;月&nbsp;19&nbsp;日&nbsp;09&nbsp;时&nbsp;30&nbsp;分，地点为&nbsp;武昌区中北路126号尚城国际5层20室。</p><p>七、其他&nbsp;<br>1、保险服务期限：一年，以保险起止时间为准。<br>2、招标发布媒介：湖北大同保险经纪有限公司官方网站（http://www.hbdtjj.com/）。</p><p>八、联系方式</p><p>招标人:湖北港口资本有限公司<br>地址:武汉市江汉区新华路特8号7楼<br>联系人:冯军清<br>电话:15671629007<br>&nbsp;<br>保险经纪机构：湖北大同保险经纪有限公司<br>地址：武汉市武昌区中北路126号尚城国际5层20室<br>联系人:熊良松<br>电话：15072429714</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:15:54	2024-11-11 06:15:54	\N	0	0	f
 43	\N	\N	\N	政府采购优秀供应商	\N	l3-6731a3697e68a306716202.jpg	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:25:44	2024-11-11 06:25:45	\N	0	0	f
 37	\N	\N	\N	个人风险解决方案	<p>程传铂18872226677（健康保险事业群） <a href="mailto:Chengcb369@163.com">Chengcb369@163.com</a></p><p>&nbsp;</p>	3-6731c11cc664b595655829.jpg	我们重视您的需求，更深谙您对生活的憧憬。安诺将从健康管理、疾病康复、出行保障、财富传承等多个维度提供友善建议，助您规划生涯、赢得人生。	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:01:34	2024-11-11 08:32:28	\N	0	0	f
@@ -923,6 +924,7 @@ COPY public.node (id, language_id, category_id, parent_id, title, body, image, s
 60	\N	\N	\N	热烈庆祝中国共产党建党100周年	<p>&nbsp; &nbsp; &nbsp; &nbsp; 2021年是伟大的中国共产党100周年生日。100年沧桑巨变，100年风雨兼程，100年辉煌伟业。无论是顺境还是逆境，我们党都初心不改、矢志不渝。在中国共产党的英明领导下，我们正唱着春天的故事，昂首跨越新的时代。<br>&nbsp; &nbsp; &nbsp;&nbsp;1921年7月23日，中国共产党第一次全国代表大会在上海召开。由于会场受到法租界巡捕的搜查，最后一天的会议转移到浙江嘉兴南湖的游船上举行。<br>1921年8月3日黄昏，浙江嘉兴南湖的暑热逐渐散去。湖面上一艘中等大小的画舫内，气氛庄重肃穆。在“中国共产党万岁”的低声呼喊中，中国共产党第一次全国代表大会闭幕。<br>&nbsp; &nbsp; &nbsp; &nbsp;2021年是中国共产党百年华诞。中国站在“两个一百年”的历史交汇点，全面建设社会主义现代化国家新征程即将开启。世界将更多目光投向中国，聚焦中国共产党矢志不渝为人民谋幸福，为民族谋复兴，为世界谋大同。</p><p>&nbsp; &nbsp; &nbsp;&nbsp;党中央建党百年活动安排：<br>&nbsp; &nbsp; &nbsp;&nbsp;一是开展党史学习教育。将结合巩固深化“不忘初心、牢记使命”主题教育成果，在全体党员中开展党史学习教育。这次学习教育贯穿2021年全年，总的要求是学史明理、学史增信、学史崇德、学史力行，教育引导党员干部学党史、悟思想、办实事、开新局。<br>&nbsp; &nbsp; &nbsp;&nbsp;二是举行庆祝大会。将以中共中央名义，隆重举行庆祝中国共产党成立100周年大会，中共中央总书记、国家主席、中央军委主席习近平将发表重要讲话。<br>&nbsp; &nbsp; &nbsp;&nbsp;三是开展“七一勋章”评选颁授和全国“两优一先”评选表彰。将以中共中央名义，向为党作出杰出贡献、创造宝贵精神财富的党员授予“七一勋章”，由中共中央总书记、国家主席、中央军委主席习近平签发证书，颁授勋章。还将评选表彰全国优秀共产党员、全国优秀党务工作者、全国先进基层党组织；向健在的党龄达到50年、一贯表现良好的老党员颁发“光荣在党50年”纪念章。此外，还将组织开展走访慰问获得党内功勋荣誉表彰的党员、生活困难党员、老党员、老干部和烈士遗属、因公殉职党员干部的家属等活动。<br>&nbsp; &nbsp; &nbsp;&nbsp;四是举办大型主题展览。将举办“不忘初心、牢记使命”大型主题展览，全面、系统、生动、立体地展示中国共产党百年的光辉历程、伟大成就和宝贵经验。<br>&nbsp; &nbsp; &nbsp;&nbsp;五是举办文艺演出。将举办庆祝中国共产党成立100周年大型文艺演出，邀请党和国家领导人、获得功勋荣誉表彰的代表、基层党员和群众代表等各界人士来观看。<br>&nbsp; &nbsp; &nbsp;&nbsp;六是召开理论研讨会和座谈会。中央宣传部将会同中央组织部、中央党校（国家行政学院）、中央党史和文献研究院、教育部、中国社会科学院、军委政治工作部联合召开庆祝建党100周年理论研讨会；中央组织部将召开全国优秀共产党员、优秀党务工作者、先进基层党组织代表庆祝建党100周年座谈会，还要召开老党员老干部座谈会和党的建设历史经验研讨会；中央统战部将商各民主党派中央、无党派人士和全国工商联，召开各界人士庆祝中国共产党成立100周年座谈会。<br>&nbsp; &nbsp; &nbsp;&nbsp;七是创作推出一批文艺作品和出版物。将以中国共产党成立100年来的光辉历史、伟大成就和宝贵经验，以及各个历史时期涌现出来的先进典型为主要内容，制作播出大型文献专题片和专题节目。创作推出一批具有较高思想艺术水平的戏剧、音乐、舞蹈、电影、电视剧等各类优秀文艺作品。推出一批重点党史著作和理论文章，编写推出《中国共产党的100年》等重点出版物。此外，还将以庆祝建党100周年为主题，发行纪念邮票、纪念封和纪念币。<br>&nbsp; &nbsp; &nbsp;&nbsp;八是开展群众性主题宣传教育活动。将在全国城乡广泛开展“永远跟党走”群众性主题宣传教育活动。各地特别是在党的历史上具有重要意义的地方，将结合本地实际，围绕党史重要事件、重要活动和重要遗址旧址等组织开展丰富多彩的庆祝活动。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:52:00	2024-11-11 06:52:00	\N	0	0	f
 61	\N	\N	\N	企业风险解决方案	<p>晏琪 &nbsp;15207127275 &nbsp;2517906409@qq.com （财产险事业群）</p><p>&nbsp;中国企业在当前环境下面临前所未有的机遇和挑战企业在经营过程中不可避免地会遇到融资、生产、营销、服务以及研发等多方面的风险，尤其是生产制造和工程类企业，更是面对复杂多变的风险状况和特殊需求，因此需要专业的保险与风险管理支持。如何全面、精准、高效地应对企业客户的多样化风险，为客户提供优质的风险管理服务，是大同不断追求的方向。</p><p>&nbsp;大同企业服务团队深度参与了医疗、教育、食品、交通、环境，采矿，企业福利等多个行业的风险管理项目，积累了丰富的实战经验，能够满足企业在保险和风险管理上的各类需求。此外，大同在高风险及特殊行业与一般企业的不同需求基础上，通过专业的风险识别和分析，进一步细分风险类别，为相关行业提供更加专业和定制化的风险管理方案。</p>	2-6731c05a1fd47681628555.jpg	深度参与采矿业、制造业、建筑业、电力热力、交通运输、金属冶炼、水利、商贸等多个行业的企业风险管理项目，利用风险识别分析，细分风险类型，为相关行业提供专业化、定制型的风险管理服务。	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 08:25:02	2024-11-11 08:29:14	\N	0	0	f
 62	\N	\N	\N	政府风险解决方案	<p>陈寅尧 &nbsp;17771801729 （政保业务事业群） 37775369@qq.com&nbsp;</p><p>中国目前正处于一个关键的经济转型新阶段，面对频繁且严峻的风险挑战。在全球层面上，公共社会风险正逐渐增加，表现出多样且复杂的特点。中国的经济发展模式已从追求高速增长转变为注重高质量发展，这一变化使得优化经济结构、改变发展方式以及转换增长动力变得更加迫切，经济转型的特征越来越显著。</p><p>&nbsp;在国内外环境的共同影响下，国内正面临一系列集中爆发的风险挑战，进入了一个风险频发的敏感期。借助于大同保险在风险管理研究领域的专业基础和丰富的服务经验，我们持续为政府和各企事业单位提供支持，通过增强风险管理能力，完善现代风险管理体系，推进社会治理中的保险产品和风险管理服务的创新，帮助构建一个多层次的社会保障系统。</p>	1-6731c01decf96572747748.jpg	依托常年服务政府、企事业单位丰富经验，积极协助有关部门，通过加强风险管理能力建设，建立健全现代风险管理体系，推动社会治理领域保险产品和风险管理服务创新，不断完善多层次社会保障体系。	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 08:25:49	2024-11-11 08:28:13	\N	0	0	f
+40	\N	\N	\N	医惠保医院风险管理系统（手术保）	<figure class="image"><a href="https://bx.hrisk.cn/yhb-mgr/" target="_blank" rel="noopener noreferrer"><img style="aspect-ratio:482/86;" src="/images/6732f996a414d-image.png" width="482" height="86"></a></figure><p>大同保险经纪有限公司与医惠保（武汉）医院管理有限公司联手，基于“专业、健康、守护”的理念，深耕医院医疗风险管理。通过先进的“医惠保”系统和术前谈话视频双录技术，我们积极配合临床科室进行术前风险评估，强化患者教育，并确保医疗意外保险的有效投保与理赔流程的完善。此合作模式已在多家医院成功落地，证实了其在降低医疗意外、保护医院与患者权益，以及优化就医环境方面的显著效益。此成熟的医疗意外风险管理服务方案，共同推进医疗服务质量的提升和医患关系的和谐。</p>	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2024-11-11 06:09:36	2024-11-11 06:09:36	\N	0	0	f
 \.
 
 
@@ -1019,22 +1021,22 @@ COPY public."order" (id, node_id, consumer_id, quantity, amount, created_at, pai
 -- Data for Name: page; Type: TABLE DATA; Schema: public; Owner: datong
 --
 
-COPY public.page (id, name, label, weight) FROM stdin;
-5	业务	business	\N
-6	公告	announcement	\N
-7	加入我们	hire	\N
-11	业务咨询	feedback	\N
-1	首页	home	1
-2	关于我们	about	2
-12	产品中心	products	3
-15	企业文化	qiyewenhua	5
-13	消保专栏	xiaobaozhuanlan	6
-3	资讯中心	news	4
-4	客户服务	services	7
-10	联系我们	contact	8
-9	信息披露	information	9
-8	党建之窗	dangjian	11
-16	招标公告	zhaobiao	10
+COPY public.page (id, name, label, weight, description) FROM stdin;
+5	业务	business	\N	\N
+6	公告	announcement	\N	\N
+7	加入我们	hire	\N	\N
+11	业务咨询	feedback	\N	\N
+1	首页	home	1	\N
+2	关于我们	about	2	\N
+12	产品中心	products	3	\N
+15	企业文化	qiyewenhua	5	\N
+13	消保专栏	xiaobaozhuanlan	6	\N
+3	资讯中心	news	4	\N
+4	客户服务	services	7	\N
+10	联系我们	contact	8	\N
+9	信息披露	information	9	\N
+8	党建之窗	dangjian	11	\N
+16	招标公告	zhaobiao	10	\N
 \.
 
 
