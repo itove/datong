@@ -88,7 +88,12 @@
   height: 310px;
   object-fit: cover;
 }
-.node-body .title-image{
-  height: 400px;
-  object-fit: cover;
+.node-body{
+  .title-image{
+    height: 400px;
+    object-fit: cover;
+  }
+  figure.table{
+    margin: auto;
+  }
 }
