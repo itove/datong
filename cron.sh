@@ -41,9 +41,9 @@ dir=~/w/db.$db
 mkdir -p $dir; cd $dir
 git status &> /dev/null
 [ "$?" -eq 128 ] && git init
-# mysqldump --skip-extended-insert -u$user -p$passwd -h $host -P $port $db  > $db.sql
-pg_dump -U $user -w -h $host -p $port $db > $db.sql
-echo -- $(date) >> $db.sql
+# mysqldump --skip-extended-insert -u$user -p$passwd -h $host -P $port $db  > db.sql
+pg_dump -U $user -w -h $host -p $port $db > db.sql
+echo -- $(date) >> db.sql
 
 git add .
 git commit -m "db dump" --no-gpg-sign > /dev/null
